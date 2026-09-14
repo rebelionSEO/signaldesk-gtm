@@ -1,0 +1,16 @@
+import {z} from 'zod';
+import {identity,database,owned,publicStudy,body,failure,ApiError} from '@/lib/gtm/server';
+import {metricSchema,outcomeSchema,type Operations} from '@/lib/gtm/operating';
+import {executionPack} from '@/lib/gtm/execution';
+const date=z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(x=>Number.isFinite(Date.parse(x))&&new Date(x).toISOString().slice(0,10)===x);
+const inputSchema=z.discriminatedUnion('action',[
+ z.object({action:z.literal('metric'),revision:z.number().int().nonnegative(),metric:metricSchema}).strict(),
+ z.object({action:z.literal('prepare'),revision:z.number().int().nonnegative(),id:z.string().uuid(),experimentId:z.string().regex(/^O\d+$/),owner:z.string().trim().min(1).max(150),startDate:date,dueDate:date,budgetCap:z.number().finite().nonnegative().max(10000000)}).strict(),
+ z.object({action:z.literal('outcome'),revision:z.number().int().nonnegative(),outcome:outcomeSchema}).strict(),
+ z.object({action:z.literal('dispatch'),revision:z.number().int().nonnegative(),taskId:z.string().uuid()}).strict()
+]);
+export async function POST(req:Request,ctx:{params:Promise<{id:string}>}){try{const owner=await identity(req);const id=(await ctx.params).id;const data=inputSchema.parse(await body(req));const row=await owned(id,owner);if(row.revision!==data.revision||row.busy_until>Date.now())throw new ApiError(409,'The study changed or research is running. Reload before editing.');const operations:Operations=JSON.parse(row.operations);if(data.action==='dispatch')throw new ApiError(409,'External launch is unavailable: connect a channel adapter and approve the exact audience, content, schedule and spending cap first. Nothing was sent or spent.');
+ if(data.action==='metric'){if(operations.metrics.length>=100)throw new ApiError(400,'This study already has 100 metric records.');if(operations.metrics.some(m=>m.id===data.metric.id))return Response.json(publicStudy(row));operations.metrics.push(data.metric)}
+ if(data.action==='prepare'){if(operations.tasks.some(t=>t.id===data.id))return Response.json(publicStudy(row));if(operations.tasks.length>=30)throw new ApiError(400,'This study already has 30 execution packs.');if(data.dueDate<data.startDate)throw new ApiError(400,'Review date cannot precede the start date.');const report=JSON.parse(row.report);const o=report.opportunities.find((o:{id:string})=>o.id===data.experimentId);if(!o)throw new ApiError(404,'Experiment not found.');operations.tasks.push(executionPack(report,o,data,data.id))}
+ if(data.action==='outcome'){if(operations.outcomes.some(o=>o.id===data.outcome.id))return Response.json(publicStudy(row));if(operations.outcomes.length>=100)throw new ApiError(400,'Outcome limit reached.');const task=operations.tasks.find(t=>t.id===data.outcome.taskId);if(!task)throw new ApiError(404,'Execution pack not found.');operations.outcomes.push(data.outcome);task.status='Measured'}
+ const saved=await database().prepare('UPDATE studies SET operations = ?, revision = revision + 1, updated_at = ? WHERE id = ? AND owner = ? AND revision = ? AND busy_until <= ?').bind(JSON.stringify(operations),new Date().toISOString(),id,owner,data.revision,Date.now()).run();if(!saved.meta.changes)throw new ApiError(409,'The study changed. Reload before saving.');return Response.json(publicStudy(await owned(id,owner)))}catch(e){return failure(e)}}

@@ -1,3 +1,4 @@
+import type {Design, OperatingPlan} from './operating';
 export type Brief = {
     company: string;
     website: string;
@@ -15,6 +16,7 @@ export type Evidence = {
     limitation: string;
 };
 export type Opportunity = {
+    design?: Design;
     id: string;
     title: string;
     hypothesis: string;
@@ -28,6 +30,7 @@ export type Opportunity = {
     owner: string;
 };
 export type Report = {
+    operatingPlan?: OperatingPlan;
     brief: Brief;
     summary: string;
     evidence: Evidence[];

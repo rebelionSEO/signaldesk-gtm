@@ -1,3 +1,4 @@
+import {designSchema,operatingPlanSchema,operatingErrors} from './operating.ts';
 import { z } from 'zod';
 export function safeUrl(value: string) { try {
     const u = new URL(value);
@@ -13,8 +14,8 @@ export function canonicalUrl(value: string) { const u = new URL(value); u.hash =
 const text = z.string().trim().min(1).max(4000);
 export const briefSchema = z.object({ company: text.max(150), website: z.string().max(2048).refine(safeUrl, 'Use a public HTTPS website.'), audience: text.max(1000), objective: text.max(1500), constraints: z.string().max(2000) }).strict();
 export const evidenceSchema = z.object({ id: z.string().regex(/^E\d+$/), title: text.max(250), url: z.string().max(2048).refine(safeUrl, 'Use a public HTTPS source.'), summary: text, kind: z.enum(['complaint', 'positive', 'context']), date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable(), limitation: text }).strict();
-export const opportunitySchema = z.object({ id: z.string().regex(/^O\d+$/), title: text.max(250), hypothesis: text, evidenceIds: z.array(z.string()).min(1).max(20), counterEvidenceIds: z.array(z.string()).max(20), stage: z.enum(['Discover', 'Evaluate', 'Activate', 'Retain']), effort: z.enum(['Low', 'Medium', 'High']), action: text, metric: text, validation: text, owner: text.max(150) }).strict();
-export const contentSchema = z.object({ summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(5), unknowns: z.array(text).max(15) }).strict();
+export const opportunitySchema = z.object({ design:designSchema.optional(), id: z.string().regex(/^O\d+$/), title: text.max(250), hypothesis: text, evidenceIds: z.array(z.string()).min(1).max(20), counterEvidenceIds: z.array(z.string()).max(20), stage: z.enum(['Discover', 'Evaluate', 'Activate', 'Retain']), effort: z.enum(['Low', 'Medium', 'High']), action: text, metric: text, validation: text, owner: text.max(150) }).strict();
+export const contentSchema = z.object({ operatingPlan:operatingPlanSchema.optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
 export const reportSchema = contentSchema.extend({ brief: briefSchema, generatedAt: z.string().datetime(), mode: z.enum(['example', 'live', 'manual']), warnings: z.array(text).max(30) }).strict();
 export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUrls?: string[]) {
     const errors: string[] = [];
@@ -40,11 +41,36 @@ export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUr
         if (o.evidenceIds.some(id => o.counterEvidenceIds.includes(id)))
             errors.push(`${o.id} uses the same record as support and counterevidence`);
     }
-    return errors;
+    errors.push(...operatingErrors(report.operatingPlan,[...ids])); return errors;
 }
 export function evidenceWarnings(report: z.infer<typeof contentSchema>) { const warnings = ['Public discussions are a non-representative sample; no prevalence or business impact can be inferred.']; const urls = new Set(report.evidence.map(e => canonicalUrl(e.url))); if (urls.size < 3)
     warnings.push('Fewer than three unique source pages. Treat recommendations as exploratory.'); if (!report.evidence.some(e => e.kind === 'positive'))
     warnings.push('No positive counterevidence recorded. Seek opposing experiences before prioritizing.'); if (report.evidence.some(e => !e.date))
     warnings.push('Some publication dates are unknown. Check freshness before acting.'); if (!report.evidence.length)
     warnings.push('No evidence yet. Add sources before proposing experiments.'); return warnings; }
-export function toMarkdown(report: z.infer<typeof reportSchema>) { return `# ${report.brief.company} — GTM study\n\nMode: ${report.mode}. Created: ${report.generatedAt}\n\n## Brief\n${report.brief.objective}\n\nAudience: ${report.brief.audience}\n\nConstraints: ${report.brief.constraints}\n\n## Working strategy\n${report.summary}\n\n## Limitations\n${report.warnings.map(x => '- ' + x).join('\n')}\n\n## Evidence\n${report.evidence.map(e => `### ${e.id}: ${e.title}\n${e.kind} · ${e.date ?? 'Date unknown'}\n\n${e.summary}\n\nSource: ${e.url}\n\nLimitation: ${e.limitation}`).join('\n\n')}\n\n## Proposed experiments\n${report.opportunities.map(o => `### ${o.id}: ${o.title}\nHypothesis: ${o.hypothesis}\n\nAction: ${o.action}\n\nSupporting evidence: ${o.evidenceIds.join(', ')}\nCounterevidence: ${o.counterEvidenceIds.join(', ') || 'None recorded'}\n\nMetric: ${o.metric}\nValidation: ${o.validation}\nProposed owner: ${o.owner}\nEffort: ${o.effort}`).join('\n\n')}\n\n## Open questions\n${report.unknowns.map(x => '- ' + x).join('\n')}\n\nIndependent research. Experiments are proposed, not launched.\n`; }
+function legacyMarkdown(report: z.infer<typeof reportSchema>) { return `# ${report.brief.company} — GTM study\n\nMode: ${report.mode}. Created: ${report.generatedAt}\n\n## Brief\n${report.brief.objective}\n\nAudience: ${report.brief.audience}\n\nConstraints: ${report.brief.constraints}\n\n## Working strategy\n${report.summary}\n\n## Limitations\n${report.warnings.map(x => '- ' + x).join('\n')}\n\n## Evidence\n${report.evidence.map(e => `### ${e.id}: ${e.title}\n${e.kind} · ${e.date ?? 'Date unknown'}\n\n${e.summary}\n\nSource: ${e.url}\n\nLimitation: ${e.limitation}`).join('\n\n')}\n\n## Proposed experiments\n${report.opportunities.map(o => `### ${o.id}: ${o.title}\nHypothesis: ${o.hypothesis}\n\nAction: ${o.action}\n\nSupporting evidence: ${o.evidenceIds.join(', ')}\nCounterevidence: ${o.counterEvidenceIds.join(', ') || 'None recorded'}\n\nMetric: ${o.metric}\nValidation: ${o.validation}\nProposed owner: ${o.owner}\nEffort: ${o.effort}`).join('\n\n')}\n\n## Open questions\n${report.unknowns.map(x => '- ' + x).join('\n')}\n\nIndependent research. Experiments are proposed, not launched.\n`; }
+
+export function toMarkdown(report:z.infer<typeof reportSchema>){let content=legacyMarkdown(report);if(report.operatingPlan){const p=report.operatingPlan;content+=`
+## Decision brief
+Problem: ${p.decision.problem}
+Response: ${p.decision.intervention}
+When: ${p.decision.horizon}
+Goal: ${p.decision.desiredOutcome}
+Metric: ${p.decision.successMetric}
+Baseline: ${p.decision.baseline??'Unknown'}
+Target: ${p.decision.target??'Not set'}
+
+## Channel decisions
+${p.channels.map(c=>`- ${c.channel}: ${c.decision}. ${c.rationale} Data needed: ${c.dataNeeded}`).join('\n')}
+`;}for(const o of report.opportunities){if(o.design){const d=o.design;content+=`
+### ${o.id} — Experiment design
+Channel: ${d.channel}
+Ambition: ${d.ambition}
+Mechanism: ${d.mechanism}
+Distinctive because: ${d.differentBecause}
+Smallest test: ${d.smallestTest}
+Budget cap: ${d.budgetCap===null?'Not approved':d.budgetCap+' USD (proposed)'}
+Duration: ${d.durationDays} days after approval
+Stop rule: ${d.stopRule}
+Guardrail: ${d.guardrail}
+`;}}return content;}

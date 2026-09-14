@@ -7,7 +7,11 @@ An evidence-led GTM research workspace. Create a company brief, collect public e
 - Saved, user-scoped company studies in Cloudflare D1.
 - A clearly labeled PostHog example, kept separate from live research.
 - Manual evidence and experiment authoring, including opposing evidence.
-- Three server-side AI stages: research, synthesis, and consistency review.
+- Five server-side AI roles: planner, researcher, strategist, creative critic, and evidence auditor.
+- A deterministic coordinator that checkpoints each stage and records an observable run trace.
+- Seven-channel prioritization across paid, organic, email, inbound, community, partnerships, and sales/CRM.
+- Core, bold, and wildcard experiment designs with a cheap test, spend cap, stop rule, and guardrail.
+- Prepared execution packs, connector contracts, metric storage, and descriptive outcome evaluation.
 - Checkpointed stages, retries, concurrent-write protection, and daily AI-stage limits.
 - Deterministic validation of source URLs, reference IDs, dates, and report structure.
 - Markdown and JSON exports retaining limitations and provenance.
@@ -26,10 +30,20 @@ Official API references:
 
 ## Research flow
 
-1. **Research** searches official pages and relevant public discussion for positive and negative evidence. Existing manual records are treated as unverified leads. Tool-returned URLs form the allowed source registry.
-2. **Synthesis** returns a strict structured plan with evidence records, source limitations, references, experiments, and unknowns. Unknown dates remain null. Output with invalid references is rejected.
-3. **Review** checks every evidence and experiment record against the research notes. Unsupported records and dependent experiments are withheld. A separate model call is an automated consistency review, not independent factual verification.
-4. **Human review** checks source contents, current product behavior, existing solutions, and baselines before launch.
+1. **Planner** frames the bottleneck, creates research questions, and assigns one decision to each of seven GTM channels.
+2. **Researcher** searches official pages and relevant public discussion for positive and negative evidence. Existing manual records are treated as unverified leads. Tool-returned URLs form the allowed source registry.
+3. **Strategist** returns a strict channel portfolio and evidence-linked experiments. Each experiment defines a mechanism, smallest test, cap, duration, metric, stop rule, and guardrail.
+4. **Creative critic** rejects generic or novelty-only concepts and pressures each idea toward a concrete, audience-specific mechanism and cheap disproof.
+5. **Evidence auditor** checks every evidence and experiment record against the research notes. Unsupported records and dependent experiments are withheld.
+6. **Human review** checks source contents, current product behavior, existing solutions, baselines, targets, audience, assets, schedule, and spend before launch.
+
+These are five sequential roles using the configured model, coordinated by a deterministic application state machine. There is no autonomous manager agent or uncontrolled sub-agent swarm. This design keeps retries, source validation, budgets, and external side effects visible.
+
+## Execution and learning loop
+
+The Operations API can store channel metrics, prepare versioned execution packs, and record experiment outcomes. Connector contracts are defined for CRM, email, organic, paid media, and product analytics. They are deliberately shown as disconnected until credentials and provider-specific adapters exist. Dispatch returns a safe error unless the exact audience, content, schedule, permissions, tracking, and cap can be approved; the current version sends nothing and spends nothing.
+
+Outcome evaluation compares declared baseline and test windows, checks sample and guardrail rules, and records limitations. It never automatically promotes a prompt or campaign. A future self-improvement layer should cluster repeated failures, run regression cases, and require a quality gate before a prompt version is promoted.
 
 Each stage has a bounded provider request. The UI advances stages sequentially; if the page closes, reopen the study and resume after the stage lease expires. Results are checkpointed in D1. The last completed report is preserved until a new review completes. No background worker is promised. New live runs replace the current completed report only on success; full historical report version browsing is not implemented.
 

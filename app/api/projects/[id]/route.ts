@@ -23,7 +23,7 @@ export async function PATCH(req: Request, ctx: Context) { try {
     if (errors.length)
         throw new ApiError(400, errors.join('; '));
     const report = { ...data.report, mode: 'manual', warnings: ['Edited by the study owner. Source summaries require human verification.', ...evidenceWarnings(data.report)] };
-    const result = await database().prepare('UPDATE studies SET brief = ?, report = ?, revision = revision + 1, stage = ?, research = NULL, candidate = NULL, updated_at = ? WHERE id = ? AND owner = ? AND revision = ? AND busy_until <= ?').bind(JSON.stringify(report.brief), JSON.stringify(report), 'draft', new Date().toISOString(), id, owner, data.revision, Date.now()).run();
+    const result = await database().prepare('UPDATE studies SET brief = ?, report = ?, revision = revision + 1, stage = ?, research = NULL, candidate = NULL, planner = NULL, updated_at = ? WHERE id = ? AND owner = ? AND revision = ? AND busy_until <= ?').bind(JSON.stringify(report.brief), JSON.stringify(report), 'draft', new Date().toISOString(), id, owner, data.revision, Date.now()).run();
     if (!result.meta.changes)
         throw new ApiError(409, 'This study changed in another window. Reload it before saving.');
     return Response.json(publicStudy(await owned(id, owner)));
