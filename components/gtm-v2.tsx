@@ -1,9 +1,10 @@
 'use client';
 
-import { Activity, ArrowRight, CheckCircle2, PlugZap, ShieldCheck, Sparkles } from 'lucide-react';
+import { Activity, ArrowRight, CheckCircle2, CircleAlert, FlaskConical, PlugZap, ShieldCheck, Sparkles } from 'lucide-react';
 import type { Opportunity, Report } from '@/lib/gtm/types';
 import { adapters } from '@/lib/gtm/execution';
 import { channels, evaluateOutcome, planQuality, type Operations, type Planner, type Trace } from '@/lib/gtm/operating';
+import { evaluateReport, evaluationScenarios } from '@/lib/gtm/evaluation';
 
 export function DecisionBrief({ report }: { report: Report }) {
   const decision = report.operatingPlan?.decision;
@@ -68,5 +69,20 @@ export function SystemBoard({ planner, traces, report }: { planner: Planner | nu
     <section className="panel"><p className="eyebrow">PLANNER OUTPUT</p><h2>{planner?.bottleneckHypothesis ?? 'Planner runs at the start of a live study'}</h2>{planner ? <><p>{planner.objective}</p><h3>Data gaps</h3><ul>{planner.dataGaps.map((gap, index) => <li key={index}>{gap}</li>)}</ul></> : <p className="muted">The example demonstrates the final operating plan. A live run stores the planner’s questions and seven-channel assignments here.</p>}</section>
     <section className="panel"><p className="eyebrow">QUALITY GATES</p><h2>Experiment completeness</h2>{checks.map(item => <div className="quality-row" key={item.id}><b>{item.id}</b><span>{item.checks.filter(check => check.pass).length}/{item.checks.length} checks passed</span></div>)}<small>These gates check structure. They do not prove originality, causality or market impact.</small></section>
     <section className="panel"><p className="eyebrow">RUN TRACE</p><h2>Observable stage history</h2>{traces.length ? traces.slice().reverse().map((trace, index) => <div className="trace-row" key={`${trace.at}-${index}`}><Activity size={15}/><div><b>{trace.phase}</b><small>{trace.signal}</small></div><span className={trace.status}>{trace.status} · {(trace.durationMs / 1000).toFixed(1)}s</span></div>) : <p className="muted">No live stages have run for this study.</p>}</section>
+  </div>;
+}
+
+export function EvaluationBoard({ planner, traces, report }: { planner: Planner | null; traces: Trace[]; report: Report }) {
+  const result = evaluateReport(report);
+  const passed = result.gates.filter(gate => gate.pass).length;
+  return <div className="v3-stack eval-workspace">
+    <section className="eval-hero panel">
+      <div><p className="eyebrow">SYSTEM QA / DETERMINISTIC BASELINE</p><h2>Can this strategy survive review?</h2><p>Signaldesk grades the report before anyone treats it as a plan. The score tests discipline and completeness; it does not claim the market diagnosis is true.</p></div>
+      <div className={`eval-score ${result.status === 'Ready for review' ? 'ready' : result.status === 'Blocked' ? 'blocked' : 'review'}`}><strong>{result.score}</strong><span>/ 100</span><b>{result.status}</b><small>{passed}/{result.gates.length} hard gates passed</small></div>
+    </section>
+    <section><div className="v3-section-heading"><div><p className="eyebrow">WEIGHTED RUBRIC</p><h2>Why the score moved</h2></div><span className="muted">Stability unlocks after 3 comparable live runs</span></div><div className="eval-dimensions">{result.dimensions.map(item => <article className="panel eval-dimension" key={item.id}><div><span className={`eval-status ${item.status.toLowerCase()}`}>{item.status}</span><strong>{item.score === null ? '—' : item.score}</strong></div><h3>{item.label}</h3><p>{item.explanation}</p><small><b>Next:</b> {item.nextAction}</small></article>)}</div></section>
+    <section className="eval-grid"><div className="panel eval-gates"><p className="eyebrow">NON-NEGOTIABLE GATES</p><h2>Failures block promotion</h2>{result.gates.map(gate => <div key={gate.name} className={gate.pass ? 'pass' : 'fail'}>{gate.pass ? <CheckCircle2 size={18}/> : <CircleAlert size={18}/>}<div><b>{gate.name}</b><p>{gate.detail}</p></div></div>)}</div><div className="panel eval-protocol"><FlaskConical size={23}/><p className="eyebrow">LIVE MODEL PROTOCOL</p><h2>What still needs real runs</h2><ol><li>Freeze one brief and source set.</li><li>Run it three times with the same model and prompt.</li><li>Compare claims, sources, Now bet, cost, and latency.</li><li>Review drift and failed gates before promoting a prompt.</li></ol><p className="muted">No stability score is invented when comparable run history is unavailable.</p></div></section>
+    <section><div className="v3-section-heading"><div><p className="eyebrow">REGRESSION SUITE</p><h2>Five conditions the system must handle</h2><p className="muted">Each case protects a different GTM failure mode. A fixture proves deterministic behavior; a specification defines the next live evaluation.</p></div></div><div className="eval-scenarios">{evaluationScenarios.map(item => <article className="panel" key={item.id}><header><span>{item.id}</span><em>{item.state}</em></header><h3>{item.name}</h3><p>{item.stress}</p><small>{item.expectedBehavior}</small></article>)}</div></section>
+    <details className="panel eval-architecture"><summary>Inspect the five-agent architecture and run trace</summary><SystemBoard planner={planner} traces={traces} report={report}/></details>
   </div>;
 }

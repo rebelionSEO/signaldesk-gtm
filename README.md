@@ -18,6 +18,9 @@ An evidence-led GTM operating system. It turns a company brief and public eviden
 - Prepared execution packs, connector contracts, metric storage, and descriptive outcome evaluation.
 - Checkpointed stages, retries, concurrent-write protection, and daily AI-stage limits.
 - Deterministic validation of source URLs, reference IDs, dates, and report structure.
+- A visible System QA workspace scoring evidence integrity, specificity, mechanism-based originality, benchmark validity, and execution readiness.
+- Four hard promotion gates plus a five-scenario regression specification covering developer-led PLG, crowded CRM, sales-led enterprise, sparse evidence, and conflicting evidence.
+- Honest repeated-run evaluation: stability remains unmeasured until at least three comparable live reports are available.
 - Markdown and JSON exports retaining limitations and provenance.
 - Complete case-study exports containing planner output, operations, measured outcomes, and the AI run trace.
 - Responsive working surface and keyboard-accessible editing dialogs.
@@ -95,7 +98,7 @@ GitHub Actions runs linting with zero warnings, type checking, unit tests, the p
 
 Deterministic validation tests and local API persistence/security checks are included. Browser interaction QA and live provider evaluations have not been performed. WebMCP tools are feature-detected and expose reading a study and staging a brief; no supported WebMCP validation context was available, so their runtime contract remains unverified.
 
-Before describing the agent as validated in a portfolio, configure a provider and evaluate real runs on PostHog, a second company, a company with sparse evidence, and a conflicting-evidence case. Manually grade factual support, source relevance, repeated-source handling, actionable experiments, latency and actual provider cost. Keep measured results distinct from this implementation's capabilities.
+The System QA tab provides a deterministic baseline and exports the score with the case study. It grades report discipline and completeness; it does not independently verify source truth or causal impact. Before describing the live model as validated in a portfolio, configure a provider and run the five defined regression conditions. Freeze each brief and source set, repeat each run at least three times, and compare claims, source relevance, recommendation drift, latency, and actual provider cost. Keep measured results distinct from implementation capabilities.
 
 ## Originality and inspiration
 
