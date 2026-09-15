@@ -15,8 +15,37 @@ export type Evidence = {
     date: string | null;
     limitation: string;
 };
+export type GTMFact = {
+    label: string;
+    value: string;
+    status: 'Public fact' | 'Inference' | 'Assumption' | 'Unknown';
+    evidenceIds: string[];
+};
+export type FunnelStage = {
+    name: 'Acquire' | 'Evaluate' | 'Activate' | 'Expand' | 'Retain';
+    signal: string;
+    state: 'Known' | 'Hypothesis' | 'Missing data';
+};
+export type MarketContext = {
+    thesis: string;
+    facts: GTMFact[];
+    funnel: FunnelStage[];
+};
+export type Assumption = {
+    id: string;
+    title: string;
+    statement: string;
+    confidence: 'Low' | 'Medium' | 'High';
+    impact: 'Low' | 'Medium' | 'High';
+    evidenceIds: string[];
+    whyItMatters: string;
+    validation: string;
+};
 export type Opportunity = {
     design?: Design;
+    priority?: 'Now' | 'Next' | 'Later';
+    territory?: string;
+    behavior?: string;
     id: string;
     title: string;
     hypothesis: string;
@@ -31,6 +60,8 @@ export type Opportunity = {
 };
 export type Report = {
     operatingPlan?: OperatingPlan;
+    marketContext?: MarketContext;
+    assumptions?: Assumption[];
     brief: Brief;
     summary: string;
     evidence: Evidence[];

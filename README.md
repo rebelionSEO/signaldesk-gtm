@@ -1,16 +1,18 @@
 # Signaldesk
 
-An evidence-led GTM research workspace. Create a company brief, collect public evidence, form hypotheses, and produce a visual experiment plan with traceable sources.
+An evidence-led GTM operating system. It turns a company brief and public evidence into a decision thesis, an explicit assumption map, a sequenced creative portfolio, and reviewable execution packs.
 
 ## What works
 
 - Saved, user-scoped company studies in Cloudflare D1.
 - A clearly labeled PostHog example, kept separate from live research.
+- A decision-first command center showing the recommended bet, funnel diagnosis, time to signal, proposed cap, and assumptions that could reverse the recommendation.
+- Explicit separation of public facts, inferences, assumptions, and unknowns so a portfolio thesis cannot masquerade as an internal company diagnosis.
 - Manual evidence and experiment authoring, including opposing evidence.
 - Five server-side AI roles: planner, researcher, strategist, creative critic, and evidence auditor.
 - A deterministic coordinator that checkpoints each stage and records an observable run trace.
 - Seven-channel prioritization across paid, organic, email, inbound, community, partnerships, and sales/CRM.
-- Core, bold, and wildcard experiment designs with a cheap test, spend cap, stop rule, and guardrail.
+- Core, bold, and wildcard experiment designs with distinct creative territories, a behavior to change, a cheap test, spend cap, stop rule, and guardrail.
 - Prepared execution packs, connector contracts, metric storage, and descriptive outcome evaluation.
 - Checkpointed stages, retries, concurrent-write protection, and daily AI-stage limits.
 - Deterministic validation of source URLs, reference IDs, dates, and report structure.
@@ -32,7 +34,7 @@ Official API references:
 
 1. **Planner** frames the bottleneck, creates research questions, and assigns one decision to each of seven GTM channels.
 2. **Researcher** searches official pages and relevant public discussion for positive and negative evidence. Existing manual records are treated as unverified leads. Tool-returned URLs form the allowed source registry.
-3. **Strategist** returns a strict channel portfolio and evidence-linked experiments. Each experiment defines a mechanism, smallest test, cap, duration, metric, stop rule, and guardrail.
+3. **Strategist** separates facts from assumptions, maps the funnel, returns a strict channel portfolio, and sequences evidence-linked experiments. Each experiment defines a behavior, creative territory, mechanism, smallest test, cap, duration, metric, stop rule, and guardrail.
 4. **Creative critic** rejects generic or novelty-only concepts and pressures each idea toward a concrete, audience-specific mechanism and cheap disproof.
 5. **Evidence auditor** checks every evidence and experiment record against the research notes. Unsupported records and dependent experiments are withheld.
 6. **Human review** checks source contents, current product behavior, existing solutions, baselines, targets, audience, assets, schedule, and spend before launch.
