@@ -1,5 +1,7 @@
 import { env } from 'cloudflare:workers';
 import { getChatGPTUser } from '@/app/chatgpt-auth';
+import { reportSchema } from '@/lib/gtm/validation';
+import { operationsSchema, plannerSchema, traceSchema } from '@/lib/gtm/operating';
 export class ApiError extends Error {
     constructor(public status: number, message: string) { super(message); }
 }
@@ -38,5 +40,5 @@ export type StudyRow = {
 };
 export async function owned(id: string, owner: string) { const row = await database().prepare('SELECT * FROM studies WHERE id = ? AND owner = ?').bind(id, owner).first<StudyRow>(); if (!row)
     throw new ApiError(404, 'Study not found.'); return row; }
-export function publicStudy(row: StudyRow) { return {planner:row.planner?JSON.parse(row.planner):null,operations:JSON.parse(row.operations||'{"metrics":[],"tasks":[],"outcomes":[]}'),trace:JSON.parse(row.trace||'[]'), id: row.id, report: JSON.parse(row.report), stage: row.stage, revision: row.revision, busy: row.busy_until > Date.now(), updatedAt: row.updated_at }; }
+export function publicStudy(row: StudyRow) { return {planner:row.planner?plannerSchema.parse(JSON.parse(row.planner)):null,operations:operationsSchema.parse(JSON.parse(row.operations||'{"metrics":[],"tasks":[],"outcomes":[]}')),trace:traceSchema.parse(JSON.parse(row.trace||'[]')), id: row.id, report: reportSchema.parse(JSON.parse(row.report)), stage: row.stage, revision: row.revision, busy: row.busy_until > Date.now(), updatedAt: row.updated_at }; }
 export function config() { const e = env as unknown as Record<string, string | undefined>; return { key: e.OPENAI_API_KEY || process.env.OPENAI_API_KEY, model: e.OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-5-mini' }; }

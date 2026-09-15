@@ -24,6 +24,7 @@ export async function POST(req: Request, ctx: {
     const lease = await database().prepare('UPDATE studies SET lease = ?, busy_until = ? WHERE id = ? AND owner = ? AND revision = ? AND busy_until <= ?').bind(token, Date.now() + 180000, id, owner, input.revision, Date.now()).run();
     if (!lease.meta.changes)
         throw new ApiError(409, 'Another request started this study. Please reload.');
+    await database().prepare('DELETE FROM run_calls WHERE created_at <= ?').bind(Date.now() - 7 * 86400000).run();
     const quota = await database().prepare('INSERT INTO run_calls (id, owner, created_at) SELECT ?, ?, ? WHERE (SELECT COUNT(*) FROM run_calls WHERE owner = ? AND created_at > ?) < 30').bind(token, owner, Date.now(), owner, Date.now() - 86400000).run();
     if (!quota.meta.changes)
         throw new ApiError(429, 'Daily research limit reached (30 AI stages). Try again tomorrow.');
@@ -64,7 +65,7 @@ catch (e) {
 finally {
     if (token && id) {
         try {
-            await database().prepare("UPDATE studies SET trace = json_insert(trace, '$[#]', json(?)), lease = CASE WHEN lease = ? THEN NULL ELSE lease END, busy_until = CASE WHEN lease = ? THEN 0 ELSE busy_until END WHERE id = ?").bind(JSON.stringify({phase,status:passed?'passed':'failed',durationMs:Date.now()-started,at:new Date().toISOString(),promptVersion,signal}),token,token,id).run();
+            await database().prepare("UPDATE studies SET trace = json_insert(CASE WHEN json_array_length(trace) >= 500 THEN json_remove(trace, '$[0]') ELSE trace END, '$[#]', json(?)), lease = CASE WHEN lease = ? THEN NULL ELSE lease END, busy_until = CASE WHEN lease = ? THEN 0 ELSE busy_until END WHERE id = ?").bind(JSON.stringify({phase,status:passed?'passed':'failed',durationMs:Date.now()-started,at:new Date().toISOString(),promptVersion,signal}),token,token,id).run();
         }
         catch { }
     }

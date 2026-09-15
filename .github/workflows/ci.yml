@@ -1,0 +1,50 @@
+name: quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: npm
+      - run: npm run install:ci
+      - run: npm run check
+      - name: Production dependency audit
+        run: npm audit --omit=dev --audit-level=high
+
+  api-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: npm
+      - run: npm run install:ci
+      - run: npm run build
+      - name: Apply local database migrations
+        run: |
+          npx wrangler d1 execute site-creator-d1 --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_dizzy_jimmy_woo.sql
+          npx wrangler d1 execute site-creator-d1 --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0001_purple_zuras.sql
+      - name: Run API integration suite
+        run: |
+          npm run dev > /tmp/signaldesk-dev.log 2>&1 &
+          server_pid=$!
+          trap 'kill $server_pid' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent http://localhost:5173/api/status > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run test:integration

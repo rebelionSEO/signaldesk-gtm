@@ -1,6 +1,6 @@
 'use client';
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import Link from 'next/link';
 import { BookOpen, Download, LoaderCircle, Pencil, Plus, Radio, Search, ShieldCheck, ExternalLink } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
@@ -31,7 +31,7 @@ type Summary = {
     stage: string;
     updated_at: string;
 };
-const blank: Brief = { company: '', website: 'https://', audience: '', objective: '', constraints: '' };
+const blank: Brief = { company: '', website: 'https://', audience: '', objective: '', constraints: '', industry: '', businessModel: '', gtmMotion: '', geography: '', companyStage: '' };
 function Field({ label, value, onChange, multiline = false, required = true, max = 4000, type = 'text' }: {
     label: string;
     value: string;
@@ -63,9 +63,9 @@ export default function Home() {
     useEffect(() => { state.current = { report, study }; }, [report, study]);
     const mounted = useRef(true);
     const createId = useRef(cryptoId());
-    function apply(s: Study) { setStudy(s); setReport(s.report); const url = new URL(window.location.href); url.searchParams.set('study', s.id); window.history.replaceState({}, '', url); }
-    async function refresh() { const result = await request('/api/projects'); setStudies(result.studies); }
-    async function load(id: string) { setError(''); setFocus([]); setBusy(true); try {
+    const apply = useCallback((s: Study) => { setStudy(s); setReport(s.report); const url = new URL(window.location.href); url.searchParams.set('study', s.id); window.history.replaceState({}, '', url); }, []);
+    const refresh = useCallback(async () => { const result = await request('/api/projects'); setStudies(result.studies); }, []);
+    const load = useCallback(async (id: string) => { setError(''); setFocus([]); setBusy(true); try {
         if (id === 'example') {
             setStudy(null);
             setReport(example);
@@ -80,7 +80,7 @@ export default function Home() {
     }
     finally {
         setBusy(false);
-    } }
+    } }, [apply]);
     useEffect(() => { mounted.current = true; async function init() { try {
         const response = await fetch('/api/status');
         if (response.status === 401) {
@@ -101,7 +101,7 @@ export default function Home() {
     }
     catch (e) {
         setError(message(e));
-    } } void init(); return () => { mounted.current = false; }; }, []);
+    } } void init(); return () => { mounted.current = false; }; }, [load, refresh]);
     useEffect(() => { const context = (document as unknown as {
         modelContext?: {
             registerTool: (tool: unknown, options: unknown) => void | Promise<void>;
@@ -190,11 +190,11 @@ export default function Home() {
         setBusy(false);
         setPhase('');
     } }
-    function download(format: 'md' | 'json') { const content = format === 'md' ? toMarkdown(report) : JSON.stringify(report, null, 2); const url = URL.createObjectURL(new Blob([content], { type: format === 'md' ? 'text/markdown' : 'application/json' })); const link = document.createElement('a'); link.href = url; link.download = report.brief.company.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-gtm-study.' + format; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }
+    function download(format: 'md' | 'json') { const bundle = study ? { studyId: study.id, stage: study.stage, revision: study.revision, updatedAt: study.updatedAt, report, planner: study.planner, operations: study.operations, trace: study.trace } : { report, note: 'Curated example; no saved operations or run trace.' }; const content = format === 'md' ? caseStudyMarkdown(report, study) : JSON.stringify(bundle, null, 2); const url = URL.createObjectURL(new Blob([content], { type: format === 'md' ? 'text/markdown' : 'application/json' })); const link = document.createElement('a'); link.href = url; link.download = report.brief.company.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '-gtm-case-study.' + format; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); }
     function showEvidence(ids: string[]) { setFocus(ids); setSearch(''); setKind('All'); setTab('evidence'); }
     async function prepare(opportunity: Opportunity) { if (!study) return; setBusy(true); setError(''); try {
         const start = new Date(); const due = new Date(start); due.setDate(due.getDate() + (opportunity.design?.durationDays ?? 14));
-        const next = await request('/api/projects/' + study.id + '/operations', 'POST', { action: 'prepare', revision: study.revision, id: cryptoId(), experimentId: opportunity.id, owner: opportunity.owner, startDate: start.toISOString().slice(0, 10), dueDate: due.toISOString().slice(0, 10), budgetCap: opportunity.design?.budgetCap ?? 0 });
+        const next = await request('/api/projects/' + study.id + '/operations', 'POST', { action: 'prepare', revision: study.revision, id: cryptoId(), experimentId: opportunity.id, owner: opportunity.owner, startDate: start.toISOString().slice(0, 10), dueDate: due.toISOString().slice(0, 10), budgetCap: opportunity.design?.budgetCap ?? 0, approved: true });
         apply(next); setNotice('Execution pack prepared. Review the artifact and connector contract before any external action.'); setTab('execution');
     } catch (e) { setError(message(e)); } finally { setBusy(false); } }
     const filtered = report.evidence.filter(e => (kind === 'All' || e.kind === kind) && (!focus.length || focus.includes(e.id)) && `${e.title} ${e.summary} ${e.url}`.toLowerCase().includes(search.toLowerCase()));
@@ -221,7 +221,7 @@ export default function Home() {
         setDialog(null);
         setError('');
     } }}><DialogContent className="editor-dialog"><DialogTitle>{dialog === 'new' ? 'Start a company study' : dialog === 'brief' ? 'Edit research brief' : dialog === 'evidence' ? 'Evidence record' : 'Proposed experiment'}</DialogTitle><DialogDescription>{dialog === 'new' ? 'Define the company and question. Saving a brief does not call AI.' : dialog === 'evidence' ? 'Summarize what the source actually says. Include its limitations.' : dialog === 'brief' ? 'Changing the brief clears proposed experiments. Changing the company also clears evidence.' : 'Edits are saved as manual work and reset any in-progress AI research.'}</DialogDescription>{error && <p className="error" role="alert">{error}</p>}<form onSubmit={dialog === 'new' ? create : submitEdit}>
- {(dialog === 'new' || dialog === 'brief') && <><Field label="Company" value={brief.company} max={150} onChange={v => setBrief({ ...brief, company: v })}/><Field label="Company website (HTTPS)" value={brief.website} type="url" max={2048} onChange={v => setBrief({ ...brief, website: v })}/><Field label="Target audience" value={brief.audience} max={1000} onChange={v => setBrief({ ...brief, audience: v })}/><Field label="What do you want to investigate?" value={brief.objective} multiline max={1500} onChange={v => setBrief({ ...brief, objective: v })}/><Field label="Constraints and assumptions (optional)" value={brief.constraints} multiline required={false} max={2000} onChange={v => setBrief({ ...brief, constraints: v })}/></>}
+ {(dialog === 'new' || dialog === 'brief') && <><Field label="Company" value={brief.company} max={150} onChange={v => setBrief({ ...brief, company: v })}/><Field label="Company website (HTTPS)" value={brief.website} type="url" max={2048} onChange={v => setBrief({ ...brief, website: v })}/><Field label="Target audience" value={brief.audience} max={1000} onChange={v => setBrief({ ...brief, audience: v })}/><Field label="What do you want to investigate?" value={brief.objective} multiline max={1500} onChange={v => setBrief({ ...brief, objective: v })}/><div className="form-row"><Field label="Industry or category (optional)" value={brief.industry ?? ''} required={false} max={250} onChange={v => setBrief({ ...brief, industry: v })}/><Field label="Business model (optional)" value={brief.businessModel ?? ''} required={false} max={250} onChange={v => setBrief({ ...brief, businessModel: v })}/></div><div className="form-row"><Field label="GTM motion (optional)" value={brief.gtmMotion ?? ''} required={false} max={250} onChange={v => setBrief({ ...brief, gtmMotion: v })}/><Field label="Company stage (optional)" value={brief.companyStage ?? ''} required={false} max={250} onChange={v => setBrief({ ...brief, companyStage: v })}/></div><Field label="Primary geography (optional)" value={brief.geography ?? ''} required={false} max={250} onChange={v => setBrief({ ...brief, geography: v })}/><Field label="Constraints and assumptions (optional)" value={brief.constraints} multiline required={false} max={2000} onChange={v => setBrief({ ...brief, constraints: v })}/></>}
  {dialog === 'evidence' && evidence && <><Field label="Observation title" value={evidence.title} max={250} onChange={v => setEvidence({ ...evidence, title: v })}/><Field label="Source URL (HTTPS)" value={evidence.url} type="url" max={2048} onChange={v => setEvidence({ ...evidence, url: v })}/><Picker label="Evidence type" value={evidence.kind} items={['complaint', 'positive', 'context']} onChange={v => setEvidence({ ...evidence, kind: v as Evidence['kind'] })}/><Field label="Source summary (paraphrase)" value={evidence.summary} multiline onChange={v => setEvidence({ ...evidence, summary: v })}/><Field label="Publication date (leave blank if unknown)" value={evidence.date ?? ''} type="date" required={false} onChange={v => setEvidence({ ...evidence, date: v || null })}/><Field label="Limitations or conflicting context" value={evidence.limitation} multiline onChange={v => setEvidence({ ...evidence, limitation: v })}/></>}
  {dialog === 'opportunity' && opportunity && <><Field label="Experiment title" value={opportunity.title} max={250} onChange={v => setOpportunity({ ...opportunity, title: v })}/><Field label="Hypothesis" value={opportunity.hypothesis} multiline onChange={v => setOpportunity({ ...opportunity, hypothesis: v })}/><div className="form-row"><Picker label="Journey stage" value={opportunity.stage} items={['Discover', 'Evaluate', 'Activate', 'Retain']} onChange={v => setOpportunity({ ...opportunity, stage: v as Opportunity['stage'] })}/><Picker label="Estimated effort" value={opportunity.effort} items={['Low', 'Medium', 'High']} onChange={v => setOpportunity({ ...opportunity, effort: v as Opportunity['effort'] })}/></div><Field label="Proposed action" value={opportunity.action} multiline onChange={v => setOpportunity({ ...opportunity, action: v })}/><Field label="Success metric (no invented baseline)" value={opportunity.metric} multiline onChange={v => setOpportunity({ ...opportunity, metric: v })}/><Field label="Validation needed before launch" value={opportunity.validation} multiline onChange={v => setOpportunity({ ...opportunity, validation: v })}/><Field label="Proposed owner or role" value={opportunity.owner} max={150} onChange={v => setOpportunity({ ...opportunity, owner: v })}/><fieldset><legend>Supporting evidence (at least one)</legend>{report.evidence.map(e => <label className="check-row" key={e.id}><Checkbox checked={opportunity.evidenceIds.includes(e.id)} onCheckedChange={checked => setOpportunity({ ...opportunity, evidenceIds: checked ? [...opportunity.evidenceIds, e.id] : opportunity.evidenceIds.filter(id => id !== e.id), counterEvidenceIds: checked ? opportunity.counterEvidenceIds.filter(id => id !== e.id) : opportunity.counterEvidenceIds })}/>{e.id} · {e.title}</label>)}</fieldset><fieldset><legend>Counterevidence</legend>{report.evidence.map(e => <label className="check-row" key={e.id}><Checkbox checked={opportunity.counterEvidenceIds.includes(e.id)} onCheckedChange={checked => setOpportunity({ ...opportunity, counterEvidenceIds: checked ? [...opportunity.counterEvidenceIds, e.id] : opportunity.counterEvidenceIds.filter(id => id !== e.id), evidenceIds: checked ? opportunity.evidenceIds.filter(id => id !== e.id) : opportunity.evidenceIds })}/>{e.id} · {e.title}</label>)}</fieldset></>}
  <div className="dialog-actions"><button type="button" className="secondary" disabled={busy} onClick={() => setDialog(null)}>Cancel</button><button className="primary" disabled={busy}>{busy ? <LoaderCircle className="spin" size={16}/> : null}{dialog === 'new' ? 'Create study' : 'Save changes'}</button></div></form></DialogContent></Dialog>
@@ -230,3 +230,4 @@ export default function Home() {
 function cryptoId() { return typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : ''; }
 function message(e: unknown) { if (e && typeof e === 'object' && 'issues' in e)
     return 'Check required fields, source URLs, and selected supporting evidence.'; return e instanceof Error ? e.message : 'Something went wrong. Please try again.'; }
+function caseStudyMarkdown(report: Report, study: Study | null) { let content = toMarkdown(report); if (!study) return content + '\n## Decision history\nCurated example; no saved run trace or execution history.\n'; content += `\n## Planner\n${study.planner ? `Objective: ${study.planner.objective}\nBottleneck hypothesis: ${study.planner.bottleneckHypothesis}\nData gaps:\n${study.planner.dataGaps.map(x => `- ${x}`).join('\n')}` : 'No planner output saved.'}\n\n## Execution packs\n${study.operations.tasks.map(t => `- ${t.title} — ${t.status}; ${t.startDate} to ${t.dueDate}; cap USD ${t.budgetCap}; approved ${t.approvedAt ?? 'not recorded'}`).join('\n') || '- None prepared.'}\n\n## Recorded metrics\n${study.operations.metrics.map(m => `- ${m.name}: ${m.value} ${m.unit}; ${m.windowStart} to ${m.windowEnd}; source: ${m.source}`).join('\n') || '- None recorded.'}\n\n## Outcomes\n${study.operations.outcomes.map(o => `- ${o.metric}: ${o.baselineSuccess}/${o.baselineTotal} to ${o.testSuccess}/${o.testTotal}; design: ${o.design}; source: ${o.source}`).join('\n') || '- None recorded.'}\n\n## Run trace\n${study.trace.map(t => `- ${t.at}: ${t.phase} ${t.status} in ${t.durationMs}ms; prompt ${t.promptVersion}; ${t.signal}`).join('\n') || '- No AI stages recorded.'}\n`; return content; }

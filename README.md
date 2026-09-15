@@ -12,11 +12,14 @@ An evidence-led GTM operating system. It turns a company brief and public eviden
 - Five server-side AI roles: planner, researcher, strategist, creative critic, and evidence auditor.
 - A deterministic coordinator that checkpoints each stage and records an observable run trace.
 - Seven-channel prioritization across paid, organic, email, inbound, community, partnerships, and sales/CRM.
+- Benchmark cohorts classified by category, business model, GTM motion, company stage, geography, peer role, and metric comparability.
+- Benchmark ranges remain explicitly unavailable unless a source establishes the metric definition, cohort, reporting period, and observed range.
 - Core, bold, and wildcard experiment designs with distinct creative territories, a behavior to change, a cheap test, spend cap, stop rule, and guardrail.
 - Prepared execution packs, connector contracts, metric storage, and descriptive outcome evaluation.
 - Checkpointed stages, retries, concurrent-write protection, and daily AI-stage limits.
 - Deterministic validation of source URLs, reference IDs, dates, and report structure.
 - Markdown and JSON exports retaining limitations and provenance.
+- Complete case-study exports containing planner output, operations, measured outcomes, and the AI run trace.
 - Responsive working surface and keyboard-accessible editing dialogs.
 
 ## Live AI setup
@@ -34,7 +37,7 @@ Official API references:
 
 1. **Planner** frames the bottleneck, creates research questions, and assigns one decision to each of seven GTM channels.
 2. **Researcher** searches official pages and relevant public discussion for positive and negative evidence. Existing manual records are treated as unverified leads. Tool-returned URLs form the allowed source registry.
-3. **Strategist** separates facts from assumptions, maps the funnel, returns a strict channel portfolio, and sequences evidence-linked experiments. Each experiment defines a behavior, creative territory, mechanism, smallest test, cap, duration, metric, stop rule, and guardrail.
+3. **Strategist** separates facts from assumptions, maps the funnel, builds a source-linked benchmark cohort, returns a strict channel portfolio, and sequences evidence-linked experiments. Each experiment defines a behavior, creative territory, mechanism, smallest test, cap, duration, metric, stop rule, and guardrail.
 4. **Creative critic** rejects generic or novelty-only concepts and pressures each idea toward a concrete, audience-specific mechanism and cheap disproof.
 5. **Evidence auditor** checks every evidence and experiment record against the research notes. Unsupported records and dependent experiments are withheld.
 6. **Human review** checks source contents, current product behavior, existing solutions, baselines, targets, audience, assets, schedule, and spend before launch.
@@ -43,7 +46,7 @@ These are five sequential roles using the configured model, coordinated by a det
 
 ## Execution and learning loop
 
-The Operations API can store channel metrics, prepare versioned execution packs, and record experiment outcomes. Connector contracts are defined for CRM, email, organic, paid media, and product analytics. They are deliberately shown as disconnected until credentials and provider-specific adapters exist. Dispatch returns a safe error unless the exact audience, content, schedule, permissions, tracking, and cap can be approved; the current version sends nothing and spends nothing.
+The Operations API can store channel metrics, prepare versioned execution packs, and record experiment outcomes. Only the current `Now` experiment can enter execution; its approved preparation cap cannot exceed the reviewed experiment cap, and the approval timestamp is retained. Connector contracts are defined for CRM, email, organic, paid media, and product analytics. They are deliberately shown as disconnected until credentials and provider-specific adapters exist. Dispatch returns a safe error unless the exact audience, content, schedule, permissions, tracking, and cap can be approved; the current version sends nothing and spends nothing.
 
 Outcome evaluation compares declared baseline and test windows, checks sample and guardrail rules, and records limitations. It never automatically promotes a prompt or campaign. A future self-improvement layer should cluster repeated failures, run regression cases, and require a quality gate before a prompt version is promoted.
 
@@ -69,11 +72,14 @@ npm run dev
 npm run test
 npm run typecheck
 npm run build
+npm run check
 ```
 
 For local user identity, visit `/signin-with-chatgpt?return_to=/`. The Sites preview simulates a local identity; hosted identity is supplied by the platform.
 
 Generate schema migrations with `npm run db:generate`. Apply the checked-in migration to the local D1 database following the Sites starter workflow before API integration tests. Then run `node tests/api.integration.mjs` against the local preview on port 5173. The integration test creates synthetic local records and refuses a configurable production target.
+
+GitHub Actions runs linting with zero warnings, type checking, unit tests, the production build, a production dependency audit, and the local API integration suite on pushes to `main` and pull requests.
 
 ## Structure
 

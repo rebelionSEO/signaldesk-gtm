@@ -5,6 +5,11 @@ export type Brief = {
     audience: string;
     objective: string;
     constraints: string;
+    industry?: string;
+    businessModel?: string;
+    gtmMotion?: string;
+    geography?: string;
+    companyStage?: string;
 };
 export type Evidence = {
     id: string;
@@ -30,6 +35,30 @@ export type MarketContext = {
     thesis: string;
     facts: GTMFact[];
     funnel: FunnelStage[];
+};
+export type BenchmarkProfile = {
+    category: string;
+    businessModel: string;
+    gtmMotion: string;
+    companyStage: string;
+    geography: string;
+    peers: {
+        company: string;
+        role: 'Direct competitor' | 'Category leader' | 'Motion leader' | 'Creative reference';
+        rationale: string;
+        evidenceIds: string[];
+    }[];
+    metrics: {
+        name: string;
+        definition: string;
+        observedRange: string | null;
+        unit: string;
+        evidenceIds: string[];
+        freshness: string;
+        limitation: string;
+    }[];
+    conventions: string[];
+    whitespace: string[];
 };
 export type Assumption = {
     id: string;
@@ -61,6 +90,7 @@ export type Opportunity = {
 export type Report = {
     operatingPlan?: OperatingPlan;
     marketContext?: MarketContext;
+    benchmarkProfile?: BenchmarkProfile;
     assumptions?: Assumption[];
     brief: Brief;
     summary: string;

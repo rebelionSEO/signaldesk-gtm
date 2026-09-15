@@ -12,13 +12,15 @@ export function canonicalUrl(value: string) { const u = new URL(value); u.hash =
     if (key.startsWith('utm_'))
         u.searchParams.delete(key); return u.toString().replace(/\/$/, ''); }
 const text = z.string().trim().min(1).max(4000);
-export const briefSchema = z.object({ company: text.max(150), website: z.string().max(2048).refine(safeUrl, 'Use a public HTTPS website.'), audience: text.max(1000), objective: text.max(1500), constraints: z.string().max(2000) }).strict();
+const optionalBriefText = z.string().trim().max(250).optional();
+export const briefSchema = z.object({ company: text.max(150), website: z.string().max(2048).refine(safeUrl, 'Use a public HTTPS website.'), audience: text.max(1000), objective: text.max(1500), constraints: z.string().max(2000), industry: optionalBriefText, businessModel: optionalBriefText, gtmMotion: optionalBriefText, geography: optionalBriefText, companyStage: optionalBriefText }).strict();
 export const evidenceSchema = z.object({ id: z.string().regex(/^E\d+$/), title: text.max(250), url: z.string().max(2048).refine(safeUrl, 'Use a public HTTPS source.'), summary: text, kind: z.enum(['complaint', 'positive', 'context']), date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable(), limitation: text }).strict();
 const factSchema=z.object({label:text.max(120),value:text,status:z.enum(['Public fact','Inference','Assumption','Unknown']),evidenceIds:z.array(z.string()).max(20)}).strict();
 const marketContextSchema=z.object({thesis:text,facts:z.array(factSchema).max(20),funnel:z.array(z.object({name:z.enum(['Acquire','Evaluate','Activate','Expand','Retain']),signal:text,state:z.enum(['Known','Hypothesis','Missing data'])}).strict()).length(5)}).strict();
 const assumptionSchema=z.object({id:z.string().regex(/^A\d+$/),title:text.max(180),statement:text,confidence:z.enum(['Low','Medium','High']),impact:z.enum(['Low','Medium','High']),evidenceIds:z.array(z.string()).max(20),whyItMatters:text,validation:text}).strict();
+const benchmarkProfileSchema=z.object({category:text.max(180),businessModel:text.max(180),gtmMotion:text.max(180),companyStage:text.max(180),geography:text.max(180),peers:z.array(z.object({company:text.max(180),role:z.enum(['Direct competitor','Category leader','Motion leader','Creative reference']),rationale:text,evidenceIds:z.array(z.string()).max(20)}).strict()).max(12),metrics:z.array(z.object({name:text.max(180),definition:text,observedRange:text.nullable(),unit:text.max(80),evidenceIds:z.array(z.string()).max(20),freshness:text.max(180),limitation:text}).strict()).max(12),conventions:z.array(text).max(12),whitespace:z.array(text).max(12)}).strict();
 export const opportunitySchema = z.object({ design:designSchema.optional(), priority:z.enum(['Now','Next','Later']).optional(),territory:text.max(180).optional(),behavior:text.optional(), id: z.string().regex(/^O\d+$/), title: text.max(250), hypothesis: text, evidenceIds: z.array(z.string()).min(1).max(20), counterEvidenceIds: z.array(z.string()).max(20), stage: z.enum(['Discover', 'Evaluate', 'Activate', 'Retain']), effort: z.enum(['Low', 'Medium', 'High']), action: text, metric: text, validation: text, owner: text.max(150) }).strict();
-export const contentSchema = z.object({ operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
+export const contentSchema = z.object({ operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),benchmarkProfile:benchmarkProfileSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
 export const reportSchema = contentSchema.extend({ brief: briefSchema, generatedAt: z.string().datetime(), mode: z.enum(['example', 'live', 'manual']), warnings: z.array(text).max(30) }).strict();
 export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUrls?: string[]) {
     const errors: string[] = [];
@@ -46,6 +48,8 @@ export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUr
     }
     for(const item of report.marketContext?.facts??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`Market context references missing evidence ${id}`);
     for(const item of report.assumptions??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`${item.id} references missing evidence ${id}`);
+    for(const peer of report.benchmarkProfile?.peers??[])for(const id of peer.evidenceIds)if(!ids.has(id))errors.push(`Benchmark peer ${peer.company} references missing evidence ${id}`);
+    for(const metric of report.benchmarkProfile?.metrics??[])for(const id of metric.evidenceIds)if(!ids.has(id))errors.push(`Benchmark metric ${metric.name} references missing evidence ${id}`);
     errors.push(...operatingErrors(report.operatingPlan,[...ids])); return errors;
 }
 export function evidenceWarnings(report: z.infer<typeof contentSchema>) { const warnings = ['Public discussions are a non-representative sample; no prevalence or business impact can be inferred.']; const urls = new Set(report.evidence.map(e => canonicalUrl(e.url))); if (urls.size < 3)
@@ -101,4 +105,23 @@ Budget cap: ${d.budgetCap===null?'Not approved':d.budgetCap+' USD (proposed)'}
 Duration: ${d.durationDays} days after approval
 Stop rule: ${d.stopRule}
 Guardrail: ${d.guardrail}
-`;}}return content;}
+`;}}if(report.benchmarkProfile){const b=report.benchmarkProfile;content+=`
+## Benchmark cohort
+Category: ${b.category}
+Business model: ${b.businessModel}
+GTM motion: ${b.gtmMotion}
+Company stage: ${b.companyStage}
+Geography: ${b.geography}
+
+### Peer roles
+${b.peers.map(p=>`- ${p.company} — ${p.role}: ${p.rationale} Evidence: ${p.evidenceIds.join(', ')||'Needed'}`).join('\n')||'- No validated peers yet.'}
+
+### Comparable metrics
+${b.metrics.map(m=>`- ${m.name}: ${m.observedRange??'No defensible range yet'} ${m.unit}. ${m.definition} Freshness: ${m.freshness}. Evidence: ${m.evidenceIds.join(', ')||'Needed'}. Limitation: ${m.limitation}`).join('\n')||'- No defensible metric benchmarks yet.'}
+
+### Category conventions
+${b.conventions.map(x=>`- ${x}`).join('\n')||'- Not established.'}
+
+### Strategic whitespace
+${b.whitespace.map(x=>`- ${x}`).join('\n')||'- Not established.'}
+`; }return content;}
