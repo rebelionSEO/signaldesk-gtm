@@ -18,7 +18,9 @@ An evidence-led GTM operating system. It turns a company brief and public eviden
 - Prepared execution packs, connector contracts, metric storage, and descriptive outcome evaluation.
 - Checkpointed stages, retries, concurrent-write protection, and daily AI-stage limits.
 - Deterministic validation of source URLs, reference IDs, dates, and report structure.
-- A visible System QA workspace scoring evidence integrity, specificity, mechanism-based originality, benchmark validity, and execution readiness.
+- A supporting System QA layer scoring evidence integrity, specificity, mechanism-based originality, benchmark validity, and execution readiness.
+- A reusable commercial pressure test for SaaS companies: north-star KPI, pipeline logic, leading indicators, attribution window, competitive attacks, defensible assets, and evidence-gated 30/60/90 roadmap.
+- Experiment economics derived from the scoped test. Proposed caps are never inferred from revenue, treated as CAC, or presented as proof that a company can afford the idea.
 - Four hard promotion gates plus a five-scenario regression specification covering developer-led PLG, crowded CRM, sales-led enterprise, sparse evidence, and conflicting evidence.
 - Honest repeated-run evaluation: stability remains unmeasured until at least three comparable live reports are available.
 - Markdown and JSON exports retaining limitations and provenance.
@@ -40,7 +42,7 @@ Official API references:
 
 1. **Planner** frames the bottleneck, creates research questions, and assigns one decision to each of seven GTM channels.
 2. **Researcher** searches official pages and relevant public discussion for positive and negative evidence. Existing manual records are treated as unverified leads. Tool-returned URLs form the allowed source registry.
-3. **Strategist** separates facts from assumptions, maps the funnel, builds a source-linked benchmark cohort, returns a strict channel portfolio, and sequences evidence-linked experiments. Each experiment defines a behavior, creative territory, mechanism, smallest test, cap, duration, metric, stop rule, and guardrail.
+3. **Strategist** separates facts from assumptions, maps the funnel, builds a source-linked benchmark cohort, returns a strict channel portfolio, and sequences evidence-linked experiments. It also builds the commercial measurement chain and reverse engineers evidence-bound competitive attacks. Each experiment defines a behavior, creative territory, mechanism, smallest test, scoped cost cap, duration, metric, stop rule, and guardrail.
 4. **Creative critic** rejects generic or novelty-only concepts and pressures each idea toward a concrete, audience-specific mechanism and cheap disproof.
 5. **Evidence auditor** checks every evidence and experiment record against the research notes. Unsupported records and dependent experiments are withheld.
 6. **Human review** checks source contents, current product behavior, existing solutions, baselines, targets, audience, assets, schedule, and spend before launch.

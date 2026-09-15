@@ -19,8 +19,9 @@ const factSchema=z.object({label:text.max(120),value:text,status:z.enum(['Public
 const marketContextSchema=z.object({thesis:text,facts:z.array(factSchema).max(20),funnel:z.array(z.object({name:z.enum(['Acquire','Evaluate','Activate','Expand','Retain']),signal:text,state:z.enum(['Known','Hypothesis','Missing data'])}).strict()).length(5)}).strict();
 const assumptionSchema=z.object({id:z.string().regex(/^A\d+$/),title:text.max(180),statement:text,confidence:z.enum(['Low','Medium','High']),impact:z.enum(['Low','Medium','High']),evidenceIds:z.array(z.string()).max(20),whyItMatters:text,validation:text}).strict();
 const benchmarkProfileSchema=z.object({category:text.max(180),businessModel:text.max(180),gtmMotion:text.max(180),companyStage:text.max(180),geography:text.max(180),peers:z.array(z.object({company:text.max(180),role:z.enum(['Direct competitor','Category leader','Motion leader','Creative reference']),rationale:text,evidenceIds:z.array(z.string()).max(20)}).strict()).max(12),metrics:z.array(z.object({name:text.max(180),definition:text,observedRange:text.nullable(),unit:text.max(80),evidenceIds:z.array(z.string()).max(20),freshness:text.max(180),limitation:text}).strict()).max(12),conventions:z.array(text).max(12),whitespace:z.array(text).max(12)}).strict();
+const commercialPlanSchema=z.object({northStar:text.max(180),pipelineOutcome:text,baseline:text.nullable(),target:text.nullable(),attributionWindow:text.max(180),sourceOfTruth:text,pipelineLogic:text,costPrinciple:text,leadingIndicators:z.array(z.object({name:text.max(180),signal:text,source:text}).strict()).min(1).max(8),guardrails:z.array(text).min(1).max(8),competitivePressures:z.array(z.object({id:z.string().regex(/^C\d+$/),attacker:text.max(180),vulnerability:text,likelyMove:text,evidenceIds:z.array(z.string()).max(20),threat:z.enum(['High','Medium','Low']),leadingSignal:text,response:text}).strict()).max(6),defensibility:z.array(z.object({asset:text.max(180),whyHardToCopy:text,proofNeeded:text}).strict()).max(6),roadmap:z.array(z.object({horizon:z.enum(['0–30 days','31–60 days','61–90 days']),objective:text,decisionGate:text,experimentIds:z.array(z.string()).max(10)}).strict()).length(3)}).strict();
 export const opportunitySchema = z.object({ design:designSchema.optional(), priority:z.enum(['Now','Next','Later']).optional(),territory:text.max(180).optional(),behavior:text.optional(), id: z.string().regex(/^O\d+$/), title: text.max(250), hypothesis: text, evidenceIds: z.array(z.string()).min(1).max(20), counterEvidenceIds: z.array(z.string()).max(20), stage: z.enum(['Discover', 'Evaluate', 'Activate', 'Retain']), effort: z.enum(['Low', 'Medium', 'High']), action: text, metric: text, validation: text, owner: text.max(150) }).strict();
-export const contentSchema = z.object({ operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),benchmarkProfile:benchmarkProfileSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
+export const contentSchema = z.object({ commercialPlan:commercialPlanSchema.optional(),operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),benchmarkProfile:benchmarkProfileSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
 export const reportSchema = contentSchema.extend({ brief: briefSchema, generatedAt: z.string().datetime(), mode: z.enum(['example', 'live', 'manual']), warnings: z.array(text).max(30) }).strict();
 export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUrls?: string[]) {
     const errors: string[] = [];
@@ -50,6 +51,8 @@ export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUr
     for(const item of report.assumptions??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`${item.id} references missing evidence ${id}`);
     for(const peer of report.benchmarkProfile?.peers??[])for(const id of peer.evidenceIds)if(!ids.has(id))errors.push(`Benchmark peer ${peer.company} references missing evidence ${id}`);
     for(const metric of report.benchmarkProfile?.metrics??[])for(const id of metric.evidenceIds)if(!ids.has(id))errors.push(`Benchmark metric ${metric.name} references missing evidence ${id}`);
+    for(const pressure of report.commercialPlan?.competitivePressures??[])for(const id of pressure.evidenceIds)if(!ids.has(id))errors.push(`${pressure.id} references missing evidence ${id}`);
+    for(const step of report.commercialPlan?.roadmap??[])for(const id of step.experimentIds)if(!opportunityIds.has(id))errors.push(`Roadmap references missing experiment ${id}`);
     errors.push(...operatingErrors(report.operatingPlan,[...ids])); return errors;
 }
 export function evidenceWarnings(report: z.infer<typeof contentSchema>) { const warnings = ['Public discussions are a non-representative sample; no prevalence or business impact can be inferred.']; const urls = new Set(report.evidence.map(e => canonicalUrl(e.url))); if (urls.size < 3)
@@ -124,4 +127,26 @@ ${b.conventions.map(x=>`- ${x}`).join('\n')||'- Not established.'}
 
 ### Strategic whitespace
 ${b.whitespace.map(x=>`- ${x}`).join('\n')||'- Not established.'}
+`; }if(report.commercialPlan){const c=report.commercialPlan;content+=`
+## Commercial measurement
+North star: ${c.northStar}
+Pipeline outcome: ${c.pipelineOutcome}
+Baseline: ${c.baseline??'Required from connected data'}
+Target: ${c.target??'Set after baseline review'}
+Attribution window: ${c.attributionWindow}
+Source of truth: ${c.sourceOfTruth}
+Pipeline logic: ${c.pipelineLogic}
+Cost principle: ${c.costPrinciple}
+
+### Leading indicators
+${c.leadingIndicators.map(k=>`- ${k.name}: ${k.signal}. Source: ${k.source}`).join('\n')}
+
+### Competitive pressure
+${c.competitivePressures.map(p=>`- ${p.id} [${p.threat}] ${p.attacker}: ${p.vulnerability}. Likely move: ${p.likelyMove}. Signal: ${p.leadingSignal}. Response: ${p.response}. Evidence: ${p.evidenceIds.join(', ')||'Needed'}`).join('\n')||'- No evidence-bound attack defined.'}
+
+### Defensibility
+${c.defensibility.map(d=>`- ${d.asset}: ${d.whyHardToCopy}. Proof needed: ${d.proofNeeded}`).join('\n')||'- No defensible asset established.'}
+
+### 90-day roadmap
+${c.roadmap.map(r=>`- ${r.horizon}: ${r.objective}. Decision gate: ${r.decisionGate}. Experiments: ${r.experimentIds.join(', ')||'None'}`).join('\n')}
 `; }return content;}

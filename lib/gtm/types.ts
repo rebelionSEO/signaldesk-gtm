@@ -60,6 +60,21 @@ export type BenchmarkProfile = {
     conventions: string[];
     whitespace: string[];
 };
+export type CommercialPlan = {
+    northStar: string;
+    pipelineOutcome: string;
+    baseline: string | null;
+    target: string | null;
+    attributionWindow: string;
+    sourceOfTruth: string;
+    pipelineLogic: string;
+    costPrinciple: string;
+    leadingIndicators: { name: string; signal: string; source: string }[];
+    guardrails: string[];
+    competitivePressures: { id: string; attacker: string; vulnerability: string; likelyMove: string; evidenceIds: string[]; threat: 'High' | 'Medium' | 'Low'; leadingSignal: string; response: string }[];
+    defensibility: { asset: string; whyHardToCopy: string; proofNeeded: string }[];
+    roadmap: { horizon: '0–30 days' | '31–60 days' | '61–90 days'; objective: string; decisionGate: string; experimentIds: string[] }[];
+};
 export type Assumption = {
     id: string;
     title: string;
@@ -88,6 +103,7 @@ export type Opportunity = {
     owner: string;
 };
 export type Report = {
+    commercialPlan?: CommercialPlan;
     operatingPlan?: OperatingPlan;
     marketContext?: MarketContext;
     benchmarkProfile?: BenchmarkProfile;

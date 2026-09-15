@@ -16,6 +16,7 @@ export function CommandCenter({ report, onNavigate, onEvidence }: { report: Repo
   const recommended = report.opportunities.find(item => item.priority === 'Now') ?? report.opportunities[0];
   const risky = (report.assumptions ?? []).filter(item => item.impact === 'High' && item.confidence === 'Low');
   const immediateCap = recommended?.design?.budgetCap;
+  const commercial = report.commercialPlan;
   return <div className="v3-stack">
     <section className="v3-hero">
       <div className="v3-hero-copy"><p className="eyebrow">PORTFOLIO THESIS · DECISION REQUIRED</p><h2>{report.marketContext?.thesis ?? report.summary}</h2><p>{decision?.problem ?? report.brief.objective}</p><div className="v3-hero-actions"><button className="v3-light-button" onClick={() => onNavigate('plan')}>Inspect the bet <ArrowRight size={16}/></button><button className="v3-ghost-button" onClick={() => onNavigate('strategy')}>Challenge assumptions</button></div></div>
@@ -23,10 +24,10 @@ export function CommandCenter({ report, onNavigate, onEvidence }: { report: Repo
     </section>
 
     <section className="v3-kpi-row" aria-label="Decision readiness">
-      <div><Gauge size={18}/><strong>{risky.length}</strong><span>critical assumptions</span></div>
-      <div><Radar size={18}/><strong>Missing</strong><span>funnel baseline</span></div>
+      <div title={commercial?.northStar}><Gauge size={18}/><strong>{commercial?.northStar ?? 'Define KPI'}</strong><span>north star KPI</span></div>
+      <div><Radar size={18}/><strong>{commercial?.baseline ?? 'Connect data'}</strong><span>current baseline</span></div>
       <div><Sparkles size={18}/><strong>{recommended?.design?.durationDays ?? '—'}d</strong><span>time to signal</span></div>
-      <div><ShieldCheck size={18}/><strong>{immediateCap == null ? 'Pending' : `$${immediateCap.toLocaleString()}`}</strong><span>immediate test cap</span></div>
+      <div><ShieldCheck size={18}/><strong>{immediateCap == null ? 'Estimate required' : `$${immediateCap.toLocaleString()}`}</strong><span>designed test cost</span></div>
     </section>
 
     <section className="panel v3-funnel-panel"><div className="v3-section-heading"><div><p className="eyebrow">FUNNEL DIAGNOSIS</p><h2>Where the thesis could break</h2></div><span className="v3-status hypothesis">Outside-in hypothesis</span></div><div className="v3-funnel">{(report.marketContext?.funnel ?? []).map((stage, index) => <div className="v3-funnel-stage" key={stage.name}><span>0{index + 1}</span><h3>{stage.name}</h3><p>{stage.signal}</p><small className={`v3-state ${stage.state.toLowerCase().replace(' ', '-')}`}>{stage.state}</small></div>)}</div></section>
