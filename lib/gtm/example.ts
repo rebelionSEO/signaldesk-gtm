@@ -32,7 +32,7 @@ export const example: Report = {
     { id: 'E12', title: 'External source estimates roughly $58M ARR', url: 'https://sacra.com/c/posthog/', summary: 'Sacra estimates PostHog reached approximately $57.5 million ARR in February 2026.', kind: 'context', date: null, limitation: 'Third-party estimate. Do not present as an audited or company-reported figure.' },
   ],
   marketContext: {
-    thesis: 'PostHog may not need more generic demos. It may need a memorable proof that its expanding platform can observe a real product problem, propose a change, and measure the result without losing developer trust.',
+    thesis: 'PostHog’s platform story may be outrunning developer comprehension.',
     facts: [
       { label: 'Business model', value: 'Product-led, usage-based SaaS with generous free tiers and paid expansion across multiple products.', status: 'Public fact', evidenceIds: ['E5', 'E10'] },
       { label: 'Primary ICP', value: 'Ambitious AI-oriented software teams with 1–500 potential PostHog users.', status: 'Public fact', evidenceIds: ['E6'] },
@@ -60,7 +60,7 @@ export const example: Report = {
   ],
   operatingPlan: {
     decision: {
-      problem: 'The platform and positioning have expanded faster than this outside study can verify developer comprehension and multi-product activation.',
+      problem: 'Test whether a public ship → observe → iterate proof makes the expanded platform easier to understand and activate.',
       evidenceIds: ['E1', 'E3', 'E7', 'E8'],
       intervention: 'Prototype a public proof where PostHog observes a real product problem, proposes a fix, and measures the result.',
       desiredOutcome: 'More qualified evaluators complete meaningful activation events across more than one PostHog product.',
@@ -72,10 +72,10 @@ export const example: Report = {
     },
     channels: [
       { channel: 'Paid media', decision: 'Hold', rationale: 'Amplify proven demand later; do not use paid distribution to manufacture interest.', evidenceIds: ['E9'], dataNeeded: 'Incremental qualified activation and approved audience/privacy rules.' },
-      { channel: 'Organic & SEO', decision: 'Test', rationale: 'Publish the technical trace and reusable implementation artifacts after the live proof.', evidenceIds: ['E9'], dataNeeded: 'Qualified search demand, task starts, activation, and assisted conversions.' },
+      { channel: 'Organic & SEO', decision: 'Investigate', rationale: 'Hold distribution design until the live proof establishes a useful technical artifact.', evidenceIds: ['E9'], dataNeeded: 'Qualified search demand, task starts, activation, and assisted conversions.' },
       { channel: 'Email & lifecycle', decision: 'Investigate', rationale: 'Offer consented, behavior-triggered assistance when an evaluator stalls on an activation event.', evidenceIds: ['E8', 'E10'], dataNeeded: 'Current automations, trigger precision, replies, activation, and unsubscribe guardrails.' },
       { channel: 'Inbound & website', decision: 'Test', rationale: 'Make the self-driving promise inspectable through one live product loop.', evidenceIds: ['E5', 'E7'], dataNeeded: 'Path selection, first useful task, proof completion, and downstream activation.' },
-      { channel: 'Community & developer relations', decision: 'Test', rationale: 'Invite developers to challenge the proof and publish failures, fixes, and limitations.', evidenceIds: ['E6', 'E9'], dataNeeded: 'Participant fit, completion, feedback, referrals, and moderation capacity.' },
+      { channel: 'Community & developer relations', decision: 'Investigate', rationale: 'Recruit the first validation cohort; delay a public challenge until the core proof survives it.', evidenceIds: ['E6', 'E9'], dataNeeded: 'Participant fit, completion, feedback, referrals, and moderation capacity.' },
       { channel: 'Partnerships & events', decision: 'Hold', rationale: 'Events are less scalable; consider a physical expression only after the digital proof works.', evidenceIds: ['E10'], dataNeeded: 'Digital proof performance, partner quality, attributable activation, and production cost.' },
       { channel: 'Sales & CRM', decision: 'Investigate', rationale: 'Offer technical assistance to high-potential accounts based on product behavior.', evidenceIds: ['E10'], dataNeeded: 'Account potential, activation triggers, routing, assistance acceptance, and expansion.' },
     ],
