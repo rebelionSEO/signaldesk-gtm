@@ -105,3 +105,9 @@ The System QA tab provides a deterministic baseline and exports the score with t
 ## Originality and inspiration
 
 Original application code inspired by the workflow patterns discussed in `hculap/awesome-ai-gtm`, `ong/awesome-ai-gtm`, `gtmagents/gtm-agents`, `SamurAIGPT/open-ai-gtm-agent`, `lucaslinares1/gtm-skills`, and `onvoyage-ai/gtm-engineer-skills`. Their code was not copied into this application. UI infrastructure comes from the bundled Sites/Vinext starter and retains its supplied dependencies.
+
+### Pipeline & Budget workbench
+
+Each experiment can retain a user-entered economics model inside the owner-scoped study report. Select **Pipeline & Budget** or **Model pipeline & budget** from Command. Cost lines separate cash from internal time; the optional available cash budget is an independent constraint. Conservative/base/optimistic inputs model incremental activation and either opportunities/wins or self-service paid accounts. Unknown inputs remain unknown; negative uplift is preserved; nonpositive incremental outcomes never produce a cost ratio. The teaching-example button loads synthetic values, not PostHog data or industry benchmarks.
+
+Models persist with the study and appear in Markdown/JSON exports and newly prepared execution packs. Existing packs are snapshots and are not rewritten. Scenario calculations hold downstream conversion constant between baseline and treatment within each case. They are not forecasts validated against real observations, confidence intervals, company CAC, ROI, or launch authorization. Attribution method, assumption provenance, sample requirement, success rule and stop rule must be specified for funding review. No CRM or channel data is connected by this feature. Changing the brief clears model-dependent strategy; a new live run replaces manual models.

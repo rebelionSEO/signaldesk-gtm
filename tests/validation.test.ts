@@ -1,3 +1,4 @@
+import {calculateEconomics,illustrativeEconomics,emptyEconomics,economicsSchema} from '../lib/gtm/economics.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { briefSchema, reportSchema, referenceErrors, evidenceWarnings, canonicalUrl, safeUrl, toMarkdown } from '../lib/gtm/validation.ts';
@@ -31,3 +32,30 @@ test('regression suite covers five distinct GTM conditions', () => { assert.equa
 test('commercial plan connects KPIs, pipeline, competitive pressure, and roadmap', () => { assert.ok(example.commercialPlan); assert.equal(example.commercialPlan?.baseline, null); assert.equal(example.commercialPlan?.target, null); assert.equal(example.commercialPlan?.roadmap.length, 3); assert.ok(example.commercialPlan?.leadingIndicators.length); assert.ok(example.commercialPlan?.competitivePressures.every(item => item.evidenceIds.length)); assert.ok(example.commercialPlan?.costPrinciple.includes('not inferred CAC')); assert.deepEqual(referenceErrors(example), []); });
 test('commercial roadmap and pressure references must resolve', () => { const copy = structuredClone(example); copy.commercialPlan!.roadmap[0].experimentIds = ['O404']; copy.commercialPlan!.competitivePressures[0].evidenceIds = ['E404']; const errors = referenceErrors(copy); assert.ok(errors.some(item => item.includes('Roadmap'))); assert.ok(errors.some(item => item.includes('C1'))); });
 test('commercial measurement is retained in the case-study export', () => { const md = toMarkdown(example); assert.ok(md.includes('## Commercial measurement')); assert.ok(md.includes('## Commercial measurement') && md.includes('### Competitive pressure')); assert.ok(md.includes('A proposed cap is test cost')); });
+
+test('economics computes incremental sales pipeline, bookings and cash separately',()=>{
+ const m=illustrativeEconomics('O1');const r=calculateEconomics(m);const b=r.scenarios.find(s=>s.name==='Base')!;
+ assert.equal(r.cash,3000);assert.equal(r.labor,3000);assert.equal(r.total,6000);
+ assert.equal(b.baseline,40);assert.equal(b.treated,50);assert.equal(b.incremental,10);assert.equal(b.outcomes,3);assert.equal(b.pipeline,36000);assert.equal(b.bookings,9000);assert.equal(b.costPerOutcome,2000);
+ assert.match(r.decision,/Illustration only/);
+});
+test('missing economics inputs stay unknown, while explicit zero costs remain zero',()=>{
+ const m=emptyEconomics('O1');let r=calculateEconomics(m);assert.equal(r.total,null);assert.equal(r.scenarios[0].bookings,null);assert.match(r.decision,/Hold/);
+ m.costs.forEach(c=>{c.quantity=0;c.unitCost=0;});r=calculateEconomics(m);assert.equal(r.total,0);assert.equal(r.scenarios[0].costPerOutcome,null);
+});
+test('nonpositive lift is preserved without invalid cost ratios',()=>{
+ const m=illustrativeEconomics('O1');m.scenarios[0].activationRate=10;m.scenarios[1].activationRate=20;
+ const r=calculateEconomics(m);assert.equal(r.scenarios[0].incremental,-20);assert.equal(r.scenarios[0].pipeline,-72000);assert.equal(r.scenarios[0].costPerOutcome,null);assert.equal(r.scenarios[1].outcomes,0);assert.equal(r.scenarios[1].costPerOutcome,null);
+});
+test('self-service uses paid conversion without a sales win-rate or opportunity pipeline',()=>{
+ const m=illustrativeEconomics('O1');m.motion='Self-service';m.scenarios.forEach(s=>{s.winRate=null;s.value=1200;});const b=calculateEconomics(m).scenarios[1];assert.equal(b.pipeline,null);assert.equal(b.customers,3);assert.equal(b.bookings,3600);
+});
+test('economics validates rates, finite amounts, unique cases and experiment links',()=>{
+ const m=illustrativeEconomics('O1');m.scenarios[0].winRate=101;assert.equal(economicsSchema.safeParse(m).success,false);m.scenarios[0].winRate=25;m.costs[0].unitCost=Infinity;assert.equal(economicsSchema.safeParse(m).success,false);
+ const copy=structuredClone(example);copy.economics=[illustrativeEconomics('O999')];assert.ok(referenceErrors(copy).some(e=>e.includes('missing experiment')));copy.economics=[illustrativeEconomics('O1'),illustrativeEconomics('O1')];assert.ok(referenceErrors(copy).some(e=>e.includes('Duplicate economics')));
+ const duplicate=illustrativeEconomics('O1');duplicate.scenarios[0].name='Base';assert.equal(economicsSchema.safeParse(duplicate).success,false);
+});
+test('cash availability never implies approval or company CAC',()=>{
+ const m=illustrativeEconomics('O1');m.illustrative=false;m.availableBudget=2999;assert.match(calculateEconomics(m).decision,/Rescope/);m.availableBudget=3000;assert.match(calculateEconomics(m).decision,/Hold/);m.minimumPerGroup=100;assert.match(calculateEconomics(m).decision,/human funding review/);
+ const md=toMarkdown({...example,economics:[m]});assert.match(md,/36000/);assert.match(md,/No portfolio summation, ROI or company CAC claim/);
+});

@@ -103,6 +103,7 @@ export type Opportunity = {
     owner: string;
 };
 export type Report = {
+    economics?: import('./economics').Economics[];
     commercialPlan?: CommercialPlan;
     operatingPlan?: OperatingPlan;
     marketContext?: MarketContext;
