@@ -1,5 +1,6 @@
 'use client';
 import {useState} from 'react';
+import {caseCopy} from '@/lib/gtm/posthog-presentation';
 import type {Report} from '@/lib/gtm/types';
 import {calculateEconomics,emptyEconomics,illustrativeEconomics,type Economics} from '@/lib/gtm/economics';
 import {Select,SelectTrigger,SelectValue,SelectContent,SelectItem} from '@/components/ui/select';
@@ -10,7 +11,7 @@ export function PipelineBudget({report,canSave,onSave}:{report:Report;canSave:bo
  const [selected,setSelected]=useState(report.opportunities[0]?.id??'');
  const opportunity=report.opportunities.find(o=>o.id===selected)??report.opportunities[0];
  if(!opportunity)return <section className="panel"><h2>Pipeline & Budget</h2><p>Add a proposed experiment to model its costs and commercial impact.</p></section>;
- return <section className="economics"><div className="section-title"><div><p className="eyebrow">INVESTMENT WORKBENCH · USD</p><h2>What could this test change?</h2><p className="muted">Cost the idea. Model the incremental outcome. Decide what evidence earns the next investment.</p></div><Select value={opportunity.id} onValueChange={setSelected}><SelectTrigger aria-label="Select experiment"><SelectValue/></SelectTrigger><SelectContent>{report.opportunities.map(o=><SelectItem key={o.id} value={o.id}>{o.id} · {o.title}</SelectItem>)}</SelectContent></Select></div><ModelEditor key={opportunity.id+JSON.stringify(report.economics?.find(m=>m.experimentId===opportunity.id))} initial={report.economics?.find(m=>m.experimentId===opportunity.id)??emptyEconomics(opportunity.id)} cap={opportunity.design?.budgetCap??null} canSave={canSave} onSave={onSave}/></section>;
+ return <section className="economics"><div className="section-title"><div><p className="eyebrow">INVESTMENT WORKBENCH · USD</p><h2>{caseCopy(report, 'What could this test change?', 'Cool idea. What does it cost?')}</h2><p className="muted">{caseCopy(report, 'Cost the idea. Model the incremental outcome. Decide what evidence earns the next investment.', 'Price the experiment. Change the assumptions. See what has to happen for it to be worth another dollar.')}</p></div><Select value={opportunity.id} onValueChange={setSelected}><SelectTrigger aria-label="Select experiment"><SelectValue/></SelectTrigger><SelectContent>{report.opportunities.map(o=><SelectItem key={o.id} value={o.id}>{o.id} · {o.title}</SelectItem>)}</SelectContent></Select></div><ModelEditor key={opportunity.id+JSON.stringify(report.economics?.find(m=>m.experimentId===opportunity.id))} initial={report.economics?.find(m=>m.experimentId===opportunity.id)??emptyEconomics(opportunity.id)} cap={opportunity.design?.budgetCap??null} canSave={canSave} onSave={onSave}/></section>;
 }
 function ModelEditor({initial,cap,canSave,onSave}:{initial:Economics;cap:number|null;canSave:boolean;onSave:(m:Economics)=>Promise<void>}){
  const [m,setM]=useState(initial),[dirty,setDirty]=useState(false),[saving,setSaving]=useState(false),[error,setError]=useState('');
