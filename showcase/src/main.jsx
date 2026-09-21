@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles.css'
 
@@ -33,6 +33,32 @@ const scenarios = {
 
 function money(n){ return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n) }
 
+function StrategyPopup(){
+  const [visible,setVisible]=useState(false)
+  useEffect(()=>{
+    let dismissed=false
+    try{ dismissed=sessionStorage.getItem('signaldesk:showcase-popup:dismissed')==='yes' }catch{}
+    const timer=setTimeout(()=>{ if(!dismissed)setVisible(true) },900)
+    return()=>clearTimeout(timer)
+  },[])
+  function dismiss(){
+    try{ sessionStorage.setItem('signaldesk:showcase-popup:dismissed','yes') }catch{}
+    setVisible(false)
+  }
+  useEffect(()=>{
+    if(!visible)return
+    const close=e=>{ if(e.key==='Escape')dismiss() }
+    window.addEventListener('keydown',close)
+    return()=>window.removeEventListener('keydown',close)
+  },[visible])
+  if(!visible)return null
+  return <aside className="strategy-popup" aria-labelledby="strategy-popup-title">
+    <button className="popup-close" onClick={dismiss} aria-label="Dismiss strategy joke">×</button>
+    <div className="popup-copy"><p>THIS GOT OUT OF HAND</p><h2 id="strategy-popup-title">Well, this strategy<br/>escalated quickly.</h2><span>One hunch. Four experiments. Somehow, a canary.</span><small>Let’s start with the small test.</small></div>
+    <img src="/ron-burgundy-strategy.png" alt="Ron Burgundy reacting in his office"/>
+  </aside>
+}
+
 function App(){
   const [tab,setTab]=useState('bet')
   const [scenario,setScenario]=useState('base')
@@ -58,11 +84,11 @@ function App(){
 
     <nav className="tabs" aria-label="Case study sections">{[['bet','The bet'],['evidence','What we know'],['ideas','Other ideas'],['impact','Commercial impact']].map(([id,label])=><button className={tab===id?'active':''} aria-current={tab===id?'page':undefined} onClick={()=>setTab(id)} key={id}>{label}</button>)}</nav>
 
-    {tab==='bet'&&<section className="page bet">
+    {tab==='bet'&&<><StrategyPopup/><section className="page bet">
       <div className="thesis"><p className="eyebrow">THE WORKING THESIS</p><h2>PostHog may not need another generic demo.</h2><p>It may need memorable proof that the platform can observe a real product problem, propose a change, and measure the result without losing developer trust.</p><div className="chips"><span>Outside-in hypothesis</span><span>14-day discovery pilot</span><span>Human approval required</span></div></div>
       <div className="steps">{[['01','PLANT ONE BUG','A synthetic app. One agreed problem. No customer data.'],['02','SHOW THE WORK','Reveal the signals, the proposed fix, and what the system rejected.'],['03','COUNT SOMETHING','Track task completion, second-product use, and paid behavior.']].map(x=><article key={x[0]}><span>{x[0]}</span><h3>{x[1]}</h3><p>{x[2]}</p></article>)}</div>
       <div className="decision"><div><p className="eyebrow">WHAT MAKES THIS A GTM BET</p><h2>The stunt earns its keep only if behavior changes.</h2></div><dl><div><dt>Primary signal</dt><dd>Qualified participants who activate a second product</dd></div><div><dt>Stop rule</dt><dd>Stop if tracking fails, the cash cap is reached, or developer trust worsens.</dd></div><div><dt>What it proves</dt><dd>Whether inspected product proof improves multi-product comprehension.</dd></div></dl></div>
-    </section>}
+    </section></>}
 
     {tab==='evidence'&&<section className="page evidence-page">
       <div className="section-head"><div><p className="eyebrow">FACTS, HUNCHES, MISSING PIECES</p><h2>A clue is not a conclusion.</h2></div><p>Every source supports a narrow claim. Competitive pages establish product overlap—not commercial performance.</p></div>
