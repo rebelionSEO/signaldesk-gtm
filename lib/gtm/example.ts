@@ -1,6 +1,8 @@
+import {posthogEconomics} from './posthog-economics.ts';
 import type { Report } from './types';
 
 export const example: Report = {
+  economics: posthogEconomics,
   brief: {
     company: 'PostHog',
     website: 'https://posthog.com',
