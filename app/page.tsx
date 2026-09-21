@@ -13,6 +13,7 @@ import type { Brief, Evidence, Opportunity, Report } from '@/lib/gtm/types';
 import type { Operations, Planner, Trace } from '@/lib/gtm/operating';
 import { emptyOperations } from '@/lib/gtm/operating';
 import { isPostHogCaseStudy, caseCopy } from '@/lib/gtm/posthog-presentation';
+import { PostHogBetPopup } from '@/components/posthog-bet-popup';
 import { PipelineBudget } from '@/components/pipeline-budget';
 import { PressureTestBoard } from '@/components/gtm-v2';
 import { evaluateReport } from '@/lib/gtm/evaluation';
@@ -213,7 +214,7 @@ export default function Home() {
  <div className="actionbar"><div className="run-status">{busy ? <><LoaderCircle size={17} className="spin"/>{phase || 'Saving your study…'}</> : <><span className={'status-mark ' + (configured ? 'connected' : '')}/>{configured ? 'Live research connected' : 'Live research needs an AI connection'}</>}</div><div className="actions">{study ? <button className="primary compact" disabled={locked || !configured} onClick={() => void run()}><Search size={16}/>{['researched', 'planned'].includes(study.stage) ? 'Resume research' : study.stage === 'complete' ? 'New live run' : 'Run live research'}</button> : <button className="secondary" disabled={locked || signedIn !== true} onClick={() => void copyExample()}>Save an editable copy</button>}<button className="secondary" onClick={() => download('md')}><Download size={16}/> Export brief</button><button className="secondary" onClick={() => download('json')}>JSON</button></div></div>
  {study?.busy && !busy && <div className="notice"><p>A research stage is running or recovering. Reload the study after a few minutes.</p><button className="secondary" onClick={() => void load(study.id)}>Reload study</button></div>}
  <Tabs value={tab} onValueChange={setTab}><TabsList className="tabbar v3-tabbar" variant="line"><TabsTrigger value="overview">{caseCopy(report, "Command", "The bet")}</TabsTrigger><TabsTrigger value="strategy">{caseCopy(report, "Strategy", "What we know")}</TabsTrigger><TabsTrigger value="plan">Ideas <span>{report.opportunities.length}</span></TabsTrigger><TabsTrigger value="economics">Pipeline & Budget</TabsTrigger><TabsTrigger value="execution">Operations <span>{study?.operations.tasks.length ?? 0}</span></TabsTrigger><TabsTrigger value="evidence">Evidence <span>{report.evidence.length}</span></TabsTrigger><TabsTrigger value="system">{caseCopy(report, "Pressure Test", "Poke holes")}</TabsTrigger></TabsList>
- <TabsContent value="overview"><CommandCenter report={report} onNavigate={setTab} onEvidence={showEvidence}/></TabsContent>
+ <TabsContent value="overview">{tab==='overview'&&isPostHogCaseStudy(report)&&<PostHogBetPopup/>}<CommandCenter report={report} onNavigate={setTab} onEvidence={showEvidence}/></TabsContent>
  <TabsContent value="strategy"><StrategyView report={report} onEvidence={showEvidence}/></TabsContent>
  <TabsContent value="plan"><ExperimentsView report={report} editable={!!editable} onEdit={item => { setOpportunity({ ...item }); setDialog('opportunity'); }} onEvidence={showEvidence}/></TabsContent>
  <TabsContent value="economics"><PipelineBudget key={study?.id??'example'} report={report} canSave={!!editable} onSave={async model=>{await save({...report,economics:[...(report.economics??[]).filter(m=>m.experimentId!==model.experimentId),model]});}}/></TabsContent>
