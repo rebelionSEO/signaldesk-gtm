@@ -37,6 +37,9 @@ export const example: Report = {
     { id: 'E10', title: 'Revenue motion is primarily inbound and product-led', url: 'https://posthog.com/handbook/growth/sales/overview', summary: 'PostHog says most paying customers arrive without sales contact. Its teams focus on inbound, warm product-led assistance, cross-sell, onboarding, and customers paying or capable of paying at least $20,000 per year.', kind: 'context', date: null, limitation: 'The threshold is a service focus, not average contract value.' },
     { id: 'E11', title: 'Revenue ambition is materially above the user’s estimate', url: 'https://stripe.com/customers/posthog', summary: 'Stripe describes PostHog as on pace for $100 million ARR and reports that 41% of revenue flows through in-product checkout.', kind: 'positive', date: null, limitation: 'Stripe does not disclose current ARR on this page; “on pace” is directional.' },
     { id: 'E12', title: 'External source estimates roughly $58M ARR', url: 'https://sacra.com/c/posthog/', summary: 'Sacra estimates PostHog reached approximately $57.5 million ARR in February 2026.', kind: 'context', date: null, limitation: 'Third-party estimate. Do not present as an audited or company-reported figure.' },
+    { id: 'E13', title: 'Mixpanel combines analytics, replay, and experiments', url: 'https://mixpanel.com/home/', summary: 'Mixpanel presents product analytics, session replay, experiments, and AI-assisted analysis, with free signup and demo paths.', kind: 'context', date: null, limitation: 'Vendor positioning reviewed September 21, 2026. Establishes product overlap, not conversion performance or superiority.' },
+    { id: 'E14', title: 'Amplitude connects analytics and experimentation', url: 'https://amplitude.com/', summary: 'Amplitude lists product analytics, session replay, feature experimentation, and AI tools, alongside free entry and a sales path.', kind: 'context', date: null, limitation: 'Vendor positioning reviewed September 21, 2026. Useful for a proposed peer comparison; customer mix and performance are not matched.' },
+    { id: 'E15', title: 'LaunchDarkly emphasizes controlled releases and experimentation', url: 'https://launchdarkly.com/', summary: 'LaunchDarkly presents feature flags, progressive rollouts, automated rollbacks, and experimentation as controls for software and AI behavior.', kind: 'context', date: null, limitation: 'Vendor positioning reviewed September 21, 2026. A release-workflow reference, not a whole-platform or revenue benchmark.' },
   ],
   marketContext: {
     thesis: 'Can developers see how the pieces fit together? We think a hands-on test could help.',
@@ -64,7 +67,11 @@ export const example: Report = {
     gtmMotion: 'Product-led growth with selective sales assistance',
     companyStage: 'Scale-up',
     geography: 'Global',
-    peers: [],
+    peers: [
+      { company: 'Mixpanel', role: 'Direct competitor', rationale: 'Compare the journey from a behavioral question to replay evidence and an experiment. Our angle to test: let developers inspect a failure and its fix, not just the dashboard.', evidenceIds: ['E13'] },
+      { company: 'Amplitude', role: 'Direct competitor', rationale: 'Compare how a broad analytics and experimentation platform explains the next useful action. Proposed differentiation: publish the human decisions and rejected fixes, not another AI promise.', evidenceIds: ['E14'] },
+      { company: 'LaunchDarkly', role: 'Creative reference', rationale: 'A partial competitor in flags and experiments. Study how it demonstrates release control; our canary should teach a real rollback rather than just look funny. Not a matched financial peer.', evidenceIds: ['E15'] },
+    ],
     metrics: [
       { name: 'Product-specific activation', definition: 'Completion of a meaningful behavior within a product-specific 14- or 30-day window.', observedRange: null, unit: 'percentage of qualified new accounts', evidenceIds: ['E8'], freshness: 'Definition is public; performance date is unavailable.', limitation: 'PostHog publishes definitions but no comparable cohort range. Internal product analytics and matched peer data are required.' },
       { name: 'Self-serve revenue share', definition: 'Revenue completed through an in-product checkout without a sales-led close.', observedRange: null, unit: 'percentage of revenue', evidenceIds: ['E10', 'E11'], freshness: 'Current public pages; reporting period is not disclosed.', limitation: 'A company-specific directional signal, not an industry benchmark or a complete measure of sales assistance.' },
