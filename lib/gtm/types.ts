@@ -36,6 +36,21 @@ export type MarketContext = {
     facts: GTMFact[];
     funnel: FunnelStage[];
 };
+export type BrandProfile = {
+    voiceTraits: {
+        trait: string;
+        implication: string;
+        status: 'Public fact' | 'Inference' | 'Assumption';
+        evidenceIds: string[];
+    }[];
+    creativePermission: string;
+    signatureAssets: {
+        asset: string;
+        application: string;
+        evidenceIds: string[];
+    }[];
+    avoid: string[];
+};
 export type BenchmarkProfile = {
     category: string;
     businessModel: string;
@@ -107,6 +122,7 @@ export type Report = {
     commercialPlan?: CommercialPlan;
     operatingPlan?: OperatingPlan;
     marketContext?: MarketContext;
+    brandProfile?: BrandProfile;
     benchmarkProfile?: BenchmarkProfile;
     assumptions?: Assumption[];
     brief: Brief;

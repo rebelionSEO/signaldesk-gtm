@@ -13,8 +13,9 @@ An evidence-led GTM operating system. It turns a company brief and public eviden
 - A deterministic coordinator that checkpoints each stage and records an observable run trace.
 - Seven-channel prioritization across paid, organic, email, inbound, community, partnerships, and sales/CRM.
 - Benchmark cohorts classified by category, business model, GTM motion, company stage, geography, peer role, and metric comparability.
+- A default brand-native creative brief grounded in sourced voice, demonstrated behavior, founder and team authority, signature assets, creative permission, and explicit boundaries.
 - Benchmark ranges remain explicitly unavailable unless a source establishes the metric definition, cohort, reporting period, and observed range.
-- Core, bold, and wildcard experiment designs with distinct creative territories, a behavior to change, a cheap test, spend cap, stop rule, and guardrail.
+- Core, bold, and wildcard experiment designs with distinct commercial jobs, category conventions to replace, brand permission, a behavior to change, a falsifiable assumption, proof threshold, cheap test, spend cap, stop rule, and guardrail.
 - Prepared execution packs, connector contracts, metric storage, and descriptive outcome evaluation.
 - Checkpointed stages, retries, concurrent-write protection, and daily AI-stage limits.
 - Deterministic validation of source URLs, reference IDs, dates, and report structure.
@@ -40,10 +41,10 @@ Official API references:
 
 ## Research flow
 
-1. **Planner** frames the bottleneck, creates research questions, and assigns one decision to each of seven GTM channels.
-2. **Researcher** searches official pages and relevant public discussion for positive and negative evidence. Existing manual records are treated as unverified leads. Tool-returned URLs form the allowed source registry.
-3. **Strategist** separates facts from assumptions, maps the funnel, builds a source-linked benchmark cohort, returns a strict channel portfolio, and sequences evidence-linked experiments. It also builds the commercial measurement chain and reverse engineers evidence-bound competitive attacks. Each experiment defines a behavior, creative territory, mechanism, smallest test, scoped cost cap, duration, metric, stop rule, and guardrail.
-4. **Creative critic** rejects generic or novelty-only concepts and pressures each idea toward a concrete, audience-specific mechanism and cheap disproof.
+1. **Planner** frames the bottleneck, creates research questions, and makes brand behavior, category cliches, signature assets, reputation, retention, and commercial whitespace part of the default scope. It assigns one decision to each of seven GTM channels.
+2. **Researcher** searches official pages and relevant public discussion for positive and negative evidence, brand behavior, founder and team authority, category winners, and the mechanisms behind peer acquisition, conversion, retention, expansion, and reputation. Existing manual records are treated as unverified leads. Tool-returned URLs form the allowed source registry.
+3. **Strategist** separates facts from assumptions, maps the funnel, creates an evidence-linked brand profile, builds a source-linked benchmark cohort, returns a strict channel portfolio, and sequences evidence-linked experiments. It also builds the commercial measurement chain and reverse engineers evidence-bound competitive attacks. Each experiment names the commercial job, category convention, brand permission, behavior, mechanism, assumption, proof threshold, smallest test, scoped cost cap, duration, metric, stop rule, and guardrail.
+4. **Creative critic** applies a logo-swap test, rejects standard formats with clever names, and rebuilds weak concepts around company-specific product, service, data, customer, intellectual-property, or distribution assets. It also rejects portfolios that repeat awareness ideas instead of covering distinct commercial jobs.
 5. **Evidence auditor** checks every evidence and experiment record against the research notes. Unsupported records and dependent experiments are withheld.
 6. **Human review** checks source contents, current product behavior, existing solutions, baselines, targets, audience, assets, schedule, and spend before launch.
 

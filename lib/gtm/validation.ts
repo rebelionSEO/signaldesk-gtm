@@ -18,11 +18,12 @@ export const briefSchema = z.object({ company: text.max(150), website: z.string(
 export const evidenceSchema = z.object({ id: z.string().regex(/^E\d+$/), title: text.max(250), url: z.string().max(2048).refine(safeUrl, 'Use a public HTTPS source.'), summary: text, kind: z.enum(['complaint', 'positive', 'context']), date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable(), limitation: text }).strict();
 const factSchema=z.object({label:text.max(120),value:text,status:z.enum(['Public fact','Inference','Assumption','Unknown']),evidenceIds:z.array(z.string()).max(20)}).strict();
 const marketContextSchema=z.object({thesis:text,facts:z.array(factSchema).max(20),funnel:z.array(z.object({name:z.enum(['Acquire','Evaluate','Activate','Expand','Retain']),signal:text,state:z.enum(['Known','Hypothesis','Missing data'])}).strict()).length(5)}).strict();
+const brandProfileSchema=z.object({voiceTraits:z.array(z.object({trait:text.max(120),implication:text,status:z.enum(['Public fact','Inference','Assumption']),evidenceIds:z.array(z.string()).max(20)}).strict()).min(1).max(8),creativePermission:text,signatureAssets:z.array(z.object({asset:text.max(180),application:text,evidenceIds:z.array(z.string()).max(20)}).strict()).max(8),avoid:z.array(text).min(1).max(10)}).strict();
 const assumptionSchema=z.object({id:z.string().regex(/^A\d+$/),title:text.max(180),statement:text,confidence:z.enum(['Low','Medium','High']),impact:z.enum(['Low','Medium','High']),evidenceIds:z.array(z.string()).max(20),whyItMatters:text,validation:text}).strict();
 const benchmarkProfileSchema=z.object({category:text.max(180),businessModel:text.max(180),gtmMotion:text.max(180),companyStage:text.max(180),geography:text.max(180),peers:z.array(z.object({company:text.max(180),role:z.enum(['Direct competitor','Category leader','Motion leader','Creative reference']),rationale:text,evidenceIds:z.array(z.string()).max(20)}).strict()).max(12),metrics:z.array(z.object({name:text.max(180),definition:text,observedRange:text.nullable(),unit:text.max(80),evidenceIds:z.array(z.string()).max(20),freshness:text.max(180),limitation:text}).strict()).max(12),conventions:z.array(text).max(12),whitespace:z.array(text).max(12)}).strict();
 const commercialPlanSchema=z.object({northStar:text.max(180),pipelineOutcome:text,baseline:text.nullable(),target:text.nullable(),attributionWindow:text.max(180),sourceOfTruth:text,pipelineLogic:text,costPrinciple:text,leadingIndicators:z.array(z.object({name:text.max(180),signal:text,source:text}).strict()).min(1).max(8),guardrails:z.array(text).min(1).max(8),competitivePressures:z.array(z.object({id:z.string().regex(/^C\d+$/),attacker:text.max(180),vulnerability:text,likelyMove:text,evidenceIds:z.array(z.string()).max(20),threat:z.enum(['High','Medium','Low']),leadingSignal:text,response:text}).strict()).max(6),defensibility:z.array(z.object({asset:text.max(180),whyHardToCopy:text,proofNeeded:text}).strict()).max(6),roadmap:z.array(z.object({horizon:z.enum(['0–30 days','31–60 days','61–90 days']),objective:text,decisionGate:text,experimentIds:z.array(z.string()).max(10)}).strict()).length(3)}).strict();
 export const opportunitySchema = z.object({ design:designSchema.optional(), priority:z.enum(['Now','Next','Later']).optional(),territory:text.max(180).optional(),behavior:text.optional(), id: z.string().regex(/^O\d+$/), title: text.max(250), hypothesis: text, evidenceIds: z.array(z.string()).min(1).max(20), counterEvidenceIds: z.array(z.string()).max(20), stage: z.enum(['Discover', 'Evaluate', 'Activate', 'Retain']), effort: z.enum(['Low', 'Medium', 'High']), action: text, metric: text, validation: text, owner: text.max(150) }).strict();
-export const contentSchema = z.object({ economics:z.array(economicsSchema).max(7).optional(),commercialPlan:commercialPlanSchema.optional(),operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),benchmarkProfile:benchmarkProfileSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
+export const contentSchema = z.object({ economics:z.array(economicsSchema).max(7).optional(),commercialPlan:commercialPlanSchema.optional(),operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),brandProfile:brandProfileSchema.optional(),benchmarkProfile:benchmarkProfileSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
 export const reportSchema = contentSchema.extend({ brief: briefSchema, generatedAt: z.string().datetime(), mode: z.enum(['example', 'live', 'manual']), warnings: z.array(text).max(30) }).strict();
 export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUrls?: string[]) {
     const errors: string[] = [];
@@ -49,6 +50,8 @@ export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUr
             errors.push(`${o.id} uses the same record as support and counterevidence`);
     }
     for(const item of report.marketContext?.facts??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`Market context references missing evidence ${id}`);
+    for(const item of report.brandProfile?.voiceTraits??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`Brand trait ${item.trait} references missing evidence ${id}`);
+    for(const item of report.brandProfile?.signatureAssets??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`Brand asset ${item.asset} references missing evidence ${id}`);
     for(const item of report.assumptions??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`${item.id} references missing evidence ${id}`);
     for(const peer of report.benchmarkProfile?.peers??[])for(const id of peer.evidenceIds)if(!ids.has(id))errors.push(`Benchmark peer ${peer.company} references missing evidence ${id}`);
     for(const metric of report.benchmarkProfile?.metrics??[])for(const id of metric.evidenceIds)if(!ids.has(id))errors.push(`Benchmark metric ${metric.name} references missing evidence ${id}`);
@@ -84,6 +87,19 @@ Why it matters: ${item.whyItMatters}
 
 Validation: ${item.validation}`).join('\n\n')}
 `;}
+if(report.brandProfile){const b=report.brandProfile;content+=`
+## Brand-native creative brief
+Creative permission: ${b.creativePermission}
+
+### Voice and behavior
+${b.voiceTraits.map(item=>`- ${item.trait} [${item.status}]: ${item.implication}. Evidence: ${item.evidenceIds.join(', ')||'Needed'}`).join('\n')}
+
+### Signature assets
+${b.signatureAssets.map(item=>`- ${item.asset}: ${item.application}. Evidence: ${item.evidenceIds.join(', ')||'Needed'}`).join('\n')||'- No evidenced signature asset yet.'}
+
+### Avoid
+${b.avoid.map(item=>`- ${item}`).join('\n')}
+`;}
 if(report.operatingPlan){const p=report.operatingPlan;content+=`
 ## Decision brief
 Problem: ${p.decision.problem}
@@ -105,6 +121,11 @@ Channel: ${d.channel}
 Ambition: ${d.ambition}
 Mechanism: ${d.mechanism}
 Distinctive because: ${d.differentBecause}
+Commercial role: ${d.commercialRole??'Not assigned'}
+Category convention replaced: ${d.categoryConvention??'Not recorded'}
+Brand fit: ${d.brandFit??'Not recorded'}
+Assumption under test: ${d.assumptionToTest??'Not recorded'}
+Proof required: ${d.proofRequired??'Not recorded'}
 Smallest test: ${d.smallestTest}
 Budget cap: ${d.budgetCap===null?'Not approved':d.budgetCap+' USD (proposed)'}
 Duration: ${d.durationDays} days after approval
