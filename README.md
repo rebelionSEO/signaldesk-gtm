@@ -112,3 +112,11 @@ Original application code inspired by the workflow patterns discussed in `hculap
 Each experiment can retain a user-entered economics model inside the owner-scoped study report. Select **Pipeline & Budget** or **Model pipeline & budget** from Command. Cost lines separate cash from internal time; the optional available cash budget is an independent constraint. Conservative/base/optimistic inputs model incremental activation and either opportunities/wins or self-service paid accounts. Unknown inputs remain unknown; negative uplift is preserved; nonpositive incremental outcomes never produce a cost ratio. The teaching-example button loads synthetic values, not PostHog data or industry benchmarks.
 
 Models persist with the study and appear in Markdown/JSON exports and newly prepared execution packs. Existing packs are snapshots and are not rewritten. Scenario calculations hold downstream conversion constant between baseline and treatment within each case. They are not forecasts validated against real observations, confidence intervals, company CAC, ROI, or launch authorization. Attribution method, assumption provenance, sample requirement, success rule and stop rule must be specified for funding review. No CRM or channel data is connected by this feature. Changing the brief clears model-dependent strategy; a new live run replaces manual models.
+
+## Clear decision briefs and Stratabeat example
+
+The overview now starts with a short finding, evidence, alternative explanations, a first test, and what to confirm. Full analysis is expandable. New AI plans use the same plain-English contract and evidence review. See [the output contract and validation notes](docs/clear-decisions.md).
+
+Choose **Stratabeat · example** in the study selector, or open `/?study=stratabeat-example`. It is a manually curated interview example with five proposed experiments, illustrative costs, and explicit evidence limits. Signed-in users can save a copy. PostHog remains a separate example. Neither example represents a live model run.
+
+For a separate local preview, the API tests support `SIGNALDESK_TEST_PORT=5174 npm run test:integration`; the hostname is always fixed to localhost.

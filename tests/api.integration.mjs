@@ -1,7 +1,9 @@
 // Run against a local development preview with migrations applied.
 // Uses test records in the local database only; never target production.
 import assert from 'node:assert/strict';
-const origin='http://localhost:5173';
+const port=process.env.SIGNALDESK_TEST_PORT ?? '5173';
+assert.match(port, /^\d{4,5}$/);
+const origin='http://localhost:'+port;
 const login=await fetch(origin+'/signin-with-chatgpt?return_to=/',{redirect:'manual'});
 const cookie=login.headers.getSetCookie().map(c=>c.split(';')[0]).join('; ');
 assert.ok(cookie,'Local sign-in cookie required');
@@ -29,3 +31,12 @@ assert.equal((await call('/api/projects/'+id+'/run','POST',{revision:3})).status
 assert.equal((await call('/api/projects/'+crypto.randomUUID())).status,404);
 assert.equal((await call('/api/projects/'+id)).data.revision,3);
 console.log('PASS: authentication, persistence, stale-write protection, origin checks, report validation, execution-pack preparation, blocked unconfigured dispatch, missing AI configuration, and not-found behavior.');
+
+const agencyCopy=await call('/api/projects','POST',{id:crypto.randomUUID(),brief,example:true,exampleId:'stratabeat'});
+assert.equal(agencyCopy.status,201,JSON.stringify(agencyCopy.data));
+assert.equal(agencyCopy.data.report.brief.company,'Stratabeat');
+assert.equal(agencyCopy.data.report.decisionBrief.recommendedExperimentId,'O1');
+const agencyReload=await call('/api/projects/'+agencyCopy.data.id);
+assert.deepEqual(agencyReload.data.report.decisionBrief,agencyCopy.data.report.decisionBrief);
+assert.equal(agencyReload.data.report.opportunities.length,5);
+console.log('Stratabeat copy and reload passed');

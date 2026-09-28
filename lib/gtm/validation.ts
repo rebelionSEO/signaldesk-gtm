@@ -1,6 +1,7 @@
 import {economicsSchema,economicsMarkdown} from './economics.ts';
 import {designSchema,operatingPlanSchema,operatingErrors} from './operating.ts';
 import { z } from 'zod';
+import { decisionBriefSchema } from './decision.ts';
 export function safeUrl(value: string) { try {
     const u = new URL(value);
     const host = u.hostname.toLowerCase();
@@ -23,7 +24,7 @@ const assumptionSchema=z.object({id:z.string().regex(/^A\d+$/),title:text.max(18
 const benchmarkProfileSchema=z.object({category:text.max(180),businessModel:text.max(180),gtmMotion:text.max(180),companyStage:text.max(180),geography:text.max(180),peers:z.array(z.object({company:text.max(180),role:z.enum(['Direct competitor','Category leader','Motion leader','Creative reference']),rationale:text,evidenceIds:z.array(z.string()).max(20)}).strict()).max(12),metrics:z.array(z.object({name:text.max(180),definition:text,observedRange:text.nullable(),unit:text.max(80),evidenceIds:z.array(z.string()).max(20),freshness:text.max(180),limitation:text}).strict()).max(12),conventions:z.array(text).max(12),whitespace:z.array(text).max(12)}).strict();
 const commercialPlanSchema=z.object({northStar:text.max(180),pipelineOutcome:text,baseline:text.nullable(),target:text.nullable(),attributionWindow:text.max(180),sourceOfTruth:text,pipelineLogic:text,costPrinciple:text,leadingIndicators:z.array(z.object({name:text.max(180),signal:text,source:text}).strict()).min(1).max(8),guardrails:z.array(text).min(1).max(8),competitivePressures:z.array(z.object({id:z.string().regex(/^C\d+$/),attacker:text.max(180),vulnerability:text,likelyMove:text,evidenceIds:z.array(z.string()).max(20),threat:z.enum(['High','Medium','Low']),leadingSignal:text,response:text}).strict()).max(6),defensibility:z.array(z.object({asset:text.max(180),whyHardToCopy:text,proofNeeded:text}).strict()).max(6),roadmap:z.array(z.object({horizon:z.enum(['0–30 days','31–60 days','61–90 days']),objective:text,decisionGate:text,experimentIds:z.array(z.string()).max(10)}).strict()).length(3)}).strict();
 export const opportunitySchema = z.object({ design:designSchema.optional(), priority:z.enum(['Now','Next','Later']).optional(),territory:text.max(180).optional(),behavior:text.optional(), id: z.string().regex(/^O\d+$/), title: text.max(250), hypothesis: text, evidenceIds: z.array(z.string()).min(1).max(20), counterEvidenceIds: z.array(z.string()).max(20), stage: z.enum(['Discover', 'Evaluate', 'Activate', 'Retain']), effort: z.enum(['Low', 'Medium', 'High']), action: text, metric: text, validation: text, owner: text.max(150) }).strict();
-export const contentSchema = z.object({ economics:z.array(economicsSchema).max(7).optional(),commercialPlan:commercialPlanSchema.optional(),operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),brandProfile:brandProfileSchema.optional(),benchmarkProfile:benchmarkProfileSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
+export const contentSchema = z.object({ decisionBrief:decisionBriefSchema.optional(), economics:z.array(economicsSchema).max(7).optional(),commercialPlan:commercialPlanSchema.optional(),operatingPlan:operatingPlanSchema.optional(),marketContext:marketContextSchema.optional(),brandProfile:brandProfileSchema.optional(),benchmarkProfile:benchmarkProfileSchema.optional(),assumptions:z.array(assumptionSchema).max(15).optional(), summary: text, evidence: z.array(evidenceSchema).max(30), opportunities: z.array(opportunitySchema).max(7), unknowns: z.array(text).max(15) }).strict();
 export const reportSchema = contentSchema.extend({ brief: briefSchema, generatedAt: z.string().datetime(), mode: z.enum(['example', 'live', 'manual']), warnings: z.array(text).max(30) }).strict();
 export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUrls?: string[]) {
     const errors: string[] = [];
@@ -49,6 +50,13 @@ export function referenceErrors(report: z.infer<typeof contentSchema>, allowedUr
         if (o.evidenceIds.some(id => o.counterEvidenceIds.includes(id)))
             errors.push(`${o.id} uses the same record as support and counterevidence`);
     }
+    if (report.decisionBrief) {
+        const d = report.decisionBrief;
+        for (const id of d.evidenceIds) if (!ids.has(id)) errors.push(`Decision brief references missing evidence ${id}`);
+        const now = report.opportunities.filter(o => o.priority === 'Now');
+        if (d.recommendedExperimentId !== null && (!opportunityIds.has(d.recommendedExperimentId) || now.length !== 1 || now[0].id !== d.recommendedExperimentId)) errors.push('Decision brief must select the single Now experiment');
+        if (d.recommendedExperimentId === null && now.length) errors.push('Decision brief defers action but a Now experiment is selected');
+    }
     for(const item of report.marketContext?.facts??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`Market context references missing evidence ${id}`);
     for(const item of report.brandProfile?.voiceTraits??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`Brand trait ${item.trait} references missing evidence ${id}`);
     for(const item of report.brandProfile?.signatureAssets??[])for(const id of item.evidenceIds)if(!ids.has(id))errors.push(`Brand asset ${item.asset} references missing evidence ${id}`);
@@ -67,7 +75,16 @@ export function evidenceWarnings(report: z.infer<typeof contentSchema>) { const 
     warnings.push('No evidence yet. Add sources before proposing experiments.'); return warnings; }
 function legacyMarkdown(report: z.infer<typeof reportSchema>) { return `# ${report.brief.company} — GTM study\n\nMode: ${report.mode}. Created: ${report.generatedAt}\n\n## Brief\n${report.brief.objective}\n\nAudience: ${report.brief.audience}\n\nConstraints: ${report.brief.constraints}\n\n## Working strategy\n${report.summary}\n\n## Limitations\n${report.warnings.map(x => '- ' + x).join('\n')}\n\n## Evidence\n${report.evidence.map(e => `### ${e.id}: ${e.title}\n${e.kind} · ${e.date ?? 'Date unknown'}\n\n${e.summary}\n\nSource: ${e.url}\n\nLimitation: ${e.limitation}`).join('\n\n')}\n\n## Proposed experiments\n${report.opportunities.map(o => `### ${o.id}: ${o.title}\nHypothesis: ${o.hypothesis}\n\nAction: ${o.action}\n\nSupporting evidence: ${o.evidenceIds.join(', ')}\nCounterevidence: ${o.counterEvidenceIds.join(', ') || 'None recorded'}\n\nMetric: ${o.metric}\nValidation: ${o.validation}\nProposed owner: ${o.owner}\nEffort: ${o.effort}`).join('\n\n')}\n\n## Open questions\n${report.unknowns.map(x => '- ' + x).join('\n')}\n\nIndependent research. Experiments are proposed, not launched.\n`; }
 
-export function toMarkdown(report:z.infer<typeof reportSchema>){let content=legacyMarkdown(report)+economicsMarkdown(report.economics??[]);if(report.marketContext){content+=`
+export function toMarkdown(report:z.infer<typeof reportSchema>){let content=legacyMarkdown(report)+economicsMarkdown(report.economics??[]);if(report.decisionBrief){const d=report.decisionBrief;content+=`
+## Decision brief
+What we found [${d.status}]: ${d.finding}
+Evidence: ${d.evidenceIds.join(', ')}
+Why it matters: ${d.whyItMatters}
+Other explanations: ${d.alternativeExplanations.join(' / ')}
+Try first: ${d.recommendedExperimentId ?? 'Collect evidence first'}
+Why first: ${d.whyFirst}
+What to confirm: ${d.nextQuestion}
+`;}if(report.marketContext){content+=`
 ## Market context
 Portfolio thesis: ${report.marketContext.thesis}
 

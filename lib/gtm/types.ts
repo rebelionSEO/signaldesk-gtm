@@ -118,6 +118,7 @@ export type Opportunity = {
     owner: string;
 };
 export type Report = {
+    decisionBrief?: import('./decision').DecisionBrief;
     economics?: import('./economics').Economics[];
     commercialPlan?: CommercialPlan;
     operatingPlan?: OperatingPlan;

@@ -60,3 +60,38 @@ test('cash availability never implies approval or company CAC',()=>{
  const m=illustrativeEconomics('O1');m.illustrative=false;m.availableBudget=2999;assert.match(calculateEconomics(m).decision,/Rescope/);m.availableBudget=3000;assert.match(calculateEconomics(m).decision,/Hold/);m.minimumPerGroup=100;assert.match(calculateEconomics(m).decision,/human funding review/);
  const md=toMarkdown({...example,economics:[m]});assert.match(md,/36000/);assert.match(md,/No portfolio summation, ROI or company CAC claim/);
 });
+
+test('decision brief rejects missing evidence and contradictory priorities', () => {
+  const copy = structuredClone(example);
+  copy.decisionBrief!.evidenceIds = ['E999'];
+  assert.ok(referenceErrors(copy).some(e => e.includes('Decision brief references')));
+  copy.decisionBrief!.evidenceIds = ['E1'];
+  copy.decisionBrief!.recommendedExperimentId = 'O999';
+  assert.ok(referenceErrors(copy).some(e => e.includes('single Now')));
+  copy.decisionBrief!.recommendedExperimentId = null;
+  assert.ok(referenceErrors(copy).some(e => e.includes('defers action')));
+});
+test('legacy studies still load but require a reviewed decision brief', () => {
+  const copy = structuredClone(example);
+  delete copy.decisionBrief;
+  assert.equal(reportSchema.safeParse(copy).success, true);
+  assert.equal(evaluateReport(copy).gates.find(g => g.name === 'Clear decision brief')?.pass, false);
+});
+test('decision brief limits reading load and exports alternative explanations', () => {
+  const copy = structuredClone(example);
+  copy.decisionBrief!.finding = 'x'.repeat(321);
+  assert.equal(reportSchema.safeParse(copy).success, false);
+  assert.ok(toMarkdown(example).includes(example.decisionBrief!.alternativeExplanations[0]));
+});
+test('Stratabeat example stays distinct, scoped and honest about missing data', async () => {
+  const { stratabeatExample: report } = await import('../lib/gtm/stratabeat-example.ts');
+  assert.equal(reportSchema.safeParse(report).success, true);
+  assert.deepEqual(referenceErrors(report), []);
+  assert.equal(report.opportunities.length, 5);
+  assert.equal(report.opportunities.filter(o => o.priority === 'Now').length, 1);
+  assert.equal(new Set(report.opportunities.map(o => o.design?.commercialRole)).size, 5);
+  assert.equal(report.mode, 'example');
+  assert.ok(report.opportunities.every(o => o.validation.includes('Illustrative total')));
+  assert.equal(evaluateReport(report).status, 'Blocked'); // This is an interview hypothesis, not execution-ready research.
+  assert.ok(toMarkdown(report).includes('## Decision brief'));
+});

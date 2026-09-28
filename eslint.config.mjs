@@ -11,8 +11,14 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "showcase/dist/**",
     "next-env.d.ts",
   ]),
+  {
+    // The standalone Vite showcase cannot use the Next.js image runtime.
+    files: ["showcase/src/**/*.{js,jsx}"],
+    rules: { "@next/next/no-img-element": "off" },
+  },
   {
     files: ["components/ui/**/*.{ts,tsx}", "hooks/use-mobile.ts"],
     rules: {

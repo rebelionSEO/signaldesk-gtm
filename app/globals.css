@@ -133,3 +133,18 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--background
 
 /* Empty benchmark panels must not stretch to the neighboring content. */
 .v3-benchmark-grid{align-items:start}.v3-tabbar{display:flex!important;overflow-x:auto!important;flex-wrap:nowrap!important;height:auto!important}.v3-tabbar [role=tab]{flex:none;min-height:44px}
+
+/* Keep the executive decision readable before exposing the full analysis. */
+.sd-decision-brief h2 { font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.2; }
+.sd-decision-brief p, .sd-decision-brief li { max-width: 72ch; line-height: 1.6; overflow-wrap: anywhere; }
+.sd-decision-brief .decision-finding { font-size: 1.15rem; font-weight: 600; margin: 1rem 0; }
+.decision-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.decision-next { border-top: 1px solid #cbd5e1; margin-top: 1.5rem; padding-top: 1rem; }
+.decision-measures { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; }
+.decision-measures dt { font-size: .8rem; color: #526079; }
+.decision-measures dd { margin: .4rem 0; line-height: 1.5; }
+.sd-decision-brief summary, .decision-analysis > summary { cursor: pointer; font-weight: 600; padding: .8rem 0; }
+.sd-decision-brief button { margin: .4rem 0; }
+@media (max-width: 700px) { .decision-grid, .decision-measures { grid-template-columns: 1fr; gap: 1rem; } }
+
+@media (max-width: 700px) { .v3-tabbar [role="tab"] { flex-shrink: 0; padding-inline: 12px; } }

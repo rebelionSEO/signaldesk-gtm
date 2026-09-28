@@ -2,6 +2,15 @@ import {posthogEconomics} from './posthog-economics.ts';
 import type { Report } from './types';
 
 export const example: Report = {
+  decisionBrief: {
+    finding: 'Could a hands-on product challenge help developers decide whether to use more of PostHog?',
+    status: 'Hypothesis', evidenceIds: ['E1', 'E4', 'E5'],
+    whyItMatters: 'If developers find a useful second product, some may become paying users. Participation alone would not establish revenue impact.',
+    alternativeExplanations: ['Developers may already understand the platform but only need one product.', 'Setup time or product fit may matter more than the marketing format.'],
+    recommendedExperimentId: 'O1',
+    whyFirst: 'A small sandbox test lets developers inspect the work and helps us learn before funding a larger campaign.',
+    nextQuestion: 'Where do eligible users stop today: setup, first useful result, second-product use, or payment?',
+  },
   economics: posthogEconomics,
   brief: {
     company: 'PostHog',
