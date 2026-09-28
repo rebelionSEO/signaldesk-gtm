@@ -18,3 +18,5 @@ These are project memory, not a replacement for the user's latest instructions. 
 - Do not save credentials, tokens, private client data or raw secret-bearing conversation excerpts in project memory or Git.
 
 Do not change product behavior merely to make memory documents appear true. Record limitations honestly.
+
+For strategy or research work also read `docs/process/GTM_OPERATING_STANDARD.md` and select relevant entries from `docs/references/GTM_LIBRARY.md`. For engineering remediation consult `docs/qa/SYSTEM_AUDIT_2026-09-28.md`. Missing company facts must remain unknown; do not disguise invented data as assumptions.

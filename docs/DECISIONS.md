@@ -15,3 +15,6 @@ Use this to preserve user decisions; not every assistant proposal is an accepted
 | 2026-09-28 | User request / implemented in docs | Establish durable repo memory and a startup reading instruction to reduce repeated corrections and lost context. |
 
 For future entries, record the actual date of the decision. Older requirements above were consolidated on September 28; this does not claim they were first expressed that day.
+
+### September 28: research and operating standard
+User requested source-backed GTM references with weekly updates, preferred Screaming Frog MCP, grounded reputation research, rapid experiments, clear finance, missing-data honesty, system QA, and bounded supervision/validation loops. Implemented: library/docs/audit, weekly refresh, shared prompt guidance and truthful creativity-check labels. Pending: production source retrieval, crawl adapter, durable cost control and substantive creative evaluation. Delegation was authorized for this task; two helper agents handled reference research and code audit, supervised in the main chat.

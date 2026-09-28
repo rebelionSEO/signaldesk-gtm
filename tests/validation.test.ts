@@ -22,7 +22,7 @@ test('sparse evidence does not become confident output', () => { const copy = { 
 test('export retains provenance, limitations, and proposed status', () => { const md = toMarkdown(example); assert.ok(md.includes('Mode: example')); assert.ok(md.includes(example.evidence[0].url)); assert.ok(md.includes('Counterevidence: E4')); assert.ok(md.includes('proposed, not launched')); });
 test('operating plan covers every GTM channel exactly once', () => { assert.deepEqual(example.operatingPlan?.channels.map(item => item.channel).sort(), [...channels].sort()); });
 test('bold ideas carry a bounded test, stop rule and guardrail', () => { const quality = planQuality(example.opportunities); assert.ok(example.opportunities.some(item => item.design?.ambition === 'Wildcard')); assert.ok(quality.every(item => item.checks.every(check => check.pass))); });
-test('default creative contract is brand-native and commercially varied', () => { assert.ok(example.brandProfile?.voiceTraits.every(item => item.evidenceIds.length)); assert.ok(example.brandProfile?.signatureAssets.every(item => item.evidenceIds.length)); assert.ok(example.opportunities.every(item => item.design?.categoryConvention && item.design.brandFit && item.design.commercialRole && item.design.assumptionToTest && item.design.proofRequired)); assert.ok(new Set(example.opportunities.map(item => item.design?.commercialRole)).size >= 3); assert.equal(evaluateReport(example).gates.find(item => item.name === 'Brand-native creativity')?.pass, true); });
+test('default creative contract is brand-native and commercially varied', () => { assert.ok(example.brandProfile?.voiceTraits.every(item => item.evidenceIds.length)); assert.ok(example.brandProfile?.signatureAssets.every(item => item.evidenceIds.length)); assert.ok(example.opportunities.every(item => item.design?.categoryConvention && item.design.brandFit && item.design.commercialRole && item.design.assumptionToTest && item.design.proofRequired)); assert.ok(new Set(example.opportunities.map(item => item.design?.commercialRole)).size >= 3); assert.equal(evaluateReport(example).gates.find(item => item.name === 'Creative brief structure')?.pass, true); });
 test('V3 separates assumptions from facts and sequences one immediate bet', () => { assert.ok(example.marketContext?.facts.some(item => item.status === 'Public fact')); assert.ok(example.marketContext?.facts.some(item => item.status === 'Unknown')); assert.ok(example.assumptions?.some(item => item.impact === 'High' && item.confidence === 'Low')); assert.equal(example.opportunities.filter(item => item.priority === 'Now').length, 1); assert.equal(new Set(example.opportunities.map(item => item.territory)).size, example.opportunities.length); });
 test('V3 export includes thesis, assumption map, benchmark cohort, brand brief, and creative territory', () => { const md = toMarkdown(example); assert.ok(md.includes('## Market context')); assert.ok(md.includes('## Assumption map')); assert.ok(md.includes('## Brand-native creative brief')); assert.ok(md.includes('## Benchmark cohort')); assert.ok(md.includes('Range unavailable') || md.includes('No defensible range')); assert.ok(md.includes('Territory: Product as proof')); assert.ok(md.includes('Category convention replaced:')); });
 test('benchmark claims must retain valid evidence references', () => { const copy = structuredClone(example); copy.benchmarkProfile!.metrics[0].evidenceIds = ['E404']; assert.ok(referenceErrors(copy).some(error => error.includes('Benchmark metric'))); });
@@ -101,4 +101,12 @@ test('recommendation website checks cannot cite unread pages', () => {
   const copy=structuredClone(example);
   copy.opportunities[0].websiteCheck={existingWork:'Existing proof',proposedChange:'A different interaction',reviewedUrls:['https://posthog.com/']};
   assert.ok(referenceErrors(copy).some(e=>e.includes('website check references an unread page')));
+});
+
+
+test('creative field completeness is not presented as measured originality', () => {
+  const result = evaluateReport(example);
+  const dimension = result.dimensions.find(d => d.id === 'originality');
+  assert.equal(dimension?.label, 'Creative brief completeness');
+  assert.match(dimension?.explanation ?? '', /does not measure originality/);
 });

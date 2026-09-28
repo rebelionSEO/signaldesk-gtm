@@ -51,3 +51,12 @@ None has user approval, implementation or effectiveness validation. The assistan
 
 ## Last verification
 Before memory setup: 47 unit tests, lint, typecheck, production build and local API integration tests passed; revised Stratabeat overview inspected in browser. These checks validate structure/behavior, NOT idea quality or a full live end-to-end run. Build had a bundle-size warning. No public redeploy.
+
+## September 28 operating-standard update
+- Latest user rule: do not invent missing company data. Unknown ICP, funnel performance, budget or rates stay unknown; explicit hypotheses are questions to test, not substitute facts.
+- Added docs/process/GTM_OPERATING_STANDARD.md, docs/references/GTM_LIBRARY.md and docs/qa/SYSTEM_AUDIT_2026-09-28.md. Read these before strategy or runtime remediation.
+- Shared research-policy instructions are appended to model calls. Creativity QA labels now describe structural completeness rather than measured originality. Neither change is a verified semantic guardrail. No paid model calls were made.
+- Full static/unit/build and local API checks passed in the audit; live-model effectiveness and fresh visual QA were not tested.
+- Preferred Screaming Frog MCP is not exposed in this session; no importer or connector was added.
+- Weekly library refresh created: refresh-signaldesk-gtm-reference-library, Monday09:00 app schedule. No paid APIs or automatic production changes/pushes.
+- Runtime priorities from audit: dollar budget ledger; preserve paid research across crawl recovery; claim-level source support; substantive creative rejection; claim-specific coverage. These remain open, not solved by memory or extra agents.
