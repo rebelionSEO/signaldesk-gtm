@@ -60,3 +60,11 @@ Before memory setup: 47 unit tests, lint, typecheck, production build and local 
 - Preferred Screaming Frog MCP is not exposed in this session; no importer or connector was added.
 - Weekly library refresh created: refresh-signaldesk-gtm-reference-library, Monday09:00 app schedule. No paid APIs or automatic production changes/pushes.
 - Runtime priorities from audit: dollar budget ledger; preserve paid research across crawl recovery; claim-level source support; substantive creative rejection; claim-specific coverage. These remain open, not solved by memory or extra agents.
+
+## Reference library expansion — September 28
+- User requested broad reusable GTM resources. Added `docs/references/README.md` as the entry point and three topic collections: books, channels, media. Total 59 entries (18 core + 15 books/methods + 15 channel articles/docs + 11 session/course/event references).
+- Book descriptions, samples, contents-only pages and session descriptions are explicitly labeled; no claim to have read full books or watched recordings. No paid calls, purchases, subscriptions or client-data assumptions.
+- AGENTS.md routes future strategy work through the index. Select 3–5 applicable references and keep method inspiration separate from client evidence. The deployed app does not automatically retrieve these Markdown files.
+- Existing weekly automation updated to maintain relevant topic collections and index counts, with the same schedule and no automatic pushes/deployments.
+- This expansion changes documentation and research continuity only; existing rejected example experiments remain rejected, and runtime gaps above remain open.
+- Verification: 59 unique resource IDs, no duplicated source URLs across the catalog, all local library links resolve, and Git whitespace check passed. Application tests were not rerun for this documentation-only expansion; no live model evaluation or deployment was performed.

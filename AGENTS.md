@@ -19,4 +19,4 @@ These are project memory, not a replacement for the user's latest instructions. 
 
 Do not change product behavior merely to make memory documents appear true. Record limitations honestly.
 
-For strategy or research work also read `docs/process/GTM_OPERATING_STANDARD.md` and select relevant entries from `docs/references/GTM_LIBRARY.md`. For engineering remediation consult `docs/qa/SYSTEM_AUDIT_2026-09-28.md`. Missing company facts must remain unknown; do not disguise invented data as assumptions.
+For strategy or research work also read `docs/process/GTM_OPERATING_STANDARD.md`, start at `docs/references/README.md`, and select 3–5 relevant entries from its topic collections. Use these as method inspiration, never as client evidence. For engineering remediation consult `docs/qa/SYSTEM_AUDIT_2026-09-28.md`. Missing company facts must remain unknown; do not disguise invented data as assumptions.

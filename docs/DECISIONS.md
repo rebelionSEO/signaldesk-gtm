@@ -18,3 +18,6 @@ For future entries, record the actual date of the decision. Older requirements a
 
 ### September 28: research and operating standard
 User requested source-backed GTM references with weekly updates, preferred Screaming Frog MCP, grounded reputation research, rapid experiments, clear finance, missing-data honesty, system QA, and bounded supervision/validation loops. Implemented: library/docs/audit, weekly refresh, shared prompt guidance and truthful creativity-check labels. Pending: production source retrieval, crawl adapter, durable cost control and substantive creative evaluation. Delegation was authorized for this task; two helper agents handled reference research and code audit, supervised in the main chat.
+
+### September 28: expanded reference collections
+User requested as many useful GTM resources as possible, saved as Markdown/folders for reuse. Implemented: 59-entry indexed collection with explicit source access levels and topic routing. Broad coverage is maintained alongside a 3–5-reference selection rule per strategy decision; volume is not treated as evidence or creative quality. Weekly refresh expanded to the topic folders. Automatic runtime retrieval remains unimplemented.

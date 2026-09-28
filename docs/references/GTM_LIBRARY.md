@@ -2,6 +2,8 @@
 
 Last verified: 2026-09-28. Maintainer: SignalDesk research workflow.
 
+This is the original 18-entry core collection. The [full library index](README.md) now routes to 59 entries across the core, books, channels and media collections. Start there for topic selection and weekly additions; retain this file's refresh log as the common record.
+
 ## How to use this library
 
 This is an inspiration and method library, **not evidence about any client**. A published tactic, a founder's opinion, or a vendor case study does not establish a client's ICP, conversion rate, reputation, budget, or problem. Unknown client facts stay unknown. Proposed experiments test an unanswered question; they do not require pretending the answer is already known.
@@ -174,4 +176,5 @@ Weekly refresh instructions, to be executed only by a configured scheduled task 
 
 ## Refresh log
 
+- 2026-09-28 expansion: Added 15 books/method references (B01–B15), 15 channel/measurement references (C01–C15), and 11 media/course/event references (W01–W11). Total catalog: 59 entries, with inspected scope disclosed; not 59 full works consumed. Added topic index and retrieval guidance. Flagged pipeline/spend mislabeled as ROI, source-date conflicts and survey denominator differences. No paid calls or subscriptions. Weekly refresh now covers the topic folders.
 - 2026-09-28: Initial library. 18 original-source URLs opened; includes author/publisher book descriptions, one authorized free chapter sample, seven explicitly dated/updated 2026 articles, a 2026 vendor report based on 2025 data, and current platform documentation. No paid API calls or subscriptions. References support methods, not claims about Stratabeat or any other client.
