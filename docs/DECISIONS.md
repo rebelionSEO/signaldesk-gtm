@@ -21,3 +21,6 @@ User requested source-backed GTM references with weekly updates, preferred Screa
 
 ### September 28: expanded reference collections
 User requested as many useful GTM resources as possible, saved as Markdown/folders for reuse. Implemented: 59-entry indexed collection with explicit source access levels and topic routing. Broad coverage is maintained alongside a 3–5-reference selection rule per strategy decision; volume is not treated as evidence or creative quality. Weekly refresh expanded to the topic folders. Automatic runtime retrieval remains unimplemented.
+
+### September 28: enforce staged review
+User approved implementing bounded research/creative correction loops, withholding unsupported numbers and spending controls. Implemented in the live saved-study workflow, with one public follow-up, two creative revisions and conservative persistent study reservations. No paid execution authorization or dollar amounts inferred. Model reviews remain fallible; public deployment remains separate.

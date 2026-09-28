@@ -137,3 +137,11 @@ A supervisor with bounded stages and durable checkpoints is sufficient for this 
 After the initial audit, a shared prompt policy was added for unknown inputs, source limitations, routine-idea rejection, channel handoffs and financial honesty. The numeric originality dimension and creative gate were relabeled as completeness/structure checks, with explicit limitations. This addresses misleading labels and adds guidance; it does not resolve the substantive P1 findings or establish creative effectiveness. The GTM reference library is available to Codex, not yet retrieved by the deployed runtime.
 
 Final follow-up verification: lint and typecheck passed; updated unit suite passed 48/48 after aligning the renamed gate assertion. Production build rechecked after runtime policy changes. Substantive creative review cases are saved separately; they were not evaluated with a paid model.
+
+## Bounded-workflow remediation follow-up
+
+See `docs/process/RUN_CONTROLS.md` and prompt version `signaldesk-v2.4-bounded-review`. The research-loss/replanning path now preserves paid findings and planner state. Structured audit outcomes route at most one targeted public follow-up and two creative revisions; rejected records/sections and unsupported numbers are withheld with their dependent references. Tests establish enforcement, not semantic truth or creative effectiveness.
+
+Spending now requires a persistent pre-call reservation with explicit operator-configured study allowance and verified worst-case call ceiling; malformed/error/timeout retries retain reservations. A 60-call ceiling and request envelope supplement it. This partially addresses the budget finding: actual provider cost reconciliation and an account-wide cap remain absent, and an incorrectly configured per-call ceiling cannot guarantee the provider invoice. No values were configured or paid calls made.
+
+Local migration applied; 61 unit tests, lint, typecheck, build and local API integration passed. Existing bundle warning remains. No hosted deployment, live-model or fresh visual QA. Whole-site gating, claim-level independent support and crawler-adapter findings remain open.

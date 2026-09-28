@@ -13,7 +13,7 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --max-warnings 0",
     "db:generate": "drizzle-kit generate",
     "test": "npm run test:unit",
-    "test:unit": "node --experimental-strip-types --test tests/validation.test.ts tests/website-crawl.test.ts",
+    "test:unit": "node --experimental-strip-types --test tests/validation.test.ts tests/website-crawl.test.ts tests/supervisor.test.ts tests/model-budget.test.ts",
     "test:integration": "node tests/api.integration.mjs",
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm run test:unit && npm run build"

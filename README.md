@@ -30,7 +30,7 @@ An evidence-led GTM operating system. It turns a company brief and public eviden
 
 ## Live AI setup
 
-Live research requires a server-side `OPENAI_API_KEY`. Configure the hosted variable as a secret through Sites; never expose it in browser code or source control. For local development, populate `.env` using `.env.example`. `OPENAI_MODEL` defaults to `gpt-5-mini` and can be changed to a model supporting Responses web search and structured outputs.
+Live research requires a server-side `OPENAI_API_KEY`, an explicitly configured `SIGNALDESK_RUN_BUDGET_USD` and an operator-verified `OPENAI_MAX_CALL_USD` reservation ceiling. Paid stages fail closed without those limits and the spending-ledger migration. See [run controls](docs/process/RUN_CONTROLS.md) for the request envelope, retry limits, setup and billing limitations. Configure the hosted variable as a secret through Sites; never expose it in browser code or source control. For local development, populate `.env` using `.env.example`. `OPENAI_MODEL` defaults to `gpt-5-mini` and can be changed to a model supporting Responses web search and structured outputs.
 
 The OpenAI Developers plugin can provision/configure a key through its approved flow. No key was available during this implementation. The provider integration is implemented but has not been validated against a live paid account. The UI explicitly reports this condition and never substitutes the example for an AI result.
 

@@ -1,4 +1,8 @@
 import { startCrawl, crawlBatch, crawlCanContinue, type CrawlState } from '@/lib/gtm/website-crawl';
+import { initialSupervisor, supervisorSchema, consumeRevision, nextReviewStage, auditFeedback, mergeResearch } from '@/lib/gtm/supervisor';
+import type { Research } from '@/lib/gtm/ai';
+import { reserveModelCall, ModelBudgetError } from '@/lib/gtm/model-budget';
+import { env } from 'cloudflare:workers';
 import { coverageBlockers } from '@/lib/gtm/website-coverage';
 import {promptVersion} from '@/lib/gtm/operating';
 import { z } from 'zod';
@@ -36,13 +40,36 @@ export async function POST(req: Request, ctx: {
     let researchData = row.research;
     let candidate = row.candidate;
     let report = row.report;
+    const savedResearch=researchData?JSON.parse(researchData):{};
+    let findings:Research|undefined=savedResearch.findings??(savedResearch.notes?savedResearch:undefined);
+    let crawl:CrawlState|undefined=savedResearch.crawl??findings?.crawl;
+    let supervisor=stage==='draft'?initialSupervisor():supervisorSchema.parse(savedResearch.supervisor??initialSupervisor());
+    const guard=async(requestBody:string)=>{
+        const request=JSON.parse(requestBody);
+        await reserveModelCall(database(),{studyId:id!,lease:token!,model:request.model,requestBytes:new TextEncoder().encode(requestBody).length,maxOutputTokens:request.max_output_tokens,maxToolCalls:request.max_tool_calls??0}, {...process.env,...env} as unknown as Record<string,string|undefined>);
+    };
+    if(stage==='draft'){findings=undefined;crawl=undefined;supervisor=initialSupervisor();}
+    if(stage==='research-revision'||stage==='creative-revision'){
+        try{supervisor=consumeRevision(supervisor,stage);}catch{
+            const stopped=await database().prepare('UPDATE studies SET stage = ?, revision = revision + 1, lease = NULL, busy_until = 0 WHERE id = ? AND owner = ? AND lease = ?').bind('complete',id,owner,token).run();
+            if(!stopped.meta.changes)throw new ApiError(409,'Run changed. Reload the study.');
+            signal='Revision limit reached. Only previously audited content is retained.';passed=true;
+            return Response.json(publicStudy(await owned(id,owner)));
+        }
+        // Persist attempts BEFORE paid work, so failed requests cannot reset retry limits.
+        researchData=JSON.stringify({crawl,findings,supervisor});
+        const checkpoint=await database().prepare('UPDATE studies SET research = ? WHERE id = ? AND owner = ? AND lease = ?').bind(researchData,id,owner,token).run();
+        if(!checkpoint.meta.changes)throw new ApiError(409,'Run changed before revision.');
+    }
     if(stage==='draft' || stage==='crawling' || stage==='page-review') {
-        const crawl: CrawlState = stage==='draft' ? startCrawl(brief.website) : JSON.parse(researchData!).crawl;
-        if(stage==='page-review') await reviewWebsiteBatch(crawl);
+        crawl = stage==='draft' ? startCrawl(brief.website) : crawl;
+        if(!crawl)throw new ApiError(409,'Website checkpoint is missing. Start a new run.');
+        if(stage==='page-review') await reviewWebsiteBatch(crawl,guard);
         else await crawlBatch(crawl);
         const blockers=coverageBlockers(crawl.coverage);
-        nextStage=crawl.pending.length?'page-review':crawlCanContinue(crawl)?'crawling':blockers.length?'coverage-blocked':'mapped';
-        researchData=JSON.stringify({crawl}); candidate=null; planner=null;
+        nextStage=crawl.pending.length?'page-review':crawlCanContinue(crawl)?'crawling':blockers.length?'coverage-blocked':findings?'researched':'mapped';
+        if(findings)findings={...findings,websiteCoverage:crawl.coverage};
+        candidate=null; if(!findings)planner=null;
         const previous=JSON.parse(report);
         report=JSON.stringify({...previous, websiteCoverage:crawl.coverage,
           marketContext:undefined, brandProfile:undefined, assumptions:undefined, benchmarkProfile:undefined, decisionBrief:undefined, opportunities:[], commercialPlan:undefined, operatingPlan:undefined, economics:undefined,
@@ -51,45 +78,56 @@ export async function POST(req: Request, ctx: {
         signal=`${crawl.coverage.pages.filter(p=>p.state==='Reviewed').length} pages reviewed; ${crawl.coverage.pages.filter(p=>p.required&&p.state!=='Reviewed').length} required pages outstanding.`;
     }
     else if(stage==='mapped') {
-        const coverage=JSON.parse(researchData!).crawl.coverage;
+        const coverage=crawl?.coverage; if(!coverage)throw new ApiError(409,'Website inventory missing.');
         const blockers=coverageBlockers(coverage); if(blockers.length) throw new ApiError(409,blockers.join(' '));
-        planner=JSON.stringify(await plan(brief,operations,coverage)); nextStage='scoped';
+        planner=JSON.stringify(await plan(brief,operations,coverage,guard)); nextStage='scoped';
     }
-    else if (stage === 'scoped') {
-        const crawl: CrawlState | undefined = researchData ? JSON.parse(researchData).crawl : undefined;
-        if(!crawl) throw new ApiError(409,'This older run has no website inventory. Start a new run.');
-        const findings=await research(brief, JSON.parse(row.report).evidence,planner?JSON.parse(planner):undefined,crawl.coverage);
+    else if (stage === 'scoped' || stage === 'research-revision') {
+        if(!crawl) throw new ApiError(409,'This older run has no website checkpoint. Start a new run.');
+        const previous=findings;
+        const updated=await research(brief,stage==='research-revision'?{questions:supervisor.feedback,previousNotes:previous?.notes}:JSON.parse(row.report).evidence,planner?JSON.parse(planner):undefined,crawl.coverage,guard,stage==='research-revision');
+        findings=mergeResearch(previous,updated);
+        crawl.coverage=findings.websiteCoverage;
         candidate=null;
         if(coverageBlockers(findings.websiteCoverage).length){
-            crawl.coverage=findings.websiteCoverage;
-            researchData=JSON.stringify({crawl}); nextStage='crawling';
-            report=JSON.stringify({...JSON.parse(report),websiteCoverage:crawl.coverage});
-            signal='Search found additional company pages. Returning to website review before strategy.';
-        } else { researchData=JSON.stringify(findings); nextStage='researched'; }
-
+            nextStage='crawling';
+            report=JSON.stringify({...JSON.parse(report),websiteCoverage:crawl.coverage,opportunities:[],decisionBrief:undefined,commercialPlan:undefined,operatingPlan:undefined,economics:undefined});
+            signal='New company pages need review. Saved research and planner are retained.';
+        } else nextStage='researched';
     }
     else if (stage === 'researched') {
-        if (!researchData)
-            throw new ApiError(409, 'Research notes are missing. Start a new run.');
-        candidate = JSON.stringify(await strategize(brief, JSON.parse(researchData),planner?JSON.parse(planner):undefined,operations));
+        if (!findings) throw new ApiError(409, 'Research notes are missing. Start a new run.');
+        candidate = JSON.stringify(await strategize(brief,{...findings,supervisor},planner?JSON.parse(planner):undefined,operations,guard));
         nextStage = 'proposed';
     }
-    else if(stage==='proposed'){if(!researchData||!candidate)throw new ApiError(409,'Research or plan is missing. Start a new run.');candidate=JSON.stringify(await challenge(brief,JSON.parse(researchData),JSON.parse(candidate),operations));nextStage='planned';}
+    else if(stage==='proposed'||stage==='creative-revision'){
+        if(!findings||!candidate)throw new ApiError(409,'Research or plan is missing. Start a new run.');
+        const revised=await challenge(brief,{...findings,supervisor},JSON.parse(candidate),operations,guard);
+        // Identical retries cannot earn another call merely by returning unchanged work.
+        if(stage==='creative-revision'&&JSON.stringify(revised)===candidate){
+            nextStage='complete';signal='Revision made no change. Unresolved ideas remain withheld.';
+        }else{candidate=JSON.stringify(revised);nextStage='planned';}
+    }
     else if (stage === 'planned') {
-        if (!researchData || !candidate)
-            throw new ApiError(409, 'The plan is missing. Start a new run.');
-        report = JSON.stringify(await review(brief, JSON.parse(researchData), JSON.parse(candidate),operations));
-        nextStage = 'complete';
+        if (!findings || !candidate) throw new ApiError(409, 'The plan is missing. Start a new run.');
+        const checked=await review(brief,findings,JSON.parse(candidate),operations,guard);
+        supervisor.feedback=auditFeedback(checked.audit);
+        supervisor.lastAudit=checked.audit;
+        nextStage=nextReviewStage(checked.audit,supervisor);
+        report=JSON.stringify(checked.report);
+        signal=nextStage==='complete'?'Review finished. Unsupported content withheld.':nextStage==='research-revision'?'Specific public evidence gaps returned for one follow-up.':'Generic concepts returned for targeted revision.';
     }
     else
         throw new ApiError(409, 'Unknown research stage. Start a new run.');
+    researchData=JSON.stringify({crawl,findings,supervisor});
     const saved = await database().prepare('UPDATE studies SET planner = ?, research = ?, candidate = ?, report = ?, stage = ?, revision = revision + 1, lease = NULL, busy_until = 0, updated_at = ? WHERE id = ? AND owner = ? AND lease = ?').bind(planner,researchData, candidate, report, nextStage, new Date().toISOString(), id, owner, token).run();
     if (!saved.meta.changes)
         throw new ApiError(409, 'This run was superseded. Reload the saved study.');
     passed=true; return Response.json(publicStudy(await owned(id, owner)));
 }
 catch (e) {
-    signal=e instanceof ApiError?e.message:'Stage failed validation';return failure(e);
+    const error=e instanceof ModelBudgetError?new ApiError(e.status,e.message):e;
+    signal=error instanceof ApiError?error.message:'Stage failed validation';return failure(error);
 }
 finally {
     if (token && id) {

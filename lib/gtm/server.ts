@@ -1,3 +1,4 @@
+import { readModelBudget, type ModelBudget } from './model-budget';
 import { env } from 'cloudflare:workers';
 import { getChatGPTUser } from '@/app/chatgpt-auth';
 import { reportSchema } from '@/lib/gtm/validation';
@@ -25,6 +26,8 @@ catch {
     throw new ApiError(400, 'Invalid request data.');
 } }
 export type StudyRow = {
+    modelBudget?:ModelBudget|null;
+    budgetAvailable?:boolean;
     id: string; planner:string|null; operations:string; trace:string;
     owner: string;
     brief: string;
@@ -39,6 +42,8 @@ export type StudyRow = {
     updated_at: string;
 };
 export async function owned(id: string, owner: string) { const row = await database().prepare('SELECT * FROM studies WHERE id = ? AND owner = ?').bind(id, owner).first<StudyRow>(); if (!row)
-    throw new ApiError(404, 'Study not found.'); return row; }
-export function publicStudy(row: StudyRow) { return {planner:row.planner?plannerSchema.parse(JSON.parse(row.planner)):null,operations:operationsSchema.parse(JSON.parse(row.operations||'{"metrics":[],"tasks":[],"outcomes":[]}')),trace:traceSchema.parse(JSON.parse(row.trace||'[]')), id: row.id, report: reportSchema.parse(JSON.parse(row.report)), stage: row.stage, revision: row.revision, busy: row.busy_until > Date.now(), updatedAt: row.updated_at }; }
+    throw new ApiError(404, 'Study not found.');
+    try{row.modelBudget=await readModelBudget(database(),id);row.budgetAvailable=true;}catch{row.modelBudget=null;row.budgetAvailable=false;}
+    return row; }
+export function publicStudy(row: StudyRow) { return {modelBudget:row.modelBudget??null,budgetAvailable:row.budgetAvailable??false,planner:row.planner?plannerSchema.parse(JSON.parse(row.planner)):null,operations:operationsSchema.parse(JSON.parse(row.operations||'{"metrics":[],"tasks":[],"outcomes":[]}')),trace:traceSchema.parse(JSON.parse(row.trace||'[]')), id: row.id, report: reportSchema.parse(JSON.parse(row.report)), stage: row.stage, revision: row.revision, busy: row.busy_until > Date.now(), updatedAt: row.updated_at }; }
 export function config() { const e = env as unknown as Record<string, string | undefined>; return { key: e.OPENAI_API_KEY || process.env.OPENAI_API_KEY, model: e.OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-5-mini' }; }

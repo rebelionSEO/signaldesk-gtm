@@ -13,7 +13,7 @@ const status=await call('/api/status');assert.equal(status.status,200);assert.eq
 const id=crypto.randomUUID();const brief={company:'Integration test company',website:'https://example.com',audience:'Developers',objective:'Investigate evaluation friction',constraints:'Local automated test; not a real company study.'};
 const created=await call('/api/projects','POST',{id,brief});assert.equal(created.status,201,JSON.stringify(created.data));assert.equal(created.data.report.brief.company,brief.company);
 const repeated=await call('/api/projects','POST',{id,brief});assert.equal(repeated.data.id,id);
-const loaded=await call('/api/projects/'+id);assert.equal(loaded.status,200);assert.equal(loaded.data.revision,0);
+const loaded=await call('/api/projects/'+id);assert.equal(loaded.status,200);assert.equal(loaded.data.revision,0);assert.equal(loaded.data.budgetAvailable,true,'Spending-ledger migration must be applied locally');assert.equal(loaded.data.modelBudget,null,'Unused study must not invent spending');
 const report=loaded.data.report;report.evidence.push({id:'E1',title:'Test observation',url:'https://example.com/feedback',summary:'A manually entered test observation.',kind:'complaint',date:null,limitation:'Synthetic fixture, not research.'});
 const saved=await call('/api/projects/'+id,'PATCH',{revision:0,report});assert.equal(saved.status,200,JSON.stringify(saved.data));assert.equal(saved.data.revision,1);
 const reopened=await call('/api/projects/'+id);assert.equal(reopened.data.report.evidence.length,1);

@@ -15,6 +15,13 @@
       "when": 1789179318690,
       "tag": "0001_purple_zuras",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1790620007063,
+      "tag": "0002_pink_gertrude_yorkes",
+      "breakpoints": true
     }
   ]
 }
