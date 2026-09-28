@@ -1,0 +1,2673 @@
+{
+  "version": 1,
+  "root": "https://stratabeat.com/",
+  "checkedAt": "2026-09-28T16:58:44.015Z",
+  "indexing": "Unverified — search results and sitemaps are not a complete index report",
+  "navigationDetected": true,
+  "discoveryComplete": false,
+  "pages": [
+    {
+      "url": "https://stratabeat.com/",
+      "title": "Stratabeat: Award-Winning B2B SEO, GEO & Content Agency",
+      "required": true,
+      "foundBy": "Homepage",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Stratabeat’s homepage positions the company as an award-winning B2B organic growth agency specializing in SEO, GEO (AI search), CRO, content strategy and development, Reddit marketing, digital PR, analytics, and web design. It highlights unique approaches (neuroscience-based marketing, audience insight, content-ICP fit), client results (large percentage gains and traffic value), industries served (SaaS, fintech, medtech, manufacturing, cybersecurity), awards, resources (blogs, playbooks, downloads), and calls-to-action to book a strategy call.",
+      "existing": [
+        "SEO services (enterprise and B2B SaaS)",
+        "GEO / AI search services",
+        "Content strategy and content development",
+        "Conversion rate optimization (CRO)",
+        "Reddit marketing",
+        "Digital PR & authority building",
+        "Web analytics and data intelligence",
+        "Web design"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/seo-agency-of-the-year",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Heck, Yeah! Stratabeat Named 2026 SEO Agency of the Year!",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Announcement blog post celebrating Stratabeat being named 2026 SEO Agency of the Year and Silver B2B Agency of the Year. Reviews self-reported client impacts (large percentage increases in traffic, SQLs, booked meetings, LLM visibility claims). Reiterates service list and the agency’s deep data- and audience-driven approach and team praise. Includes links to additional marketing articles and CTAs to book a strategy call.",
+      "existing": [
+        "Award announcement and publicity asset",
+        "List of client outcome claims (case highlights)",
+        "Services list (SEO, GEO, CRO, content, Reddit, PR, analytics)",
+        "CTA to book a strategy call",
+        "Marketing blog content",
+        "Contact info and social links"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/results",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SEO, Content, and Marketing Success Stories | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case studies/results page showcasing multiple client success stories with metrics: dramatic organic traffic growth, SQL and revenue increases, traffic value figures, and website relaunch impacts across industries (fintech, AI voice, robotics, property management, etc.). Each result links to a deeper case study; page includes testimonial, newsletter CTA, and service reiteration.",
+      "existing": [
+        "Multiple case study pages with quantified results",
+        "Client testimonial quote",
+        "Newsletter signup (lead capture)",
+        "Service and industry alignment per case study",
+        "CTAs to view detailed case studies",
+        "Awards and recognition mention"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "SEO, Content, & Web Design Services for B2B | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Services overview page for Stratabeat, a B2B-focused digital marketing agency. Describes offerings (SEO, GEO/AI search, content strategy, content development, Reddit marketing, digital PR/authority building, web design, web analytics, CRO), neuroscience-based approach, claims of large client results, testimonials, calls-to-action to book strategy calls, resource links, and contact info.",
+      "existing": [
+        "SEO services (audit, technical, on-page, topic research)",
+        "Generative Engine Optimization (GEO) / AI search optimization",
+        "Content strategy and development (blogs, newsletters, video, design)",
+        "Reddit marketing and audience research",
+        "Digital PR & authority building (research, link acquisition)",
+        "Web design & development (WordPress, Webflow, UX)",
+        "Web analytics (GA4, GTM, attribution, integrations)",
+        "Conversion Rate Optimization (A/B testing, behavioral analytics)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-seo",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SEO Services for Greater Leads & Pipeline | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Dedicated B2B SEO service page. Emphasizes strategic, data-driven SEO for B2B SaaS and tech, claims large percentage traffic/lead/revenue gains and awards, describes deep audience research, CRO integration, proprietary dataset of 300 B2B SaaS sites, account-focused staffing, service list (technical SEO, content, GEO, international, YouTube, analytics) and FAQs about SEO.",
+      "existing": [
+        "B2B SEO strategy & audits",
+        "Keyword, topic, SERP and competitor research",
+        "Technical SEO, on-page optimization, internal linking",
+        "Content strategy, SEO copywriting, blog/content SEO",
+        "Generative Engine Optimization (GEO) integration",
+        "Audience insights (customer interviews, call review)",
+        "Web analytics and reporting (GA4, attribution)",
+        "Account-dedicated SEO strategist model"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/generative-engine-optimization",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Generative Engine Optimization (GEO) Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Generative Engine Optimization (GEO) service page describing optimization for AI answer engines (ChatGPT, Perplexity, Claude, Google AI Overviews). Explains GEO vs SEO, GEO tactics (schema, semantic HTML, entity SEO, RAG-ready content, prompt research), experimentation-led approach, related services (digital PR, content hubs), case claims and CTA to book a strategy call.",
+      "existing": [
+        "GEO audits and LLM visibility audits",
+        "Schema and structured data implementation",
+        "AI prompt research and conversational query alignment",
+        "Entity SEO and author/brand entity optimization",
+        "GEO-focused content strategy and briefs",
+        "AI SEO copywriting (human-written) and answer-ready FAQ content",
+        "Digital PR and citation/link strategies to boost authority",
+        "Custom GEO reporting and experimentation framework"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-content-strategy",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Content Marketing Strategy Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Stratabeat’s B2B content strategy page describes services for B2B SaaS and tech companies: voice-of-customer research, buyer personas, content audits, keyword and SERP research, integrated SEO and AI/GEO strategies, editorial roadmaps, measurement (GA4, GSC, CRM integrations), and pipeline-focused reporting. The page highlights case results (self-reported) and offers booking a strategy call, FAQs, and resources.",
+      "existing": [
+        "Voice-of-customer research and buyer persona development",
+        "Content audit and gap analysis",
+        "Keyword research and SEO/GEO strategy",
+        "Editorial roadmap and content calendar development",
+        "Analytics setup: GA4, GSC, CRM integrations",
+        "Performance metrics framework and reporting",
+        "Conversion and landing page optimization guidance",
+        "Competitive and market trend analysis"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-content-creation-services",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Content Development Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "This page outlines Stratabeat’s B2B content development offerings: SEO- and GEO-engineered content (blog posts, pillar pages, white papers, research, case studies, solution pages), content atomization, voice-of-customer informed briefs, and design services. Emphasis on B2B writers, measurement tied to pipeline, and examples of deliverables. Calls to book a strategy call and links to resources included.",
+      "existing": [
+        "SEO-optimized articles, blog posts, and pillar pages",
+        "White papers and original research studies",
+        "Product-led SaaS and solution page copywriting",
+        "Content atomization (social, video scripts)",
+        "Content briefs informed by buyer research",
+        "Case study development and data visualization",
+        "Webinar planning and presentation design",
+        "Analytics tracking and custom reporting dashboards"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-reddit-marketing",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Reddit Marketing Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "The Reddit marketing page presents organic Reddit research and strategy for B2B SaaS/tech: subreddit analysis, voice-of-customer extraction, identification of Reddit threads that rank in Google and are cited by LLMs, Reddit-informed keyword/GEO work, and configuration of Reddit referral and conversion tracking. Page stresses Reddit as buyer-intelligence source and integration with SEO/GEO efforts.",
+      "existing": [
+        "Reddit audience research and subreddit analysis",
+        "Extraction of buyer language and sentiment from threads",
+        "Identification of Reddit threads ranking in Google and cited by LLMs",
+        "Reddit-informed keyword and content guidance",
+        "Reddit referral and conversion tracking setup",
+        "Brand monitoring and competitive Reddit intelligence",
+        "Mapping Reddit influence to AI/GEO strategies",
+        "Reporting dashboards for Reddit performance"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-authority-building",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Authority Building & Digital PR Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Service page describing Stratabeat’s Digital PR & Authority Building offerings for B2B tech/SaaS. Emphasizes original research, content promotion, passive backlink strategies, executive branding, Reddit marketing, GEO/AI search visibility, and integrated SEO. Claims proprietary GEO data, award wins, and client results. Includes service lists, FAQs, testimonials, resource links, and contact CTA.",
+      "existing": [
+        "Original research studies and data-driven campaigns",
+        "Content promotion and amplification",
+        "Passive backlink earning via compelling content",
+        "Executive branding and speaking opportunity development",
+        "Reddit marketing and community engagement",
+        "GEO/AI search visibility and Wikipedia/Wikidata work",
+        "Customer review site optimization (G2, Gartner, Capterra)",
+        "Virtual events, webinars, and interactive tools"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-web-design",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Web Design & Development Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Service page for B2B Web Design & Development. Describes neuroscience/behavioral-intelligence-driven UX, audience research, SEO and CRO integration, WordPress/Webflow development, analytics, A/B testing, IP detection, and conversion-focused design. Offers FAQs, testimonials, resources, and a strategy-call CTA.",
+      "existing": [
+        "Audience & competitive research (interviews, SERP analysis)",
+        "Custom web design (interactive) and WordPress/Webflow dev",
+        "UX design, CRO, A/B testing, session reviews",
+        "Web analytics, IP detection, behavioral analytics",
+        "Copywriting, messaging platform, landing page design",
+        "SEO integration and content strategy for sites",
+        "Web hosting and enterprise-level security",
+        "Training/support for post-launch updates"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-web-analytics",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Web Analytics Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Service page for B2B Web Analytics. Focuses on auditing and rebuilding GA4/GTM/GSC, accurate conversion and event tracking, lead-to-revenue integrations (Salesforce/HubSpot/Marketo), behavioral analytics, GEO/AI referral tracking, dashboards (Data Studio), and monthly reporting. Claims client results and offers FAQs, tools list, and contact CTA.",
+      "existing": [
+        "GA4 audit, custom event & conversion setup",
+        "Google Tag Manager configuration and consulting",
+        "Google Search Console and Data Studio dashboards",
+        "Lead tracking and CRM integrations (Salesforce, HubSpot)",
+        "Behavioral analytics, session recordings, spam filtering",
+        "AI engine and GEO referral tracking (Claude, ChatGPT)",
+        "Custom conversion path and CTA performance reporting",
+        "Monthly performance reporting and data-quality monitoring"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-cro",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "CRO Services to Increase Your B2B Leads | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Stratabeat’s B2B CRO service page outlines their neuroscience-, behavior-, and testing-based CRO framework for B2B SaaS and tech sites. It describes services like behavioral analytics, session recordings, heatmaps, A/B testing, landing page and UX redesign, messaging and copy optimization, GA4 work, funnel analysis, and ongoing testing. The page includes client testimonials and multiple self-reported case results (e.g., 27.7% cart completion lift, 1,260.7% organic traffic increase, 55% higher SEO conversion rate, 427% leads).",
+      "existing": [
+        "Behavioral analytics (heatmaps, session recordings)",
+        "A/B testing and multivariate testing",
+        "CRO audits, heuristic reviews, and funnel analysis",
+        "Landing page design and UX/UI redesign",
+        "Messaging, conversion copywriting, CTA optimization",
+        "GA4 configuration and data analysis",
+        "Customer journey mapping and CRM win-loss analysis",
+        "Ongoing testing and performance reporting"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/industries",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Technology Industries We Serve | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "The industries page lists B2B technology verticals Stratabeat serves (Software/SaaS, Fintech, MedTech, Cybersecurity, Manufacturing, IT solutions, and many subcategories). It highlights industry-specific results and testimonials, a training offering (custom digital marketing course for Intel partners), and several self-reported outcomes (e.g., 97.7% increase in unique visitors, 86.1% organic growth in 4 months).",
+      "existing": [
+        "Industry-focused SEO, content, and web strategies",
+        "Case studies and client testimonials by industry",
+        "Custom training courses and on-demand knowledge libraries",
+        "Results claims for specific clients (traffic and leads growth)",
+        "Free strategy call lead conversion path",
+        "Industry pages for niche verticals (e.g., fintech, medtech)",
+        "Resource links to case studies and downloads",
+        "Newsletter signup for lead capture"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/why-stratabeat",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Stratabeat Overview: B2B SEO, GEO, CRO & Content Marketing Agency",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "The agency overview page presents Stratabeat’s positioning as a B2B organic growth agency for SaaS and tech, emphasizing strategy, neuroscience-based marketing, CRO focus, small account loads for strategists, proprietary insights (database of 300 B2B SaaS sites), visitor detection, and transparency. It includes self-reported client successes (e.g., 7,235.7% traffic growth, $41M revenue growth, acquisitions, quadrupled leads) and promotes books, pricing, and a strategy call.",
+      "existing": [
+        "Proprietary database of 300 B2B SaaS websites (claimed)",
+        "Website visitor detection and behavioral intelligence (claimed)",
+        "Neuroscience-based marketing methodology",
+        "Small-account strategists (2–4 clients each) service model",
+        "Published book and thought leadership content",
+        "Case study and testimonial library",
+        "Performance reporting/dashboards",
+        "Strategy call/contact as conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/why-stratabeat/testimonials",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Stratabeat Client Testimonials",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "A long testimonials page listing many client quotes praising Stratabeat’s SEO, content, branding, web design, CRO, and analytics work. Mentions awards (2026 SEO Agency of the Year) and includes a footer with contact links, resources, and a call-to-action to book a strategy call. Company results cited in testimonials are self-reported.",
+      "existing": [
+        "Client testimonials praising SEO, content, branding, web design, CRO, analytics",
+        "Self-reported client results (traffic, revenue, hires, rankings)",
+        "Mention of 2026 SEO Agency of the Year award",
+        "Contact email and CTA to book a strategy call",
+        "Links to resources, social (LinkedIn, YouTube)",
+        "Footer with resource downloads and industry lists",
+        "Multiple named client endorsements and roles",
+        "Repeated emphasis on partnership and responsiveness"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/careers",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Career Opportunities at Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Careers page describing company culture, perks, benefits, and remote-first work. Highlights thought leadership, community investment (StrataVentures gives 3% profits to student entrepreneurs), and lists open roles (SEO Analyst, SEO/GEO & Content Strategist, Copywriter) with a CTA to apply or submit speculative applications.",
+      "existing": [
+        "Job openings: SEO Analyst, SEO/GEO & Content Strategist, Copywriter",
+        "Remote-first with quarterly meetings",
+        "Benefits: profit sharing, insurance, 401(k), unlimited PTO, parental leave",
+        "Learning resources: 1,000+ courses and books access",
+        "StrataVentures profit allocation (3%) for student entrepreneurs",
+        "Company award mention: 2026 SEO Agency of the Year",
+        "CTA to submit applications for future roles",
+        "Links to contact and resource center"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SEO, Content, and Website Resources | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Resource hub listing blog posts and guides across SEO & GEO, content, B2B websites, marketing strategy, and brain science. Features articles about GEO, AI SEO for SaaS, content atomization, B2B website guides, and company events. Footer repeats contact info, downloads, and industry specializations.",
+      "existing": [
+        "Resource categories: SEO & GEO, Content, B2B Websites, Marketing Strategy, Brain Science",
+        "Multiple blog posts and guides (GEO guide, AI SEO for SaaS, content atomization)",
+        "Downloads and benchmark studies mentioned",
+        "Event listings (Digital Summit Tampa 2026, XEO)",
+        "Search and featured content sections",
+        "Links to service pages and contact CTA",
+        "Industry-specific resource tagging (SaaS, Fintech, Cybersecurity)",
+        "Newsletter and knowledge hub links"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/seo",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SEO & GEO Resources | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Resource hub page focused on SEO & GEO (AI search) for B2B. Contains headline claiming “SEO Agency of the Year (2026)”, navigation to services, lists of blog posts (guides on B2B SEO, SaaS SEO, investing in SEO), newsletter sign-up, links to contact/book strategy call, downloads and topic tags. Repeats site navigation and footer (contact, social, downloads, industries).",
+      "existing": [
+        "SEO Services",
+        "GEO (AI Search) Services",
+        "Content Marketing Strategy",
+        "Content Development",
+        "Digital PR & Authority Building",
+        "Web Analytics & CRO",
+        "SaaS SEO Benchmark Study (download)",
+        "Newsletter sign-up / Book a strategy call"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/content",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Content Resources | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Content marketing resource hub for B2B. Shows same agency award claim, navigation, and lists content-focused blog posts (advanced B2B content marketing, content atomization, building a B2B content strategy). Includes newsletter sign-up, contact/book call links, downloads and topic tags. Footer and repeated site navigation present.",
+      "existing": [
+        "Content Marketing Strategy",
+        "Content Development",
+        "Blogging Playbook (download)",
+        "Content atomization guidance (blog)",
+        "Newsletter sign-up / Book a strategy call",
+        "Case studies & knowledge hub links",
+        "B2B content strategy downloads",
+        "Contact / email link"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/b2b-websites",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Resources for Building Effective B2B Websites | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Resource hub for B2B website design and optimization. Contains agency award claim, navigation, and blog posts about high-performance B2B websites, UX optimization using behavioral analytics, and best SaaS website elements. Includes newsletter sign-up, book a call link, downloads, and footer with industry pages and contact info.",
+      "existing": [
+        "Web Design (B2B websites)",
+        "Behavioral analytics & UX optimization content",
+        "Conversion Rate Optimization resources",
+        "Blog posts and guides",
+        "Newsletter sign-up / Book a strategy call",
+        "Links to case studies & knowledge hub",
+        "Downloads and industry-specific pages",
+        "Contact / email link"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/marketing-strategy",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Marketing Strategy Resources | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Resource hub page listing marketing-strategy category content. Includes headline about agency award, navigation, call-to-action to subscribe and book a strategy call, and links to blog posts such as B2B marketing challenges, increasing SaaS demo requests, and B2B fintech marketing. Also lists services, downloads, and resource categories. Copyright and contact info present.",
+      "existing": [
+        "Blog posts on marketing strategy and related topics",
+        "Newsletter signup form (email)",
+        "CTA to book a strategy call",
+        "Lists of services and service categories",
+        "Downloads / benchmark studies listed in footer",
+        "Contact email and social links",
+        "Resource categorization and tags",
+        "Industry & awards mentions"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/brain-science",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Brain Science Resources to Strengthen Your Marketing | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Category page for ‘Brain Science’ resources. Shows award mention, navigation, CTA to subscribe and book a strategy call, and entries including articles on behavioral segmentation, using behavioral intelligence, and opinion pieces about product bets. Links to a Forbes article and resource taxonomy similar to other pages.",
+      "existing": [
+        "Blog/articles on behavioral segmentation and brain science",
+        "Link to Forbes article on behavioral intelligence",
+        "Newsletter signup form",
+        "CTA to book a strategy call",
+        "Service and industry lists in navigation",
+        "Contact and social links",
+        "Resource tagging and category structure"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/stratabeat",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "See What Stratabeat is Up To in Our Newly Expanded Resource Center",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "‘Stratabeat’ resource center landing page summarizing recent news and company updates. Highlights 2026 SEO Agency of the Year award, blog posts about the award, webinars and events (Clearscope webinar, Digital Summit), newsletter signup, and CTAs to book strategy calls. Navigation repeats services, resources, and downloads information.",
+      "existing": [
+        "Company news and announcements (award)",
+        "Blog posts about events and webinars",
+        "Newsletter signup form",
+        "CTA to book a strategy call",
+        "Service lists and resource hub links",
+        "Contact email and social links",
+        "Event/webinar promotions"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/marketing-strategy-blog",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "The Marketing Strategy Blog | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Stratabeat’s Marketing Strategy Blog page lists blog categories (SEO & GEO, Content, Marketing Strategy, B2B Websites, Brain Science, Stratabeat) with featured posts and resource links. Highlights include announcements (2026 SEO Agency of the Year), multiple GEO/AI SEO and B2B content strategy articles, newsletter signup, playbook download CTA, service links and site navigation. Repeated navigation and resource lists appear throughout.",
+      "existing": [
+        "Blog categories: SEO & GEO, Content, Marketing Strategy, B2B Websites, Brain Science",
+        "Featured posts: GEO guides, AI SEO for SaaS, agency awards announcement",
+        "Newsletter signup and 'Book a Strategy Call' CTAs",
+        "Resource links to playbook and downloads",
+        "Site navigation to services, case studies, pricing, contact",
+        "Industry & service tags (GEO, B2B SaaS, Fintech, Cybersecurity, etc.)",
+        "Repeated lists of services: SEO, GEO, Content, Web Design, CRO, Digital PR",
+        "Copyright, privacy, contact email visible"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/playbook/high-performance-b2b-blogging",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "High-Performance B2B Blogging Playbook | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Playbook landing page promoting the 'High-Performance B2B Blogging Playbook.' Page explains the playbook’s value for driving traffic and leads, includes a form (name, title, company, website, email) to download the playbook, endorsing stat (67% more leads), and CTAs for strategy calls and site navigation. Repeats standard footer and service links.",
+      "existing": [
+        "Gated download form for B2B Blogging Playbook (name, company, website, email)",
+        "Playbook positioning: turn blog into lead generation platform",
+        "CTA: Download Playbook and Book a Strategy Call",
+        "Stat citation: 'B2B companies that blog generate 67% more leads'",
+        "Standard navigation to services, resources, and contact",
+        "Footer with contact email and social links",
+        "Resource Center categorization for playbooks",
+        "Form validation hint field present"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/articles",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Articles » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Articles page listing Stratabeat’s Articles & Interviews resource index. Displays site navigation, resource categories, and links to articles/interviews; includes CTAs for booking strategy calls and standard footer content. Content mainly indexes articles rather than full article text on this page.",
+      "existing": [
+        "Articles & Interviews index of content",
+        "Navigation to resource categories and topic tags",
+        "CTA: Book a Strategy Call",
+        "Links to downloads and playbooks in resource center",
+        "Service and industry taxonomy repeated",
+        "Footer and contact info",
+        "Search/filters implied by site structure",
+        "No full article content on this index page"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/resources/events",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Catch Stratabeat at Marketing Events around the U.S.",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Page lists Stratabeat event appearances and past presentations (2022–2025) and upcoming speaking dates, plus a CTA to hire CEO Tom Shapiro to speak and a newsletter signup. Includes navigation links to services, resources, and downloads. Company award mention: SEO Agency of the Year (2026 US Agency Awards).",
+      "existing": [
+        "Event listings and dates (past and upcoming)",
+        "Hire Tom Shapiro speaking CTA",
+        "Newsletter signup (email capture)",
+        "Navigation to Resources/Service pages",
+        "Mention of 2026 award (self-reported)",
+        "Lists of resource topics and downloads",
+        "Links to contact and social profiles",
+        "Back to Resource Center button"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/book-strategy-call",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Get More Leads & Growth for Your B2B Business | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Lead capture page offering a free Growth Marketing Assessment and a three-step process: fill form, book strategy call, receive strategies. Form fields include name, email, title, company, website, referral source, service interests, revenue and marketing budget. Testimonials and service overview included.",
+      "existing": [
+        "Strategy call booking form (lead capture)",
+        "Service interest checkboxes (SEO, GEO, CRO, etc.)",
+        "Revenue and budget fields for qualification",
+        "Testimonial quote",
+        "CTA: Book a Strategy Call",
+        "Company contact links and social icons",
+        "Resource navigation and downloads list",
+        "Privacy Policy note"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/b2b-services-company",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Increasing Organic Traffic by 7,235.7% | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study: B2B services client (Terakeet). Describes comprehensive marketing overhaul: messaging, website relaunch, blogging, 18 case studies, 160 pages of lead magnets. Reports results over three years: 7,235.7% blog traffic increase, $682,088 monthly organic traffic value gain, 170.8% revenue growth, 1,500+ non-branded page one rankings, DR 35→72, employee growth 160→412.",
+      "existing": [
+        "Case study narrative and client name (Terakeet)",
+        "Reported metrics: traffic, revenue, rankings, DR, employees",
+        "Services used: messaging, website relaunch, blogging, lead magnet creation",
+        "Quote/testimonial from RJ Licata",
+        "Conversion: Book a Strategy Call",
+        "Newsletter signup",
+        "Resource links and taxonomy",
+        "Contact email (hello@stratabeat.com)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/appfolio",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Appfolio Lead Generation Success Story | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study: AppFolio lead generation. Describes multi-channel digital marketing engagement: SEO, blogging, paid search, display, remarketing, and CRO. Reports results within one year and two years: 140% increase in paid search leads, 123% organic traffic increase, 196% blog page view increase, and 5X employee growth (50→250). Includes client endorsement and conversion prompts.",
+      "existing": [
+        "Case study narrative and client name (AppFolio)",
+        "Reported metrics: paid leads, organic traffic, blog views, employee growth",
+        "Services used: SEO, blogging, paid search, display, remarketing, CRO",
+        "Client testimonial from AppFolio marketing team",
+        "Conversion: Book a Strategy Call",
+        "Newsletter signup",
+        "Resource links and taxonomy",
+        "Contact email (hello@stratabeat.com)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/robotics-company",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "$87,867 in Monthly Traffic Value for a Robotics Company | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study: Stratabeat built a robotics company’s first blog and grew it over 14 months to nearly 30,000 monthly visits and an $87,867 monthly organic traffic value. Deliverables included 60 blog posts (~146k words), influencer interviews, videos, guides, comparisons, infographics and downloadable assets. Reported outcomes: 1,767 nonbranded keywords on page one/two and increased sales/revenue. Includes client testimonial and CTA to book a strategy call.",
+      "existing": [
+        "Blog creation and management (60 posts, 146k words)",
+        "Influencer interviews and video collaborations",
+        "Educational content: how‑tos, guides, comparisons",
+        "Infographics and downloadable content",
+        "SEO targeting nonbranded keywords",
+        "Calls‑to‑action to drive conversions",
+        "Client testimonial quoting success",
+        "Strategy call / newsletter conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-saas-marketing-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SaaS Marketing Agency Increasing Your Leads & Pipeline | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency service page for B2B SaaS marketing describing offerings: SEO, GEO, content strategy, CRO, web design, analytics, behavioral intelligence, and research. Promises increased leads, examples of client results (self-reported), FAQs, and CTAs to book a strategy call. Claims proprietary B2B SaaS website database and industry awards.",
+      "existing": [
+        "B2B SaaS marketing service descriptions (SEO, CRO, content)",
+        "Client testimonials and self-reported case results",
+        "Proprietary SaaS website database claim (250–300 sites)",
+        "CTAs to book strategy call and view pricing",
+        "FAQs addressing SEO timelines and value",
+        "List of technical services (GA4, analytics integration)",
+        "Industry recognition claim (SEO Agency of the Year)",
+        "Resource links and benchmark report CTA"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-fintech-seo-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Fintech SEO Agency that Fuels Your Pipeline Growth | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency page describing Stratabeat’s fintech-focused SEO and CRO services: fintech SEO, content strategy, GEO/AI search, technical SEO, CRO, digital PR, backlinking, analytics, GA4, visitor detection/ICP fit, behavioral analytics, web design, case studies and a strategy-call CTA. Includes client results claims (traffic and lead growth) and FAQs.",
+      "existing": [
+        "Fintech-focused SEO services",
+        "Compliance-friendly content development",
+        "GEO / AI search optimization",
+        "Conversion rate optimization (CRO)",
+        "Website visitor detection & ICP-content fit",
+        "Digital PR & passive link building",
+        "GA4 audit & analytics reporting",
+        "Fintech-focused technical & on-page SEO"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/medical-device-marketing-agency",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/manufacturing-marketing-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "The B2B Manufacturing Marketing Agency | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency page for B2B manufacturing marketing: offers SEO, content strategy, CRO, technical/on-page SEO, web design, analytics, passive link building, sales enablement, international SEO, original research, behavioral intelligence and a strategy-call CTA. Features claimed client outcomes and FAQs.",
+      "existing": [
+        "Manufacturing-focused SEO & content strategy",
+        "Technical & on-page SEO for large sites",
+        "Conversion rate optimization (CRO)",
+        "Audience insights & sales enablement",
+        "Web development & design",
+        "Passive link building and digital PR",
+        "Analytics, reporting & behavioral intelligence",
+        "International SEO & localized strategies"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/cybersecurity-marketing-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Cybersecurity Marketing Agency | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency page targeting cybersecurity firms: details services including cybersecurity SEO, technical content development, CRO, GA4/analytics, visitor detection/ICP fit, original research, passive link building, web design, consulting and GEO/AI search work. Promotes case studies, client results, and strategy-call CTA.",
+      "existing": [
+        "Cybersecurity-focused SEO & technical content",
+        "Behavioral intelligence & CRO",
+        "Visitor detection-based ICP alignment",
+        "Original research & content atomization",
+        "GA4 audit, integrations & reporting",
+        "Passive link building & digital PR",
+        "Web development & neuroscience-informed design",
+        "Topic & keyword / SERP analysis"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/seo-for-it-companies",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "SEO & Content Marketing Agency for IT Companies | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency homepage targeting IT and B2B tech companies. Promotes SEO, content, CRO, tech SEO, digital PR, GEO/GEO (AI) services, behavioral intelligence, and a 300 B2B tech website database. Includes claims of large client results, FAQs, testimonials, calls-to-action to book strategy calls, and resource links (case studies, downloads). Pricing and contact links present. Content emphasizes neuroscience-driven CRO and dedicated account caps.",
+      "existing": [
+        "SEO services (technical, on-page, topic clusters)",
+        "Content strategy & development",
+        "Conversion rate optimization with behavioral analytics",
+        "Digital PR / authority & link building",
+        "GEO / AI search services",
+        "GA4 audit & analytics reporting",
+        "300 B2B tech website benchmark database (proprietary)",
+        "Book a strategy call / lead form"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/ai-seo-for-saas",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/best-geo-agency",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/stratabeat-pricing",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Your Investment in Greater Marketing Results | Stratabeat Pricing",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Pricing page describing three packaged tiers: Dominate (starting $22k/mo), Scale ($15k–$21k/mo), and Start-Up (from $8k/mo). Each package lists included services (SEO, GEO, CRO, content strategy/development, digital PR, web analytics, Reddit marketing in higher tiers) and shared features (dedicated strategist with 2–4 clients, CRO experts, GA4 config, CRM win-loss analysis). Mentions no long-term contracts and case study links.",
+      "existing": [
+        "Three pricing tiers with monthly ranges",
+        "Dedicated strategist (2–4 client cap)",
+        "CRO experts and behavioral intelligence tools",
+        "Reddit marketing (listed)",
+        "Authority building & digital PR included",
+        "GA4 audit & custom configuration",
+        "CRM win-loss analysis",
+        "No long-term contract, 30-day cancellation"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/contact",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Drop Us a Note | Contact Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Contact page with a lead form collecting name, email, company, title, and message. Lists Stratabeat’s address (1500 District Avenue, Burlington, MA), phone (781.298.3322), and email (hello@stratabeat.com). Prompts for joining team and newsletter; includes LinkedIn follow and mailing list signup.",
+      "existing": [
+        "Lead capture form (name, email, company, title, message)",
+        "Company address and phone number",
+        "Public contact email hello@stratabeat.com",
+        "Newsletter signup and LinkedIn follow",
+        "Careers call-to-action",
+        "Trusted-by/testimonial snippets",
+        "Book a strategy call CTA",
+        "Physical office location in Burlington, MA"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/subscribe",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Gain an Unfair Marketing Advantage | Stratabeat Newsletter",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Subscription page for the Stratabeat newsletter. Describes newsletter value (lead generation and organic growth tips for B2B tech), simple sign-up form fields (name, email, confirm email, privacy checkbox), privacy policy link, and mentions syncing with email add-ons. Site navigation and footer list services, resources, contact info, and awards. Includes testimonial and CTA to start conversation.",
+      "existing": [
+        "Newsletter signup form (name, email, confirm email)",
+        "Privacy policy link",
+        "CTA: Sign Me Up / Start the Conversation",
+        "Footer contact email and social links",
+        "Site navigation to services and resources",
+        "Mention of award: SEO Agency of the Year 2026",
+        "Tip text about syncing an email add-on (Gravity Forms guidance)",
+        "Testimonial quote"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-marketing-strategies",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Marketing Strategies to Grow Your Business | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Long-form marketing strategy article (Mar 11, 2025) explaining B2B marketing strategy vs. plan, target decision-makers, content alignment, ABM, CRO, marketing automation, testing, channels (SEO, GEO, voice, paid, events, LinkedIn, PR), creative/challenger tactics, and advanced strategies. Includes self-reported client result (5X growth via SEO/CRO/content) and CTAs to book a strategy call and related posts.",
+      "existing": [
+        "Article on B2B marketing strategy and tactics",
+        "Definitions: strategy vs. plan",
+        "Descriptions of channels: SEO, GEO, voice, email, LinkedIn, events",
+        "Examples and case references (Zapier, Clearscope, Wix)",
+        "Self-reported client result: 5X growth",
+        "CTA: Book a Strategy Call",
+        "Related posts links and resource center navigation",
+        "Footer contact and awards mention"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-content-strategy",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "How to Build a B2B Content Strategy That Gets Real Results",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "In-depth guide (Feb 18, 2026) on building a B2B content strategy: goals, KPIs, audience segmentation, content audits, formats (blog, research, white papers, video, webinars, reports), distribution, team structure, tooling, measurement, and optimization. Includes self-reported client growth examples and CTA to hire or book a strategy call.",
+      "existing": [
+        "Content strategy guide with step-by-step process",
+        "Content audit and keyword/topic research guidance",
+        "List of content formats and distribution channels",
+        "Team roles and systemization advice",
+        "Tool recommendations (Ahrefs, Clearscope, Airtable, etc.)",
+        "Self-reported client growth results",
+        "CTA: Book a Strategy Call / Hire Stratabeat",
+        "Footer resource links and contact info"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-content-marketing",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "The Advanced Guide To B2B Content Marketing | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Long-form guide explaining B2B content marketing: definitions, differences from B2C, strategy steps (goals, KPIs, personas, content value prop), SEO, distribution (owned/earned/paid), content types (thought leadership, original research, blogs, case studies, white papers, social, email, infographics, podcasts, video, tools), repurposing, community building, measurement, and agency call-to-action. Includes examples, stats, FAQs, and self-promotional claims about Stratabeat services.",
+      "existing": [
+        "Long-form educational blog guide on B2B content marketing",
+        "Sections on strategy, SEO, distribution, and measurement",
+        "Content-type breakdown with examples (blogs, ebooks, webinars, podcasts)",
+        "Advice on content atomization and repurposing",
+        "Calls-to-action to book a strategy call with Stratabeat",
+        "FAQs and related resource links",
+        "References to third-party examples and cited studies",
+        "Footer with contact info and service categories"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-seo",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "The Advanced Guide to B2B SEO | Stratabeat",
+      "state": "Partial",
+      "httpStatus": 200,
+      "note": "Body truncated, too short, or requires rendering. Manual page review needed.",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-website",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "The Ultimate Guide to High-Performance B2B Websites | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Comprehensive guide to building high-performance B2B websites: fundamentals, differences from B2C, audience identification, UX/UI, responsive design, SEO and technical best practices, security, personalization, behavioral analytics, CRO, A/B testing, examples (Asana, Mailchimp, Virtual, Inc.), future trends, and a Stratabeat service pitch to book a strategy call. Includes practical tactics, tool mentions, and a client result claim.",
+      "existing": [
+        "In-depth guide to B2B website best practices and technical SEO",
+        "Sections on audience/personas and UX/UI design",
+        "Behavioral analytics, CRO, and A/B testing guidance",
+        "Security and technical optimization checklist (SSL, WAF, backups)",
+        "Examples and one client case with performance metrics",
+        "Service CTA to book a strategy call",
+        "Related posts and resource links",
+        "Footer with contact info and agency service list"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-blogging",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "The Ultimate Guide to B2B Blogging | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Long-form guide (Jan 17, 2023) on B2B blogging best practices: audience segmentation, customer journeys, question research, documented strategy, KPIs, differentiation, design, keyword and long-tail SEO, Tree Ring Multiplier, on-page SEO, titles, URLs, meta descriptions, topic ideation, long-form content, emotional triggers, video, CTAs, behavioral analytics, IP detection, and calls-to-action. Includes multiple self-reported Stratabeat results and CTAs to book strategy calls or download playbooks.",
+      "existing": [
+        "B2B blogging guide and playbook content (downloadable)",
+        "Behavioral analytics recommendations and tools",
+        "IP detection visitor-identification capability referenced",
+        "Long-form SEO and content best-practice documentation",
+        "Self-reported case study metrics (e.g., 7,235.7% traffic growth)",
+        "Calls-to-action for strategy calls and mailing list opt-ins",
+        "Links to additional resources and related blog posts",
+        "Promotional assets: books and playbooks mentioned"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/research/b2b-saas-seo-study",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "2025 B2B SaaS SEO Performance Report | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Landing page for the 2025 B2B SaaS SEO Performance Report. Promotes a benchmark study of 300 B2B SaaS websites and 15,000+ data points, touts actionable SEO insights (including AI Overviews), and offers a gated download requiring name, company, title, website, and email. Includes testimonial quote and CTA to download the report.",
+      "existing": [
+        "Gated 2025 B2B SaaS SEO Performance Report download",
+        "Form to capture leads (name, title, company, website, email)",
+        "Claims of 300-site dataset and 15,000+ data points",
+        "Mention of AI Overviews impact on SEO",
+        "Promotional CTA to 'Download Report'",
+        "Testimonial quote for social proof",
+        "Links to Resource Center and contact"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-marketing-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Stratabeat: B2B Marketing Agency That Fuels Organic Growth",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency services page describing Stratabeat as a B2B-focused organic growth agency for SaaS and tech. Lists services (SEO, GEO, content strategy and development, CRO, web design, analytics, IP detection, behavioral intelligence, original research), differentiators (neuroscience application, 300-site database, low client load), self-reported client outcomes, pricing CTA, and multiple calls-to-action to book strategy calls or get reports.",
+      "existing": [
+        "Full-service B2B organic growth service list (SEO, CRO, content, web)",
+        "Behavioral intelligence and neuroscience-driven CRO capability",
+        "300 B2B tech website database (proprietary)",
+        "IP detection/website visitor identification offering",
+        "Case study highlights and self-reported results",
+        "GA4, analytics, and dashboard integration claims",
+        "Limited-account-load service model (2–4 accounts per strategist)",
+        "Multiple CTAs to book strategy calls"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-seo-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SEO Agency Fueling Leads & Pipeline Growth | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency landing page describing Stratabeat’s B2B SEO and GEO services for SaaS and tech companies. Highlights include integrated SEO, Generative Engine Optimization (GEO), CRO rooted in behavioral intelligence, a 300-site B2B tech database, case study claims (7,235.7% traffic growth), service lists, testimonials, FAQs, and CTAs to book strategy calls.",
+      "existing": [
+        "B2B SEO services (technical, on-page, audits)",
+        "Generative Engine Optimization for AI answers",
+        "Conversion Rate Optimization using behavioral intelligence",
+        "Audience insights via CRM, sales call analysis, IP detection",
+        "Technical SEO fixes, structured data, GA4/GTM configuration",
+        "Authority building and link-building campaigns",
+        "300 B2B tech website benchmark database",
+        "Custom reporting and dashboards"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-content-marketing-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Content Marketing Agency Fueling Leads & Pipeline Growth",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Landing page promoting Stratabeat’s B2B content marketing services for tech and SaaS firms. Emphasizes strategic content that converts, integration with SEO and CRO, content production (white papers, video), original research, analytics integrations, IP detection, testimonials, industry focus, and CTAs for strategy calls.",
+      "existing": [
+        "Content strategy & planning",
+        "SEO copywriting and content development",
+        "White papers, video and content production",
+        "Original research and content atomization",
+        "Passive link-building through content",
+        "Behavioral intelligence for content performance",
+        "Analytics integration (GA4, GSC, Salesforce, HubSpot)",
+        "Conversion optimization tied to content"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-content-strategy-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Grow Leads & Build Pipeline: B2B Content Strategy Agency | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Page detailing Stratabeat’s B2B content strategy offerings: audience research, SEO topic clusters, strategic planning, content briefs, content atomization, CRO, web development, and benchmarking from their 300-site database. Reiterates industry focus, FAQs, case study highlights, and booking CTAs.",
+      "existing": [
+        "Audience research including sales call interviews",
+        "SEO topic clusters and keyword research",
+        "Detailed content briefs including design needs",
+        "Content atomization and distribution",
+        "CRO and neuromarketing consulting",
+        "Web development and landing page optimization",
+        "300 B2B website database for benchmarking",
+        "Ongoing optimization and reporting"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-saas-seo-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SaaS SEO Agency Fueling Your Leads & Pipeline Growth | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Agency landing page for Stratabeat’s B2B SaaS SEO service. Promotes SEO & GEO-focused organic growth, CRO, behavioral intelligence, IP detection for identifying visiting companies, technical SEO, content strategy, audits, analytics, and a low client-to-strategist ratio. Features claims of large client case results, FAQs, calls-to-action to book strategy calls, pricing link, and resource links. Emphasizes no long-term contracts and neuroscience-based CRO.",
+      "existing": [
+        "SEO audits & technical SEO",
+        "Keyword & SERP analysis",
+        "Content strategy & SEO copywriting",
+        "Conversion rate optimization (CRO)",
+        "Behavioral intelligence & neuroscience insights",
+        "IP detection / visitor identification",
+        "GEO (Generative Engine Optimization) integration",
+        "GA4 audit & analytics reporting"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/b2b-saas-content-marketing-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B SaaS Content Marketing Agency for Pipeline Growth | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Landing page for Stratabeat’s B2B SaaS content marketing service. Focuses on content-driven pipeline growth, SEO-integrated content, content production (blogs, whitepapers, video, social), content atomization, audience research, CRO, and review site optimization. Repeats claims of high-growth case studies, emphasizes small account loads per strategist, and invites strategy calls and downloads.",
+      "existing": [
+        "Content marketing strategy & content production",
+        "Content atomization & multi-format distribution",
+        "Audience & VOC research (sales interviews, call analysis)",
+        "SEO topic clusters & on-page optimization",
+        "Review site optimization",
+        "Passive link-building & digital PR",
+        "Behavioral intelligence & heatmaps",
+        "International content strategies"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/generative-engine-optimization-geo-agency",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "GEO Agency That Fuels Your Visibility in AI Search | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Page describing Stratabeat’s Generative Engine Optimization (GEO/AEO) services for AI-driven search (ChatGPT, Perplexity, Google AI Overviews, Gemini). Lists GEO tactics: schema/structured data, entity SEO, LLM retrievability, AI keyword forecasting, prompt research, content restructuring, authority building, and GEO audits. Highlights GEO metrics and case examples, plus integration with SEO and CRO.",
+      "existing": [
+        "GEO/GEO audit & readiness reviews",
+        "Schema & structured data implementation",
+        "Entity SEO & topical authority building",
+        "AI keyword forecasting & trend analysis",
+        "AI prompt research & conversational alignment",
+        "Technical GEO and site architecture optimization",
+        "GEO performance tracking & trust-signal monitoring",
+        "Integration of GEO with SEO and CRO"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/privacy-policy",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/author/the-stratabeat-team",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/audience-insights-solve-b2b-marketing-challenges",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-growth-strategies",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/destroy-mediocre-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/case-studies/seo",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "SEO Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Archive page listing Stratabeat SEO case studies and awards mention (SEO Agency of the Year 2026). Displays many case study headlines with brief metrics (traffic growth, SQOs, revenue increases) and site navigation (services, resources, contact). Includes CTA to book a strategy call and contact info. Company results are presented as headlines only.",
+      "existing": [
+        "SEO case study headlines with performance metrics",
+        "Award claim: SEO Agency of the Year 2026",
+        "Navigation to services and resources",
+        "CTA: Book a Strategy Call",
+        "Contact email: hello@stratabeat.com",
+        "Links to social: LinkedIn, YouTube",
+        "Resource downloads and studies referenced",
+        "Industry specialization list"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/case-studies/content",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Content Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Archive page showing Stratabeat content marketing case studies and the same award mention. Lists numerous case study titles claiming outcomes (lead growth, traffic increases, product adoption, training reach). Site navigation, resources, CTAs and contact info are present. Results shown as brief headlines and metric claims.",
+      "existing": [
+        "Content-focused case study headlines with metrics",
+        "Award claim: SEO Agency of the Year 2026",
+        "Navigation to services and downloads",
+        "CTA: Book a Strategy Call",
+        "Contact email: hello@stratabeat.com",
+        "Resource Center and Knowledge Hub links",
+        "Industry and service taxonomy (e.g., GEO, B2B SaaS)",
+        "Social links: LinkedIn, YouTube"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/case-studies/website",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Website Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Archive page listing website and CRO case studies with an award mention. Shows multiple headlines claiming outcomes (revenue growth, traffic increases, lead growth) plus navigation to services, resources, contact and CTA to book a strategy call. Case study results are presented as short metric-led headlines.",
+      "existing": [
+        "Website/CRO case study headlines with performance claims",
+        "Award claim: SEO Agency of the Year 2026",
+        "Site navigation: services, industries, resources",
+        "CTA: Book a Strategy Call",
+        "Contact email: hello@stratabeat.com",
+        "Resource downloads and benchmark studies",
+        "Industry specializations listed",
+        "Social links: LinkedIn, YouTube"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/case-studies/cro",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "CRO Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Stratabeat CRO case-studies index page listing numerous CRO, SEO, and content case studies with brief headlines (e.g., traffic and revenue growth metrics). Site navigation and repeated service lists, resources, contact info, and legal/footer links are present. Mentions agency awards and a call-to-action to book a strategy call.",
+      "existing": [
+        "CRO case studies with client outcome headlines (traffic, revenue, leads)",
+        "SEO services and GEO (AI search) services listed",
+        "Content marketing strategy and content development services",
+        "Web design, web analytics, and conversion rate optimization services",
+        "Digital PR & authority building, Reddit marketing",
+        "Contact channels: email hello@stratabeat.com and strategy call CTA",
+        "Resource center: case studies, blog, knowledge hub, downloads",
+        "Self-reported award: SEO Agency of the Year (2026 US Agency Awards)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/provenir",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Quadrupling Leads in Year One of New Website | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study: Stratabeat redesigned and relaunched Provenir’s website, aligning design with the brand and building SEO into the site. Reported results within months: +86.1% organic traffic, +97.7% unique visitors, quadrupled leads in year one. Site won Davey and AVA Digital gold awards. Activities: site IA, responsive design, technical and on‑page SEO, audience self‑selection features. Includes CTA to book a strategy call.",
+      "existing": [
+        "Website design and responsive development",
+        "Information architecture and visual redesign",
+        "Technical and on‑page SEO implementation",
+        "Audience/industry self‑selection paths on site",
+        "Award recognition for design",
+        "Reported analytics metrics (traffic, visitors)",
+        "Lead generation tracking (quadrupled leads)",
+        "Strategy call / newsletter conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/mycase",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Increasing SaaS Leads by 427% within Seven Months » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study: Stratabeat developed and ran integrated digital marketing for MyCase (SEO, content, paid search, display, retargeting, LinkedIn ads) and supported a site redesign. Reported outcomes: +427% leads in seven months, +125% organic traffic in one year, +217% paid search conversions in six months; contributed to MyCase’s $193M acquisition. Includes content calendar/copywriting and ongoing SEO recommendations.",
+      "existing": [
+        "Integrated digital marketing (SEO, paid, display, retargeting)",
+        "Content strategy, calendar and copywriting",
+        "SEO recommendations during site redesign",
+        "Paid search restructuring and testing",
+        "LinkedIn advertising campaigns",
+        "Conversion tracking and reporting (leads, conversions)",
+        "Reported client acquisition result ($193M acquisition)",
+        "Strategy call / newsletter conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/b2b-payments-and-ar-automation-platform",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "From Invisible to 4X Lead Growth for a B2B Fintech | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for TreviPay (B2B fintech) showing SEO + Generative Engine Optimization (GEO) work. Reports 9-month outcomes: 4X quarterly organic+LLM qualified leads vs prior quarter, 1,140% growth in top-3 VIP keywords, 479.5% growth in page 1–3 non-branded keywords, 407.8% growth in AI Overviews, 32% ChatGPT visibility in 90 days. Describes tactics: technical SEO, topic hub, 27 pieces of content in first 90 days, buyer-aligned content, internal linking, LLM-friendly structure.",
+      "existing": [
+        "SEO services (technical SEO, on-page)",
+        "Generative Engine Optimization (GEO) for LLMs/ChatGPT",
+        "Content development and topic hub creation",
+        "Buyer-aligned content mapping (CFOs, procurement)",
+        "Content production at scale (27 assets in 90 days)",
+        "Internal linking and site structure optimization",
+        "AI / ChatGPT visibility tracking and reporting",
+        "Landing pages and blog-to-solution funnels"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/product-discovery-platform",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "#1 in AI Search & 4.3x Organic Traffic Growth | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for Zoovu (enterprise product discovery/catalog platform) over a 30-month engagement. Reports 4.3x organic traffic growth (1,800→7,700/mo), #1 AI search visibility, 13.3x top-3 rankings growth, 6x organic traffic value, and 100% positive AI sentiment. Describes deep product fluency, CRM/win-loss analysis, technical SEO, site architecture, landing pages, expert technical long-form content, case studies, and GEO efforts with AI performance tracking.",
+      "existing": [
+        "SEO site architecture and technical optimization",
+        "Landing page development for high-intent clusters",
+        "Expert-level long-form content and case studies",
+        "CRM & win/loss analysis for audience insights",
+        "Sales-call-based buyer research",
+        "GEO/AEO for LLM visibility and entity signals",
+        "AI performance tracking (Scrunch.ai)",
+        "Conversion-focused site restructuring"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/ai-voice-saas",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Rapid SaaS Growth: 11.8x Nonbranded Organic Traffic | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for WellSaid (AI text-to-speech SaaS) showing rapid gains in 90 days: 11.8x non-branded organic traffic, 209% increase in ChatGPT mentions, organic traffic exceeding paid while costing 88.2% less, and 10+ Fortune 500 leads. Describes tactics: non-branded keyword strategy, technical SEO, CRO, GEO for LLM citations, analytics/dashboarding, and ongoing optimization linking search to MQLs, trials, and pipeline.",
+      "existing": [
+        "Non-branded keyword strategy and prioritization",
+        "Technical SEO and indexation fixes",
+        "Conversion rate optimization (CRO)",
+        "GEO/LLM visibility and citation optimization",
+        "Analytics dashboards integrating Search Console",
+        "Search-to-pipeline measurement (MQLs, trials)",
+        "Content optimized for AI and traditional search",
+        "Ongoing iterative optimization framework"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/data-training-provider",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "68% Revenue Growth in 90 Days After Site Relaunch | Stratabeat",
+      "state": "Partial",
+      "httpStatus": 200,
+      "note": "Page contents could not be reliably reviewed.",
+      "summary": "Case study describing a corporate and training website relaunch for a data governance and training provider. Stratabeat pruned ~40k pages, redesigned the corporate site (dataversity.net), optimized a training site (training.dataversity.net), implemented SEO, CRO, content hubs, unified lead-gen, analytics, and visitor-detection. Reports: +235.4% organic conversions (corporate), +104% (training), and +67.9% monthly revenue growth within 90 days. Includes service and resource links.",
+      "existing": [
+        "Corporate website redesign (dataversity.net)",
+        "Training site optimization (training.dataversity.net)",
+        "Content pruning/crawl budget recovery (~40k pages removed)",
+        "Topical hub content strategy",
+        "CRO and e-commerce product discovery improvements",
+        "Unified lead generation system and integrated calendar (Asana)",
+        "Analytics setup: GA4, UTM tracking, Salesforce integration",
+        "Visitor detection tools: RB2B and Leadfeeder"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/b2b-financial-services-company",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "138.1% SQO Growth in 3 Months | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for a B2B financial services firm where Stratabeat executed SEO, GEO, CRO and content programs to boost AI/LLM visibility, Google rankings, and local pages. Reports in three months: +138.1% sales opportunities QoQ, 3.4x monthly sales opportunities vs. yearly average, +61.6% MQLs QoQ, #1 visibility in tracked LLM prompts, and +79.4% active users on location pages.",
+      "existing": [
+        "Full-funnel SEO + GEO program",
+        "CRO and content development",
+        "LLM/AI visibility tracking and optimization",
+        "Location page optimization",
+        "Lead and pipeline reporting improvements",
+        "Sales-qualified opportunity tracking",
+        "GEO (AI search) optimizations",
+        "Service/category visibility tracking"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/masttro",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Masttro's Rise in the Family Office Software Market",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study showing Masttro’s SEO-led market growth after partnering with Stratabeat in Jan 2025. Strategy included full-funnel content for buyer stages and keyword-first structuring optimized for search and AI tools. Reported outcomes over four months: +222% organic MQLs, +242.9% AI-search traffic, +74.8% new keywords, +390% growth in top-3 rankings for key terms, +109.1% organic traffic, and +114.3% traffic value. Anecdote of Masttro ranking #1 in ChatGPT Deep Research results.",
+      "existing": [
+        "Full-funnel content strategy across buyer stages",
+        "SEO optimized for LLM/AI discovery",
+        "Conversion-focused content and structuring",
+        "Keyword-first site architecture",
+        "Metrics tracking for organic and AI-driven traffic",
+        "Competitive comparison/content for category ownership",
+        "Reported increases in MQLs and keyword rankings",
+        "Use-case anecdotes for AI search discovery"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/llc-attorney",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Driving a 183% Organic Traffic Increase for a Business Formation Platform",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for LLC Attorney describing a full rebrand, website redesign, technical SEO, and content program focused on state and industry pages. Reports 351.1% organic traffic growth in 13 months, 241.8% increase in non-branded page-one keywords, 417.4% increase in AI/LLM traffic, and more than 100,000 new companies formed. Details on branding, site rebuild, SEO/GEO, and content development (50 state pages, side-hustle series, industry pages). Includes testimonial and CTA to book a strategy call.",
+      "existing": [
+        "Website redesign and UX improvements",
+        "Technical SEO and on-page optimization",
+        "Content development: 50 state guides",
+        "Industry-specific content pages",
+        "Side Hustle topic cluster",
+        "Structured data and AI/LLM-focused content",
+        "Branding and messaging collateral (ebooks, booth, merch)",
+        "Measurement: rankings and traffic reporting"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/fourth",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "$1.3MM in Restaurant SaaS Sales Pipeline | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for Fourth (restaurant/hospitality SaaS) detailing a multi-funnel content strategy to support GTM in HR/PEO space. Stratabeat created content from informational pieces to ROI calculators, product comparison pages, and industry resources; supported PPC campaigns and niche keyword targeting. Reports $1.3M cumulative PEO sales-qualified opportunity value in six months, 360% increase in PEO traffic value, 59% increase in PEO-related keywords, and 90,000 more PEO organic impressions. Includes testimonial and CTA to book a strategy call.",
+      "existing": [
+        "Multi-funnel content (TOFU–BOFU)",
+        "ROI calculators and landing pages",
+        "Product comparison pages",
+        "Industry-specific content and keyword targeting",
+        "PPC campaign support",
+        "SEO-first content strategy",
+        "Pipeline/SQO tracking tied to CRM",
+        "Performance reporting (traffic, impressions, keyword counts)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/litmus",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Driving Greater B2B Email Marketing SaaS Results | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for Litmus (email marketing SaaS) covering an integrated SEO, CRO, and content strategy to shift blog from TOFU to full-funnel. Activities included hub-and-spoke keyword strategy, CTA matrix, product-led content, content atomization, and sales enablement case studies. Reports 655% growth in non-branded rankings for VIP topics, 272% increase in non-branded rankings for priority hubs, 38% lift in traffic moving to money pages, 37% YoY enterprise lead growth, and contributed to Litmus being acquired by Validity. Includes testimonial and CTA to book a strategy call.",
+      "existing": [
+        "Hub-and-spoke SEO strategy",
+        "CRO and CTA matrix implementation",
+        "Product-led content and MOFU/BOFU streams",
+        "Content atomization and repurposing",
+        "Industry-specific content hubs",
+        "Help-center topic mining (169 topics)",
+        "Dashboards for rankings and funnel performance",
+        "Enterprise lead tracking and reporting"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/ai-saas-startup-case-study",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Rapid 387.5% Traffic Growth for an AI SaaS Startup | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study describing Stratabeat’s SEO and website work for an AI SaaS startup. Describes a site relaunch, launch of blog/newsroom, and production of 25 non-branded blog posts (~50k words) plus technical/on-page SEO and web development. Reports rapid results within 5 months: +387.5% organic traffic (nonbranded), +341.8% nonbranded keywords on Google Page One, +2,745.7% nonbranded impressions, and a 3-week site relaunch timeline. Includes call-to-action to book a strategy call.",
+      "existing": [
+        "Website relaunch completed in under 3 weeks",
+        "Thought leadership destination: blog and newsroom",
+        "Content production: 25 blog posts (~50k words) in 5 months",
+        "Technical SEO and web development",
+        "On-page SEO and optimized content",
+        "Industry-specific (brand safety/suitability) content",
+        "Non-branded keyword targeting and scaling",
+        "Call-to-action: Book a Strategy Call"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/medtech-company",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Increasing Organic Traffic by 1,261% for a MedTech Leader | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study of Stratabeat’s SEO transformation for a GE HealthCare product line. Details technical SEO, on-page/content work (including video/YouTube optimization), authority building/backlink consolidation, and global SEO guidelines/hreflang implementation. Reports outcomes: +1,260.7% monthly organic traffic, 443 Google Top 10 non-branded keywords, 139 Google #1 keywords, and a 55% higher SEO conversion rate vs paid.",
+      "existing": [
+        "Technical SEO audit and code overhaul (reduced file size >60%)",
+        "On-page SEO and content rewrite",
+        "YouTube/video optimization (100+ videos)",
+        "Authority building and backlink acquisition",
+        "Consolidation of digital properties to central site",
+        "Global SEO guidelines and hreflang tags",
+        "Training for IT/global SEO processes",
+        "Call-to-action: Book a Strategy Call"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/sciessent",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Sciessent Brand Strategy & Website Case Study | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study describing Stratabeat’s brand, website, and lead-gen work for Sciessent. Deliverables included a 185-page Brand Strategy, multi-language website (Chinese, Vietnamese, Spanish), redesigned sales presentations, SEO and lead-generation work, and a podcast. Reported results: +288.5% page views in 8 months, +164.5% organic traffic in 8 months, and +125% annual revenue within two years. Includes client testimonial and CTA to book a strategy call.",
+      "existing": [
+        "185-page Brand Strategy from customer research",
+        "Website design and development in three languages",
+        "Sales presentation overhaul and sales support",
+        "SEO and lead-generation programs",
+        "Podcast development and production",
+        "Day-to-day marketing execution support",
+        "Multilingual content and global targeting",
+        "Call-to-action: Book a Strategy Call"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/intel",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Intel Digital Marketing Training Case Study | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study describing Stratabeat’s customized 8-part digital marketing training and online digital library built for Intel’s global retail partners. Emphasizes global scope, on-demand learning, and Stratabeat’s experience with Fortune 500 clients. Includes contact prompts and newsletter signup.",
+      "existing": [
+        "Customized 8-part digital marketing training course",
+        "Online digital library for on-demand learning",
+        "Global delivery capability for retail partners",
+        "Experience servicing Fortune 500 clients",
+        "Newsletter signup as a lead capture",
+        "Strategy call booking as conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/perlu",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Influencer Marketing Network Grows to 20K+ Members | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for Perlu detailing content and community growth: launched blog, newsletters, video content, podcast and outreach. Reports growth to 20k+ active members, global reach (65 countries), #1 Google ranking for target keywords, Fortune 500 leads, and eventual acquisition by CJ (Publicis Groupe). Includes testimonial and contact prompts.",
+      "existing": [
+        "Blog creation and content production",
+        "Newsletter distribution and lead nurturing",
+        "Podcast production and guest outreach",
+        "Behavioral analytics and A/B testing",
+        "SEO/organic ranking achievements (self-reported)",
+        "Strategy call booking and newsletter capture",
+        "Testimonial and acquisition claim (self-reported)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/catalyst",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Catalyst Website Design & Development Success Story | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study about a full rebranding and website redesign for Catalyst. Describes brand repositioning around “Innovation,” new logo/identity, responsive website, SEO built into site, content creation, and marketing support. Reports site traffic +265%, organic +121%, blog page views +510%, and award wins (WebAward, SCA) — all self-reported.",
+      "existing": [
+        "Full rebranding and visual identity redesign",
+        "Responsive website and landing page development",
+        "SEO integrated into site architecture",
+        "Content creation for thought leadership blog",
+        "Style and copywriting guidelines for brand consistency",
+        "Reported analytics results and award wins (self-reported)",
+        "Strategy call booking and newsletter capture"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/virtual",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Virtual Website Design & Build Success Story | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for Virtual, Inc.: Stratabeat redesigned a 108-page brand strategy and a new website applying neuromarketing principles to refresh Visual’s brand. The page highlights a 107.4% increase in organic site traffic and 114.9% increase in page views within six months, plus calls-to-action to book a strategy call and subscribe to a newsletter.",
+      "existing": [
+        "Brand strategy: 108-page deliverable",
+        "Website design and build",
+        "Neuromarketing-informed visual design",
+        "SEO-focused content to boost organic traffic",
+        "Social proof and messaging/snackable content",
+        "Newsletter subscription as conversion path",
+        "Book a Strategy Call CTA",
+        "Company contact (email) and social links"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/officeworks",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Officeworks Rebranding & Website Redesign | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for Officeworks: Stratabeat produced a 67-page Brand Strategy, complete rebrand (logo, tagline, messaging), responsive website, marketing collateral and videos. The page reports Officeworks grew from one to eight locations and 5X annual revenue during Stratabeat’s engagement.",
+      "existing": [
+        "67-page Brand Strategy",
+        "Full rebranding: logo, tagline, messaging",
+        "Responsive website design",
+        "Marketing collateral and video production",
+        "Awards entry design (won 1st place)",
+        "Long-term marketing support (6 years)",
+        "Book a Strategy Call CTA",
+        "Company contact (email) and social links"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/prohealth-partners",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "ProHealth Partners Website Success Story | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for ProHealth: Stratabeat delivered a brand revitalization including logo redesign (EKG-inspired), Brand Style Guide, responsive website, recruitment and lead-generation focused UX, SEO integration, and marketing brochures. The page cites positive client feedback and ProHealth’s 1,000,000+ patient visits since 2008.",
+      "existing": [
+        "Logo redesign and Brand Style Guide",
+        "Responsive website with improved UX and funnels",
+        "SEO integration for visibility",
+        "Marketing brochures and collateral",
+        "Audience targeting for clients and hires",
+        "Client testimonial (Brock Fay)",
+        "Book a Strategy Call CTA",
+        "Company contact (email) and social links"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/portfolio/vi3",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Vi3 Website Design & Build Case Study | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Case study for Vi3 describing a full rebrand: new name/logo/visual identity, a vibrant responsive website, sales deck, stationery, van wrap, marketing collateral and a 156-page brand strategy emphasizing “Data Intelligence.” Includes client quote praising Stratabeat and a call-to-action to book a strategy call.",
+      "existing": [
+        "Brand strategy document (156 pages)",
+        "New name and logo",
+        "Responsive website",
+        "Sales presentation/deck",
+        "Marketing collateral and stationery",
+        "Van wrap design",
+        "Client testimonial quote",
+        "Call-to-action: Book a Strategy Call"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/generative-engine-optimization-geo-audit",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/services/business-blogging",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Business Blogging Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Service page for Stratabeat’s B2B business-blogging offering: SEO-optimized blogging, topic/keyword research, SERP analysis, content calendars, copywriting, CTAs, analytics and conversion optimization. Includes case-study highlights (percent and traffic-value claims), FAQs, resources and CTAs to book a strategy call.",
+      "existing": [
+        "SEO-optimized blog writing",
+        "Topic & keyword research",
+        "SERP & competitive analysis",
+        "Content calendar and briefs",
+        "Copywriting and editing",
+        "Conversion optimization & analytics",
+        "Case study performance claims",
+        "Call-to-action: Book a Strategy Call"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/passive-backlinks",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/content-repurposing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/increase-conversion-rate",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/ui-and-ux",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/behavioral-analytics",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/ip-detection-for-lead-generation",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/seo-roi-calculator",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/keyword-research",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/dominate-google-serp",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/internal-linking",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/content-hub",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/youtube-seo",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/seo-metrics",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-saas-seo-performance-report-released",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/seo-insights",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/content-promotion",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/content-atomization",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/roi-of-blogging",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-saas-marketing-strategies",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/generative-engine-optimization-geo",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/job/copywriter",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/job/seo-analyst",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/job/seo-content-strategist",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/saas-link-building",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/best-b2b-saas-websites",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/author/tom-shapiro",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/author/alexis-trammell",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/author/sagar-shukla",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/author/stephanie-trovato",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/author/frida-garcia",
+      "foundBy": "Sitemap",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/about/testimonials",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Stratabeat Client Testimonials",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "A long testimonial page compiling client quotes and endorsements from many named clients and executives praising Stratabeat’s strategy, SEO, branding, web design, results (self-reported increases), responsiveness and partnership approach.",
+      "existing": [
+        "Multiple client testimonials with named companies",
+        "Self-reported performance claims (e.g., 400% revenue increase)",
+        "Named client contacts/titles",
+        "Descriptions of services delivered (SEO, branding, web)",
+        "Repeated praise for responsiveness and partnership",
+        "Call-to-action: Book a Strategy Call",
+        "Contact email shown in footer",
+        "Industry recognition/awards mentioned"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/green-tech-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/about/strataventures",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "StrataVentures for Student Entrepreneurship",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "StrataVentures is Stratabeat’s program investing in community college students to help launch businesses. They offer funding, marketing support, networks, strategic advice, and skills training. The page details benefits for students and community colleges, says Stratabeat invests 3% of profits to advance economic equity, and invites colleges to partner or contact them.",
+      "existing": [
+        "Investment funding for student business ideas",
+        "Marketing team support for student ventures",
+        "Access to Stratabeat networks and business contacts",
+        "Strategic startup, sales, and marketing advice",
+        "Skills training and tools for venture growth",
+        "Partnerships with community colleges",
+        "3% profit reinvestment to advance economic equity",
+        "Contact/partnership inquiry conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/why-invest-in-seo",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "Should You Invest in SEO in 2026? A Data-Based Answer.",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Article (Jan 8, 2026) arguing that SEO remains a high-ROI channel in 2026 and should be pursued alongside GEO (generative engine optimization). Presents data comparisons (Google vs ChatGPT volumes), case examples of client gains, study results on AI Overviews and original research benefits, and tactical guidance areas (TOFU/MOFU/BOFU, measurement, SERP features). Promotes Stratabeat SEO/GEO services and strategy calls.",
+      "existing": [
+        "Data-backed thought leadership content on SEO/GEO",
+        "Proprietary studies on AI Overviews and SEO performance",
+        "Client performance claims (self-reported)",
+        "Calls-to-action to book strategy calls",
+        "Guidance on content types (MOFU/BOFU/original research)",
+        "Measurement and analytics integration recommendations",
+        "Resources links to related SEO posts and studies",
+        "Contact/strategy call conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/technology-content-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-saas-gtm-strategy",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/cybersecurity-lead-generation",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-fintech-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/overcome-sensory-adaptation-through-effective-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/digital-summit-dallas-2021",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-saas-seo",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/increase-saas-demo-requests",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/big-bold-boundless-bets",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/behavioral-segmentation-for-higher-marketing-roi",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/clearscope-webinar-october-2021",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/category/seo",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "SEO & GEO Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Category landing page for SEO & GEO content on Stratabeat. Repeats site navigation, service lists, resource links, and CTAs. Shows topic tags (SEO & GEO, content, marketing strategy) and links to company contact and resources; no detailed articles visible in the extracted text.",
+      "existing": [
+        "SEO & GEO category label and topic tags",
+        "Service lists including SEO, GEO, content strategy",
+        "Resource links: case studies, blog, knowledge hub",
+        "Company contact: hello@stratabeat.com and strategy call CTA",
+        "Repeated navigation and footer content across site",
+        "Mentions award: SEO Agency of the Year (2026)",
+        "Downloads and benchmark studies referenced",
+        "Industry specializations listed (e.g., SaaS, fintech, manufacturing)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/category/content",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Content Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Content category landing page for Stratabeat. Contains site-wide navigation and service listings, topic tags (content, SEO & GEO, marketing strategy), resource and contact links, and prompts to book a strategy call. Extracted text shows repeated site structure rather than specific article content.",
+      "existing": [
+        "Content category label and topic tags",
+        "Service lists including content marketing strategy and content development",
+        "Resource center links: blog, case studies, knowledge hub",
+        "Contact info and CTA: hello@stratabeat.com and book a strategy call",
+        "Mentions agency award and footer/legal links",
+        "References to downloads like B2B blogging playbook",
+        "Industry focus areas (B2B, SaaS, fintech, cybersecurity)",
+        "Repeated navigation/menu structure visible"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/category/marketing-strategy",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Marketing Strategy Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Category landing page for 'Marketing Strategy' on Stratabeat. Repeats site navigation, services, resources, and tags (SEO, GEO, Content, B2B Websites, Brain Science). Mentions industry recognition and a prompt to 'Start the Conversation.' Contains links to services, downloads, contact info, and resource categories. No article content excerpts present in the supplied text.",
+      "existing": [
+        "SEO Services (listed)",
+        "GEO Services (listed)",
+        "Content Marketing Strategy (listed)",
+        "Content Development (listed)",
+        "Reddit Marketing (listed)",
+        "Digital PR & Authority Building (listed)",
+        "Web Design (listed)",
+        "Web Analytics & CRO (listed)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/category/b2b-websites",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "B2B Websites Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Category landing page for 'B2B Websites' on Stratabeat. Supplied text mirrors site-wide navigation and resources: services, topics, downloads (SaaS SEO Benchmark, B2B Blogging Playbook), contact details, and industry focus (B2B, SaaS, Fintech, Cybersecurity, Manufacturing). No article bodies included in the extract.",
+      "existing": [
+        "SEO Services (listed)",
+        "GEO Services (listed)",
+        "Content Marketing Strategy (listed)",
+        "Content Development (listed)",
+        "Reddit Marketing (listed)",
+        "Digital PR & Authority Building (listed)",
+        "Web Design (listed)",
+        "Conversion Rate Optimization (listed)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/category/brain-science",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Brain Science Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Category landing page for 'Brain Science' on Stratabeat. Supplied text repeats global navigation, services list, topic tags, resource center, downloads, and contact info. Indicates company awards and a call to start a conversation. No detailed posts or research excerpts included in the supplied text.",
+      "existing": [
+        "SEO Services (listed)",
+        "GEO Services (listed)",
+        "Content Marketing Strategy (listed)",
+        "Content Development (listed)",
+        "Reddit Marketing (listed)",
+        "Digital PR & Authority Building (listed)",
+        "Web Design (listed)",
+        "Web Analytics (listed)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/category/stratabeat-news",
+      "foundBy": "Navigation",
+      "required": true,
+      "title": "Stratabeat Archives » Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Category/archive page for Stratabeat news. Repeats site navigation, service lists, resources, topics, and contact info. Announces “SEO Agency of the Year” 2026 and includes links to strategy call, newsletter, downloads, and resource hub. Mostly navigation and site taxonomy; no detailed case content on this page.",
+      "existing": [
+        "Announcement: SEO Agency of the Year (2026)",
+        "Navigation to Services & Solutions",
+        "Links to Resource Center and Downloads",
+        "Newsletter signup/conversion path",
+        "Contact email (hello@stratabeat.com)",
+        "Book a Strategy Call conversion path",
+        "Links to topics and case studies",
+        "Social links (LinkedIn, YouTube)"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/decision-science-secrets-at-digimarcon-world-2020",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/alexis-trammell-honored-2023-top-women-in-marketing-award",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/saas-content-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-content-marketing-strategy-for-lead-generation",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/how-to-drive-traffic-to-your-website",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/modern-website-design",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/search-intent",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/fintech-seo",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/fintech-content-marketing-strategy",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/services/b2b-content-creation-services",
+      "foundBy": "Internal link",
+      "required": true,
+      "title": "B2B Content Development Services | Stratabeat",
+      "state": "Reviewed",
+      "httpStatus": 200,
+      "note": "Extracted page text reviewed; company claims are not independently verified.",
+      "summary": "Service page describing Stratabeat’s B2B content development offerings for SaaS and tech companies. Emphasizes SEO and GEO-engineered content, audience-first research, proprietary data-informed briefs, a dedicated strategist model, and a full list of deliverables (blogs, white papers, research, pillar pages, case studies, content atomization). Includes client testimonial and CTA to book a strategy call.",
+      "existing": [
+        "B2B content strategy and editorial planning",
+        "Audience/voice-of-customer research and interviews",
+        "SEO and GEO content briefs and keyword research",
+        "Original research and data study production",
+        "Content atomization for social/short video/PR",
+        "Analytics and integrations (GA4, GTM, CRM) for pipeline tracking",
+        "Dedicated content strategists (2–4 accounts each)",
+        "Pricing view and strategy call conversion path"
+      ]
+    },
+    {
+      "url": "https://stratabeat.com/marketing-flywheel",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/scaling-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/creative-teams",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-customer-journey",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/account-based-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/guerrilla-marketing",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/seo-trends",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/ai-generated-content-risks",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/long-form-content",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-content-marketing-trends",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/saas-seo-strategy",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/seo-for-technology-companies",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/transforming-your-blog-into-a-lead-generation-engine",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-blog-strategy",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/b2b-marketing-conferences",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    },
+    {
+      "url": "https://stratabeat.com/scaling-your-content-marketing-engine",
+      "foundBy": "Internal link",
+      "required": false,
+      "title": "",
+      "state": "Discovered",
+      "httpStatus": null,
+      "note": "",
+      "summary": "",
+      "existing": []
+    }
+  ],
+  "checks": [
+    {
+      "url": "https://stratabeat.com/robots.txt",
+      "outcome": "HTTP 200"
+    },
+    {
+      "url": "https://stratabeat.com/sitemap.xml",
+      "outcome": "HTTP 200"
+    },
+    {
+      "url": "https://stratabeat.com/sitemap_index.xml",
+      "outcome": "HTTP 504"
+    },
+    {
+      "url": "https://stratabeat.com/post-sitemap.xml",
+      "outcome": "Fetch failed"
+    },
+    {
+      "url": "https://stratabeat.com/page-sitemap.xml",
+      "outcome": "Fetch failed"
+    },
+    {
+      "url": "https://stratabeat.com/project-sitemap.xml",
+      "outcome": "HTTP 200"
+    },
+    {
+      "url": "https://stratabeat.com/playbook-sitemap.xml",
+      "outcome": "HTTP 200"
+    },
+    {
+      "url": "https://stratabeat.com/job-sitemap.xml",
+      "outcome": "HTTP 200"
+    },
+    {
+      "url": "https://stratabeat.com/research-sitemap.xml",
+      "outcome": "HTTP 200"
+    },
+    {
+      "url": "https://stratabeat.com/author-sitemap.xml",
+      "outcome": "HTTP 200"
+    }
+  ],
+  "limitations": [
+    "HTML crawl only: JavaScript-only links, external navigation destinations and search indexing require separate verification. No claim of whole-site coverage.",
+    "A sitemap could not be read. Discovery is incomplete.",
+    "External navigation links were found and were not crawled; verify connected sites separately."
+  ]
+}

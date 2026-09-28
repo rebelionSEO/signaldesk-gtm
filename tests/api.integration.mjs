@@ -39,7 +39,7 @@ console.log('PASS: authentication, persistence, stale-write protection, origin c
 const agencyCopy=await call('/api/projects','POST',{id:crypto.randomUUID(),brief,example:true,exampleId:'stratabeat'});
 assert.equal(agencyCopy.status,201,JSON.stringify(agencyCopy.data));
 assert.equal(agencyCopy.data.report.brief.company,'Stratabeat');
-assert.equal(agencyCopy.data.report.decisionBrief.recommendedExperimentId,null);
+assert.equal(agencyCopy.data.report.decisionBrief.recommendedExperimentId,'O1');
 const agencyReload=await call('/api/projects/'+agencyCopy.data.id);
 assert.deepEqual(agencyReload.data.report.decisionBrief,agencyCopy.data.report.decisionBrief);
 assert.equal(agencyReload.data.report.opportunities.length,5);

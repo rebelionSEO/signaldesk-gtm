@@ -1,15 +1,17 @@
 import type { Report, Opportunity } from './types';
+import coverage from './stratabeat-reviewed-coverage.json' with { type: 'json' };
+import type { WebsiteCoverage } from './website-coverage';
 
 const concepts = [
   {
-    title: 'Let buyers build their own proof map', role: 'Convert', channel: 'Sales & CRM',
-    hypothesis: 'A buyer may find relevant proof faster when starting with their own business problem.',
-    action: 'Prototype three paths through existing, approved client stories. Each path shows the problem, the work, the reported result, and what would be different for this buyer.',
-    mechanism: 'The buyer chooses a problem and leaves with a one-page decision brief they can discuss internally, using Stratabeat’s existing client proof.',
-    convention: 'A static wall of case studies.', metric: 'Qualified opportunities created from discovery calls within 60 days.',
-    early: 'Can five willing target buyers find relevant proof and explain the next step without help?',
-    stop: 'Revise if fewer than three of five buyers can explain why the selected proof is relevant. Do not infer sales lift from five interviews.',
-    cost: 1200, days: 21, costNote: 'Illustrative total: 12 design hours at $75 plus $300 for research incentives. Confirm rates and availability.',
+    title: 'Rehearse the buying decision before the proposal', role: 'Convert', channel: 'Sales & CRM',
+    hypothesis: 'A willing prospect may move forward when their internal objections are surfaced before a proposal is written.',
+    action: 'Invite three willing prospects to a 30-minute buying-committee rehearsal. Let their champion play the CFO or skeptical sales leader. Use existing case studies to answer objections, and record what would make them say no.',
+    mechanism: 'The prospect pressure-tests the decision with the agency before taking it internally. Existing proof supports the conversation; the proposed change is the objection rehearsal, not another testimonial or case study.',
+    convention: 'Sending a proposal before understanding the internal objections.', metric: 'Qualified opportunities created from discovery calls within 60 days.',
+    early: 'Do participating prospects identify an unresolved objection and agree a dated next step?',
+    stop: 'Stop if prospects see no value or the exercise repeats the existing sales process. Three conversations cannot establish conversion lift.',
+    cost: 1200, days: 21, costNote: 'Illustrative total: 12 preparation and research hours at $75 plus $300 for participant incentives. Confirm rates and availability.',
   },
   {
     title: 'Test whether buyers can tell competitors apart', role: 'Acquire', channel: 'Inbound & website',
@@ -32,13 +34,13 @@ const concepts = [
     cost: 1500, days: 30, costNote: 'Illustrative total: 18 specialist hours at $75 plus $150 for tools.',
   },
   {
-    title: 'Show clients how a rival could win', role: 'Retain', channel: 'Email & lifecycle',
-    hypothesis: 'A concrete competitive challenge may help an existing client see where continued work is useful.',
-    action: 'Choose one consenting client and one documented competitor move. Show how it could influence a buying decision, then let the client choose whether to test a response.',
-    mechanism: 'A private decision exercise using the client’s approved performance data and Stratabeat’s audience and conversion expertise, rather than a routine activity recap.',
+    title: 'Let the client challenge next month’s work', role: 'Retain', channel: 'Email & lifecycle',
+    hypothesis: 'Giving clients a concrete choice of next actions may make the value of ongoing work easier to discuss.',
+    action: 'For one willing client, show two evidence-backed options for next month and one explicit do-nothing option. Let the client reject the agency’s preferred option and explain why; agree one outcome and review date.',
+    mechanism: 'Build on the collaboration praised in public reviews: give the client a real decision over the next work cycle. Confirm this adds to existing account reviews before testing.',
     convention: 'A quarterly report listing tasks completed.', metric: 'Renewed contract value at the client’s next scheduled renewal; record other influences.',
     early: 'Does the client agree the issue matters and approve a response?',
-    stop: 'Drop the threat if evidence does not support it. Do not manufacture fear to defend a renewal.',
+    stop: 'Stop if it duplicates existing reviews or creates extra meetings without a clearer decision. Do not claim a retention problem from public reviews.',
     cost: 600, days: 30, costNote: 'Illustrative total: eight strategist hours at $75. Renewal results may take longer than this pilot.',
   },
   {
@@ -54,8 +56,9 @@ const concepts = [
 ] as const;
 const opportunities: Opportunity[] = concepts.map((c, i) => ({
   id: `O${i + 1}`, title: c.title, hypothesis: c.hypothesis,
-  evidenceIds: ['E1'], counterEvidenceIds: [], stage: i === 3 ? 'Retain' : 'Evaluate',
-  effort: 'Low', priority: 'Later',
+  evidenceIds: [['E4','E5'],['E1','E6'],['E7','E8'],['E5','E3'],['E1','E4']][i], counterEvidenceIds: i === 0 ? ['E3'] : [], stage: i === 3 ? 'Retain' : 'Evaluate',
+  effort: 'Low', priority: i === 0 ? 'Now' : i < 3 ? 'Next' : 'Later',
+  websiteCheck: {existingWork: ['Testimonials, service-filtered case studies and a strategy-call offer already exist.','Audience research and behavioral messaging are already part of the service offer.','GEO, Reddit research and search visibility work already exist.','Public testimonials describe a collaborative agency relationship.','SEO and CRO are already sold together.'][i], reviewedUrls: [i===0||i===4?'https://stratabeat.com/results':i===3?'https://stratabeat.com/why-stratabeat/testimonials':'https://stratabeat.com/'], proposedChange: c.mechanism},
   territory: c.role, behavior: c.early, action: c.action, metric: c.metric,
   validation: `${c.early} ${c.costNote} Confirm current performance and whether this already exists before launch.`,
   owner: 'Proposed: account lead and relevant specialist',
@@ -68,24 +71,29 @@ const opportunities: Opportunity[] = concepts.map((c, i) => ({
 }));
 
 export const stratabeatExample: Report = {
-  brief: { company: 'Stratabeat', website: 'https://stratabeat.com/', audience: 'Working assumption: marketing leaders at B2B SaaS and tech companies evaluating an organic growth agency.', objective: 'Explore five small tests that could help win, retain or expand suitable client accounts.', constraints: 'Interview case only. No CRM, sales calls, client records or budget access. All experiments and costs are proposals.', industry: 'B2B marketing services', businessModel: 'Client services; contract terms unknown', gtmMotion: 'Assumed consultative sales', geography: 'Not established', companyStage: 'Established agency; internal scale unknown' },
-  summary: 'Stratabeat already has testimonials and searchable case studies. The previous first recommendation is withdrawn pending a complete website review.',
+  brief: { company: 'Stratabeat', website: 'https://stratabeat.com/', audience: 'Working assumption: marketing leaders at B2B SaaS and tech companies evaluating an organic growth agency.', objective: 'Explore five small tests that could help win, retain or expand suitable client accounts.', constraints: 'Interview case only. No CRM, sales calls, client records or budget access. All experiments and costs are proposals.', industry: 'B2B marketing services', businessModel: 'Agency retainers; public packages, actual client terms unknown', gtmMotion: 'Assumed consultative sales', geography: 'Not established', companyStage: 'Established agency; internal scale unknown' },
+  websiteCoverage: coverage as WebsiteCoverage,
+  summary: 'Use the agency’s existing proof and expertise to help buyers make a decision. Test new interactions, not more generic content.',
   decisionBrief: {
-    finding: 'Stratabeat already has testimonials and searchable case studies. We have not established a gap that justifies another proof format.',
-    status: 'Needs data', evidenceIds: ['E3', 'E4'],
-    whyItMatters: 'Relevant proof could help a buyer agree on a next step. We do not know whether proof is currently a sales obstacle.',
-    alternativeExplanations: ['Current case studies may already do this well.', 'Budget, timing or poor client fit could matter more than proof.'],
-    recommendedExperimentId: null,
-    whyFirst: 'No experiment is prioritized. Review the navigation and existing work before reassessing these five conditional ideas.',
-    nextQuestion: 'Which relevant pages and existing services have we inspected, and what specific opportunity remains after that review?',
+    finding: 'Stratabeat has strong public proof. The opportunity to test is whether buyers benefit from trying the working relationship before committing.',
+    status: 'Hypothesis', evidenceIds: ['E4', 'E5'],
+    whyItMatters: 'A useful conversation could help a qualified prospect reach an agreed next step. We have not established that the current sales process is failing.',
+    alternativeExplanations: ['The current discovery process may already do this.', 'Budget, timing or client fit may matter more than the buying experience.'],
+    recommendedExperimentId: 'O1',
+    whyFirst: 'This uses existing case studies and three willing prospects. It tests the idea before producing content or buying traffic.',
+    nextQuestion: 'Does the current discovery call already surface internal objections and agree a dated next step?',
   },
   evidence: [
     { id: 'E3', title: 'Existing client testimonials', url: 'https://stratabeat.com/why-stratabeat/testimonials/', summary: 'Stratabeat has a dedicated client testimonials section.', kind: 'positive', date: null, limitation: 'Public company-published proof. This does not measure conversion performance.' },
     { id: 'E4', title: 'Existing case-study library', url: 'https://stratabeat.com/results/', summary: 'The company publishes case studies with service categories and keyword search.', kind: 'positive', date: null, limitation: 'The existing library contradicts a simple missing-proof claim. Buyer friction has not been established.' },
     { id: 'E1', title: 'Stratabeat: services and client proof', url: 'https://stratabeat.com/', summary: 'The agency presents organic growth services and client stories for B2B companies.', kind: 'positive', date: null, limitation: 'Company-published material reviewed September 28, 2026. It does not establish sales performance or a proof gap.' },
     { id: 'E2', title: 'Tom Shapiro: books and speaking', url: 'https://tomshapiro.com/', summary: 'Tom’s site features books, speaking and a link to Stratabeat.', kind: 'context', date: null, limitation: 'Company-controlled source reviewed September 28, 2026. It does not quantify Tom’s contribution to pipeline or establish founder dependence.' },
+    {id:'E5',title:'Client reviews on Clutch',url:'https://clutch.co/profile/stratabeat',summary:'Public client reviews praise collaboration and tailored work. Some mention initial communication-tool friction, with recap emails helping.',kind:'positive',date:null,limitation:'Self-selected reviews, not a retention study. Positive feedback does not establish current renewal or win rates.'},
+    {id:'E6',title:'Omniscient: organic growth positioning',url:'https://beomniscient.com/',summary:'A peer also sells research-led organic growth for B2B software companies. Broad research and growth language alone is not a unique experiment.',kind:'context',date:null,limitation:'One competitor reference, not a market benchmark or evidence of superior performance.'},
+    {id:'E7',title:'Existing GEO services',url:'https://stratabeat.com/services/generative-engine-optimization',summary:'Stratabeat already offers optimization for AI search, including prompt research and content changes.',kind:'context',date:null,limitation:'The proposed test must add a specific buyer decision; offering GEO itself is not new.'},
+    {id:'E8',title:'Scrunch profile of Stratabeat’s AI search work',url:'https://scrunch.com/case-studies/2026-01-stratabeat-ai-visibility-gains-for-clients/',summary:'A technology supplier documents Stratabeat’s existing AI visibility work for clients.',kind:'positive',date:null,limitation:'Vendor case study with a commercial interest. Visibility results do not independently establish incremental revenue.'},
   ],
   opportunities, unknowns: ['Which clients are the best fit and most profitable?', 'Where do suitable prospects stop, and why?', 'What are current win, renewal and expansion rates?', 'Which of these approaches already exist?', 'What budget and delivery capacity could support a pilot?'],
   generatedAt: '2026-09-28T00:00:00.000Z', mode: 'example',
-  warnings: ['The prior first recommendation was withdrawn. All five ideas are conditional and require website review.', 'Outside-in interview example, not a live AI run or internal diagnosis.', 'The initial two-page review missed directly discoverable proof pages. Independent customer evidence is still needed.', 'Costs are illustrative scoped estimates, not company budgets. No revenue lift or causal effect has been measured.'],
+  warnings: ['Public-research scenario: assistant synthesis using saved API page reviews and separately inspected external sources, not a completed autonomous strategy run.', 'Website coverage is incomplete. No claim that a proposed process is absent; confirm current practice with the team.', 'No CRM, sales-call, retention or buyer-testing data. Budgets are illustrative total resource costs, not measured CAC or promised returns.', 'External review coverage is limited; no broad customer-sentiment or industry-performance conclusion is justified.'],
 };

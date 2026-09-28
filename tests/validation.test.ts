@@ -88,8 +88,8 @@ test('Stratabeat example stays distinct, scoped and honest about missing data', 
   assert.equal(reportSchema.safeParse(report).success, true);
   assert.deepEqual(referenceErrors(report), []);
   assert.equal(report.opportunities.length, 5);
-  assert.equal(report.opportunities.filter(o => o.priority === 'Now').length, 0);
-  assert.equal(report.decisionBrief?.recommendedExperimentId, null);
+  assert.equal(report.opportunities.filter(o => o.priority === 'Now').length, 1);
+  assert.equal(report.decisionBrief?.recommendedExperimentId, 'O1');
   assert.equal(new Set(report.opportunities.map(o => o.design?.commercialRole)).size, 5);
   assert.equal(report.mode, 'example');
   assert.ok(report.opportunities.every(o => o.validation.includes('Illustrative total')));
