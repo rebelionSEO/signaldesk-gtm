@@ -120,3 +120,9 @@ The overview now starts with a short finding, evidence, alternative explanations
 Choose **Stratabeat · example** in the study selector, or open `/?study=stratabeat-example`. It is a manually curated interview example with five proposed experiments, illustrative costs, and explicit evidence limits. Signed-in users can save a copy. PostHog remains a separate example. Neither example represents a live model run.
 
 For a separate local preview, the API tests support `SIGNALDESK_TEST_PORT=5174 npm run test:integration`; the hostname is always fixed to localhost.
+
+## Website review is mandatory
+
+Every new live run now discovers navigation and sitemaps, reads required pages, and inventories existing work before planning. The overview shows which URLs were found, fetched, reviewed or blocked. Missing coverage blocks strategy and execution preparation. Each new idea must cite reviewed website pages and describe what it adds to existing work. See [coverage behavior, bounds and remaining limitations](docs/website-coverage.md).
+
+Stratabeat’s earlier first recommendation has been withdrawn: its existing testimonials and searchable case studies were missed in the initial review. The example now keeps all five concepts conditional, with no Now experiment.

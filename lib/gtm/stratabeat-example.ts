@@ -55,7 +55,7 @@ const concepts = [
 const opportunities: Opportunity[] = concepts.map((c, i) => ({
   id: `O${i + 1}`, title: c.title, hypothesis: c.hypothesis,
   evidenceIds: ['E1'], counterEvidenceIds: [], stage: i === 3 ? 'Retain' : 'Evaluate',
-  effort: 'Low', priority: i === 0 ? 'Now' : i < 3 ? 'Next' : 'Later',
+  effort: 'Low', priority: 'Later',
   territory: c.role, behavior: c.early, action: c.action, metric: c.metric,
   validation: `${c.early} ${c.costNote} Confirm current performance and whether this already exists before launch.`,
   owner: 'Proposed: account lead and relevant specialist',
@@ -69,21 +69,23 @@ const opportunities: Opportunity[] = concepts.map((c, i) => ({
 
 export const stratabeatExample: Report = {
   brief: { company: 'Stratabeat', website: 'https://stratabeat.com/', audience: 'Working assumption: marketing leaders at B2B SaaS and tech companies evaluating an organic growth agency.', objective: 'Explore five small tests that could help win, retain or expand suitable client accounts.', constraints: 'Interview case only. No CRM, sales calls, client records or budget access. All experiments and costs are proposals.', industry: 'B2B marketing services', businessModel: 'Client services; contract terms unknown', gtmMotion: 'Assumed consultative sales', geography: 'Not established', companyStage: 'Established agency; internal scale unknown' },
-  summary: 'Test whether buyers can connect Stratabeat’s existing proof to their own problem more easily. Confirm the need before building.',
+  summary: 'Stratabeat already has testimonials and searchable case studies. The previous first recommendation is withdrawn pending a complete website review.',
   decisionBrief: {
-    finding: 'Stratabeat publishes client proof. Could letting buyers explore it by problem help turn interest into a useful sales conversation?',
-    status: 'Hypothesis', evidenceIds: ['E1', 'E2'],
+    finding: 'Stratabeat already has testimonials and searchable case studies. We have not established a gap that justifies another proof format.',
+    status: 'Needs data', evidenceIds: ['E3', 'E4'],
     whyItMatters: 'Relevant proof could help a buyer agree on a next step. We do not know whether proof is currently a sales obstacle.',
     alternativeExplanations: ['Current case studies may already do this well.', 'Budget, timing or poor client fit could matter more than proof.'],
-    recommendedExperimentId: 'O1',
-    whyFirst: 'It uses existing material, is easy to prototype, and can be tested with five buyers before funding development.',
-    nextQuestion: 'Do recent prospects struggle to find relevant proof, and what actually prevents them from taking the next step?',
+    recommendedExperimentId: null,
+    whyFirst: 'No experiment is prioritized. Review the navigation and existing work before reassessing these five conditional ideas.',
+    nextQuestion: 'Which relevant pages and existing services have we inspected, and what specific opportunity remains after that review?',
   },
   evidence: [
+    { id: 'E3', title: 'Existing client testimonials', url: 'https://stratabeat.com/why-stratabeat/testimonials/', summary: 'Stratabeat has a dedicated client testimonials section.', kind: 'positive', date: null, limitation: 'Public company-published proof. This does not measure conversion performance.' },
+    { id: 'E4', title: 'Existing case-study library', url: 'https://stratabeat.com/results/', summary: 'The company publishes case studies with service categories and keyword search.', kind: 'positive', date: null, limitation: 'The existing library contradicts a simple missing-proof claim. Buyer friction has not been established.' },
     { id: 'E1', title: 'Stratabeat: services and client proof', url: 'https://stratabeat.com/', summary: 'The agency presents organic growth services and client stories for B2B companies.', kind: 'positive', date: null, limitation: 'Company-published material reviewed September 28, 2026. It does not establish sales performance or a proof gap.' },
     { id: 'E2', title: 'Tom Shapiro: books and speaking', url: 'https://tomshapiro.com/', summary: 'Tom’s site features books, speaking and a link to Stratabeat.', kind: 'context', date: null, limitation: 'Company-controlled source reviewed September 28, 2026. It does not quantify Tom’s contribution to pipeline or establish founder dependence.' },
   ],
   opportunities, unknowns: ['Which clients are the best fit and most profitable?', 'Where do suitable prospects stop, and why?', 'What are current win, renewal and expansion rates?', 'Which of these approaches already exist?', 'What budget and delivery capacity could support a pilot?'],
   generatedAt: '2026-09-28T00:00:00.000Z', mode: 'example',
-  warnings: ['Outside-in interview example, not a live AI run or internal diagnosis.', 'Only two company-controlled pages support this example. Independent customer evidence is still needed.', 'Costs are illustrative scoped estimates, not company budgets. No revenue lift or causal effect has been measured.'],
+  warnings: ['The prior first recommendation was withdrawn. All five ideas are conditional and require website review.', 'Outside-in interview example, not a live AI run or internal diagnosis.', 'The initial two-page review missed directly discoverable proof pages. Independent customer evidence is still needed.', 'Costs are illustrative scoped estimates, not company budgets. No revenue lift or causal effect has been measured.'],
 };

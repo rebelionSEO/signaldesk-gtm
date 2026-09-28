@@ -1,3 +1,4 @@
+import { coverageBlockers } from './website-coverage.ts';
 import type { Report } from './types.ts';
 import { channels } from './operating.ts';
 import { canonicalUrl, referenceErrors } from './validation.ts';
@@ -73,6 +74,8 @@ export function evaluateReport(report: Report, repeatedReports: Report[] = []): 
     { id: 'stability', label: 'Repeated-run stability', score: stabilityScore, weight: 0, status: stabilityScore === null ? 'Unmeasured' : statusFor(stabilityScore), explanation: 'Compares multiple live runs for structural validity and recommendation consistency.', nextAction: stabilityScore === null ? 'Run the same frozen brief at least three times after the AI connection is configured.' : 'Review material recommendation drift before promoting a prompt.' },
   ];
   const gates: EvaluationGate[] = [
+    { name: 'Existing work checked', pass: report.opportunities.length>0 && report.opportunities.every(o=>!!o.websiteCheck) && !errors.some(e=>e.includes('website check')), detail: 'Each proposed change must name existing work, cite reviewed pages, and specify what it adds.' },
+    { name: 'Website coverage', pass: coverageBlockers(report.websiteCoverage).length===0, detail: coverageBlockers(report.websiteCoverage).join(' ') || 'Required discovered pages were reviewed; unread archive pages and indexing remain explicit.' },
     { name: 'Clear decision brief', pass: Boolean(report.decisionBrief && report.opportunities.length <= 5 && !errors.some(e => e.startsWith('Decision brief'))), detail: 'A short finding needs sources, alternative explanations, a next question, and one justified first test or an explicit decision to gather evidence. This checks structure, not readability or truth.' },
     { name: 'Reference integrity', pass: errors.length === 0, detail: errors.length ? `${errors.length} broken or invalid reference${errors.length === 1 ? '' : 's'}.` : 'All internal evidence references resolve.' },
     { name: 'Counterevidence', pass: report.evidence.some(item => item.kind === 'positive') && report.evidence.some(item => item.kind === 'complaint'), detail: 'A directional strategy must include both supporting and opposing market signals.' },

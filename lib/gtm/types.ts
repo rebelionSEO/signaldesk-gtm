@@ -101,6 +101,7 @@ export type Assumption = {
     validation: string;
 };
 export type Opportunity = {
+    websiteCheck?: {existingWork:string; reviewedUrls:string[]; proposedChange:string};
     design?: Design;
     priority?: 'Now' | 'Next' | 'Later';
     territory?: string;
@@ -118,6 +119,7 @@ export type Opportunity = {
     owner: string;
 };
 export type Report = {
+    websiteCoverage?: import('./website-coverage').WebsiteCoverage;
     decisionBrief?: import('./decision').DecisionBrief;
     economics?: import('./economics').Economics[];
     commercialPlan?: CommercialPlan;

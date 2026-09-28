@@ -88,10 +88,17 @@ test('Stratabeat example stays distinct, scoped and honest about missing data', 
   assert.equal(reportSchema.safeParse(report).success, true);
   assert.deepEqual(referenceErrors(report), []);
   assert.equal(report.opportunities.length, 5);
-  assert.equal(report.opportunities.filter(o => o.priority === 'Now').length, 1);
+  assert.equal(report.opportunities.filter(o => o.priority === 'Now').length, 0);
+  assert.equal(report.decisionBrief?.recommendedExperimentId, null);
   assert.equal(new Set(report.opportunities.map(o => o.design?.commercialRole)).size, 5);
   assert.equal(report.mode, 'example');
   assert.ok(report.opportunities.every(o => o.validation.includes('Illustrative total')));
   assert.equal(evaluateReport(report).status, 'Blocked'); // This is an interview hypothesis, not execution-ready research.
   assert.ok(toMarkdown(report).includes('## Decision brief'));
+});
+
+test('recommendation website checks cannot cite unread pages', () => {
+  const copy=structuredClone(example);
+  copy.opportunities[0].websiteCheck={existingWork:'Existing proof',proposedChange:'A different interaction',reviewedUrls:['https://posthog.com/']};
+  assert.ok(referenceErrors(copy).some(e=>e.includes('website check references an unread page')));
 });

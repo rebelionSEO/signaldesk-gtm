@@ -148,3 +148,7 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--background
 @media (max-width: 700px) { .decision-grid, .decision-measures { grid-template-columns: 1fr; gap: 1rem; } }
 
 @media (max-width: 700px) { .v3-tabbar [role="tab"] { flex-shrink: 0; padding-inline: 12px; } }
+
+.website-coverage summary { cursor: pointer; padding: 12px 0; font-weight: 600; }
+.website-coverage p, .website-coverage li, .website-coverage summary { overflow-wrap: anywhere; }
+.coverage-pages > details { border-top: 1px solid #dce3ed; }

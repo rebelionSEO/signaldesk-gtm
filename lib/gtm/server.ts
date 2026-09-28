@@ -16,8 +16,8 @@ export async function identity(request?: Request) { if (request && request.metho
 export function failure(error: unknown) { if (error instanceof ApiError)
     return Response.json({ error: error.message }, { status: error.status }); if (error && typeof error === 'object' && 'issues' in error)
     return Response.json({ error: 'Some fields are invalid. Check URLs, required text, and field lengths.' }, { status: 400 }); console.error('Signaldesk request failed', error instanceof Error ? error.name : 'UnknownError'); return Response.json({ error: 'The request could not finish. Your existing study has been preserved. Please try again.' }, { status: 500 }); }
-export async function body(request: Request) { if (Number(request.headers.get('content-length') ?? 0) > 150000)
-    throw new ApiError(413, 'This study is too large. Limit the evidence to 30 concise records.'); const raw = await request.text(); if (raw.length > 150000)
+export async function body(request: Request) { if (Number(request.headers.get('content-length') ?? 0) > 3000000)
+    throw new ApiError(413, 'This study is too large. Limit the evidence to 30 concise records and the website inventory to 1,000 URLs.'); const raw = await request.text(); if (raw.length > 3000000)
     throw new ApiError(413, 'This study is too large.'); try {
     return JSON.parse(raw);
 }
