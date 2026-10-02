@@ -49,10 +49,12 @@ The collection is a reusable foundation, not an exhaustive archive or a guarante
 
 No full copyrighted books or paid courses are copied here. No accounts were subscribed or paid APIs called to build this expansion. Referenced course availability and commercial details may change.
 
-**Runtime status:** Codex reads this library through repository instructions. The deployed SignalDesk application does not yet automatically retrieve these Markdown files; saving the files does not implement a retrieval system or validate generated ideas.
+**Runtime status (2026-10-02):** The application code now compiles these notes into a local catalog and supplies 3–5 selected methods to planning, strategy, creative review and audit. Selection follows explicit brief topics, with buyer research, experience design and measurement foundations. Research checkpoints preserve the selected notes/version for later stages. This is deterministic topic routing, not semantic search or evidence verification; it does not prove creative quality. Public deployment has not been updated.
 
 ## Refresh and maintenance
 
 The existing weekly refresh should start here, select a small unresolved topic, inspect original sources, and update the relevant collection. Favor a new mechanism or correction over volume. Preserve stable IDs; do not renumber old citations. Check for duplicate URLs and repeated mechanisms, access scope, source dates, relevance and limitations. Keep the [core refresh log](GTM_LIBRARY.md#refresh-log) as the common change record.
 
 Next useful additions: accessible creative-work transcripts; failed experiments with costs and decision rules; agency-specific buyer/renewal research; independently documented partnership mechanisms. Do not delay a useful client experiment while attempting to collect every possible resource.
+
+Runtime catalog maintenance: run `npm run references:build` after source-note edits and commit `lib/gtm/reference-catalog.json`. Development/build commands regenerate it; tests reject stale output. Discovery-only media listings and B15 contents-only notes are excluded from automatic selection. New topic routes require an intentional update to `lib/gtm/reference-retrieval.ts`; catalog growth alone does not add routes.

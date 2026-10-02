@@ -38,6 +38,6 @@ A missing migration or reservation failure prevents the model call. Ordinary stu
 
 - Review decisions are model judgments against saved research, not independent source verification or proof of originality. Existing claim-level grounding and whole-site coverage limitations remain.
 - No paid end-to-end evaluation was run. Deterministic fixtures test routing, withholding, reference integrity, persistence, envelopes and stopping conditions; they do not establish creative quality.
-- The reference library is still not automatically retrieved by the deployed model workflow.
+- Application code now supplies a small deterministic selection from the local method catalog. Public deployment remains unchanged; these notes cannot substitute for client evidence.
 - There is no automated refund/usage reconciliation, administrative budget top-up or account-wide monetary ledger in this version. Safest failure behavior is to stop and preserve saved work.
 - No CRM, ad, email or external execution connector was activated.

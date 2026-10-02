@@ -87,6 +87,7 @@ export async function POST(req: Request, ctx: {
         const previous=findings;
         const updated=await research(brief,stage==='research-revision'?{questions:supervisor.feedback,previousNotes:previous?.notes}:JSON.parse(row.report).evidence,planner?JSON.parse(planner):undefined,crawl.coverage,guard,stage==='research-revision');
         findings=mergeResearch(previous,updated);
+        if(previous?.methodContext)findings.methodContext=previous.methodContext;
         crawl.coverage=findings.websiteCoverage;
         candidate=null;
         if(coverageBlockers(findings.websiteCoverage).length){
@@ -99,6 +100,7 @@ export async function POST(req: Request, ctx: {
         if (!findings) throw new ApiError(409, 'Research notes are missing. Start a new run.');
         candidate = JSON.stringify(await strategize(brief,{...findings,supervisor},planner?JSON.parse(planner):undefined,operations,guard));
         nextStage = 'proposed';
+        signal='Strategy generated using saved company research and separate method references: '+(findings.methodContext?.entries.map(e=>e.id).join(', ')??'selected from current library for legacy research');
     }
     else if(stage==='proposed'||stage==='creative-revision'){
         if(!findings||!candidate)throw new ApiError(409,'Research or plan is missing. Start a new run.');

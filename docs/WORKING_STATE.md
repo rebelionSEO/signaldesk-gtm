@@ -1,6 +1,9 @@
 # Working state
 
-Updated: 2026-09-28. Verify processes and Git before relying on this snapshot.
+Updated: 2026-10-02. Verify processes and Git before relying on this snapshot.
+
+## Current priority
+Method-library retrieval is implemented in code as of October 2 (details below). Earlier dated sections describe history. Remaining product priority is validating substantive experiment quality against real reviewed company evidence; current Stratabeat ideas remain rejected. No paid run or public deployment was performed.
 
 ## Repository and previews
 - Active checkout: `/Users/gmejia/Documents/Codex/Github/signaldesk-gtm`
@@ -76,3 +79,10 @@ Before memory setup: 47 unit tests, lint, typecheck, production build and local 
 - Added migration 0002 and applied to local D1 only. UI shows reserved allowance when present; hosted deployment/database not updated. Prompt version: signaldesk-v2.4-bounded-review.
 - Verification: 61 unit tests passed, lint/typecheck/build passed (existing large-bundle warning); local API integration passed with new budget visibility check. A second code review identified oversized feedback and overly broad follow-up prompts, both corrected. No paid API calls, live-model quality validation or visual browser QA.
 - Remaining: genuine claim/source support verification, creative effectiveness evaluation, automatic reference retrieval, claim-specific coverage, Screaming Frog adapter, provider-usage reconciliation and administrative budget controls. These controls enforce model review decisions, not their correctness.
+
+## Local method retrieval — October 2
+- Added reproducible Markdown-to-JSON catalog compilation for all 59 references, with source IDs, URLs, checked dates, access notes, limitations and content version. Tests detect stale generated catalogs; dev/build regenerate them.
+- Deterministic brief-topic routing selects 3–5 methods across buyer research, creative experience design, measurement and relevant channels/business questions. This is an initial explicit routing policy, not semantic retrieval across all entries. Discovery-only media/contents entries are excluded.
+- Planner, strategist, critic and auditor receive a separate methodInspiration packet. Research saves its selection/version; follow-up research keeps it. Notes are sent once, not duplicated in the prompt. Library URLs are not added to the company source registry. Existing reference validation and spending envelope remain.
+- Prompt version signaldesk-v2.5-method-retrieval. No additional retrieval API, embedding store, paid calls, migration or deployment. Live effectiveness not tested; saved examples unchanged.
+- Verification: 67 unit tests, lint, typecheck and production build passed (existing bundle warning). New tests cover routing, multiple topics, snapshot stability, separate evidence registry, invalid snapshots and caller override rejection. No new browser/UI behavior introduced.

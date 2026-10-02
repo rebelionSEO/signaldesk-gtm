@@ -24,3 +24,6 @@ User requested as many useful GTM resources as possible, saved as Markdown/folde
 
 ### September 28: enforce staged review
 User approved implementing bounded research/creative correction loops, withholding unsupported numbers and spending controls. Implemented in the live saved-study workflow, with one public follow-up, two creative revisions and conservative persistent study reservations. No paid execution authorization or dollar amounts inferred. Model reviews remain fallible; public deployment remains separate.
+
+### October 2: method library used in runtime
+User requested continued improvements. Implemented the previously open automatic method-reference gap using local deterministic routing and saved snapshots. No paid retrieval infrastructure added. References remain inspiration, not client evidence; semantic source support and creative quality are still unresolved evaluation work.

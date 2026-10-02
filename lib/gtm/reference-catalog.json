@@ -1,0 +1,536 @@
+{
+  "version": "09aad19710949be1db2602d0035d8d3c9e854a8a8e4ab153cfdfda54c54c7605",
+  "entries": [
+    {
+      "id": "R01",
+      "title": "Obviously Awesome and Sales Pitch — April Dunford",
+      "url": "https://www.aprildunford.com/books",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Author's books page](https://www.aprildunford.com/books).\n- Date/access: publication dates not stated on inspected page; public descriptions, not full books.\n- Useful mechanism: connect positioning to a coherent sales story rather than listing features. The page describes a positioning method and an eight-step pitch structure.\n- SignalDesk application: map alternatives, differentiating value and intended buyer from evidence; test whether a real buyer can explain the difference after seeing the offer.\n- Limit: positioning advice cannot identify the client's best customer without customer evidence. Do not invent the book's detailed steps from this sales page.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R02",
+      "title": "The Mom Test — Rob Fitzpatrick",
+      "url": "https://www.momtestbook.com/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Author's book site](https://www.momtestbook.com/).\n- Date/access: publication date not verified here; public description only.\n- Useful mechanism: reduce biased feedback and learn whether conversations indicate genuine buying interest.\n- SignalDesk application: ask about actual recent decisions, workarounds and commitments instead of asking whether someone likes a proposed idea.\n- Limit: interview design is a method; a few recruited participants do not establish market-wide demand. Distinguish our question-writing approach from a quotation or full book summary.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R03",
+      "title": "The Wynter Research Playbook — Wynter",
+      "url": "https://wynter.com/research-playbook",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Research playbook](https://wynter.com/research-playbook).\n- Date/access: no publication date displayed; public methodology.\n- Useful mechanism: establish buyer context, baseline messaging, revise and retest. Separate buyer research from message tests and creative preference tests.\n- SignalDesk application: assess clarity, relevance, value, differentiation and brand with recruited target buyers; include pricing and PPC landing pages where relevant. An AI critique alone is not a message test.\n- Limit: vendor methodology sells a research service. Its universal-sounding claims and cadence suggestions are not requirements for every business. Lack of panel access must be disclosed.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R04",
+      "title": "Best Practices Are Meaningless Without Audience Research — Amanda Natividad",
+      "url": "https://sparktoro.com/blog/best-practices-are-meaningless-without-audience-research/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [SparkToro article](https://sparktoro.com/blog/best-practices-are-meaningless-without-audience-research/).\n- Published: 2026-02-23 (verified on the publisher's blog listing).\n- Useful mechanism: choose channels and formats from specific audience context, combining conversations, communities and available analytics.\n- SignalDesk application: record where the relevant people discuss their work and what job they are trying to accomplish there before selecting distribution.\n- Limit: company blog with product promotion. Forums and analytics have different selection biases; neither substitutes for a verified ICP.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R05",
+      "title": "Testing Business Ideas — David J. Bland and Alexander Osterwalder",
+      "url": "https://www.strategyzer.com/library/testing-business-ideas-book",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Strategyzer book description](https://www.strategyzer.com/library/testing-business-ideas-book).\n- Date/access: no publication date displayed; public description only.\n- Useful mechanism: choose experiments by cost, time and evidence strength, starting with the uncertainties most important to viability.\n- SignalDesk application: name the unanswered question, cheapest useful test, decision threshold and next action before commissioning a campaign.\n- Limit: use hypotheses as questions to investigate, not unverified company facts. A quick test can be inconclusive; speed does not create statistical certainty.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R06",
+      "title": "Alchemy — Rory Sutherland",
+      "url": "https://www.penguin.co.uk/books/430379/alchemy-by-rory-sutherland/9780753556528",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Penguin publisher page](https://www.penguin.co.uk/books/430379/alchemy-by-rory-sutherland/9780753556528).\n- Date/access: paperback 2021-05-13; page identifies first publication in 2019; description only.\n- Useful mechanism: consider perception and human behavior, including solutions outside straightforward functional optimization.\n- SignalDesk application: generate alternatives that change participation, perceived risk, framing or the experience of waiting—not merely a new campaign title.\n- Limit: behavioral stories inspire tests; they do not prove a proposed mechanism or expected revenue for this client. Never use creativity as permission to mislead buyers.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R07",
+      "title": "Rethink Lead Generation — Tom Shapiro",
+      "url": "https://tomshapiro.com/book-rethink-lead-generation/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Author's book page](https://tomshapiro.com/book-rethink-lead-generation/).\n- Date/access: publication date not verified here; public description only.\n- Useful mechanism: lateral thinking applied across website, content, SEO, account-based marketing and referrals.\n- SignalDesk application: for Stratabeat, recognize that creative lead generation is already part of the founder's stated positioning; ordinary content advice is especially unlikely to add value.\n- Limit: author promotion and testimonials are not independent validation. Do not claim to have read the book or infer agency performance from endorsements.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R08",
+      "title": "The Creative Velocity Gap — Cassandra Rosas, Omniscient Digital",
+      "url": "https://beomniscient.com/blog/b2b-content-teams-performance-market/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Article](https://beomniscient.com/blog/b2b-content-teams-performance-market/).\n- Published: 2026-09-11.\n- Useful mechanism: test inexpensive message variants before investing in large finished assets; isolate what changed and let results alter the next cycle.\n- SignalDesk application: compare two materially different explanations of an evidenced buyer problem using a small appropriate audience, then decide whether a larger asset deserves production.\n- Limit: paid-feed engagement does not establish search intent or revenue impact. B2B samples may be directional. The article includes commercial tool links; do not copy its unsupported general activity-rate claims as benchmarks.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R09",
+      "title": "Growth Newsletter #347 — Demand Curve",
+      "url": "https://gp.demandcurve.com/newsletters/growth-newsletter-347",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Issue](https://gp.demandcurve.com/newsletters/growth-newsletter-347).\n- Published: 2026-09-17.\n- Useful mechanism: show the buyer's desired outcome alongside the product mechanism; distinguish temporary differentiation from durable advantage. Also discusses how pricing constrains acquisition economics.\n- SignalDesk application: prototype an outcome-focused visual and verify that viewers understand both promise and actual delivery before producing a polished campaign.\n- Limit: editorial advice, with sponsored material and some secondhand examples. Higher prices are not automatically better; willingness to pay and delivery economics remain unknown until measured.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R10",
+      "title": "Create Once, Distribute Forever — Ross Simmonds",
+      "url": "https://rosssimmonds.com/wp-content/uploads/2024/03/Create-Once-Distribute-Forever-By-Ross-Simmonds-Free-Chapter.pdf",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Author-hosted free chapter PDF](https://rosssimmonds.com/wp-content/uploads/2024/03/Create-Once-Distribute-Forever-By-Ross-Simmonds-Free-Chapter.pdf).\n- Date/access: publication date not verified from inspected sample; URL path contains 2024/03, which is not treated as publication proof. Only the public sample was accessed.\n- Useful mechanism: content needs intentional distribution to relevant communities and channels, not publication followed by hope.\n- SignalDesk application: design the route from useful organic asset to relevant paid distribution, opted-in email and contextual sales follow-up, changing the presentation to fit each channel.\n- Limit: distribution does not mean reposting everywhere or contacting people without an appropriate basis. Content reuse alone is not a distinctive experiment.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R11",
+      "title": "Pain Point SEO — Benji Hyam, Grow and Convert",
+      "url": "https://www.growandconvert.com/seo/pain-point-seo/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Original framework](https://www.growandconvert.com/seo/pain-point-seo/).\n- Updated: 2026-03-17; initial publication date not verified in this inspection.\n- Useful mechanism: prioritize purchase-relevant problems and search intent instead of maximizing raw traffic.\n- SignalDesk application: connect an evidenced search problem to the offer, destination, qualified action and subsequent opportunity; use paid tests cautiously to learn faster about specific messaging.\n- Limit: agency-reported examples are not universal benchmarks. Paid conversion and organic ranking are different questions; this framework is an ingredient, not a creative idea on its own.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R12",
+      "title": "If Search Captures Demand, Public Evidence Creates It — Amanda Natividad",
+      "url": "https://sparktoro.com/blog/if-search-captures-demand-public-evidence-creates-it/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [SparkToro article](https://sparktoro.com/blog/if-search-captures-demand-public-evidence-creates-it/).\n- Published: 2026-04-01 (verified on publisher blog listing).\n- Useful mechanism: consider the public evidence surrounding a brand, including discussion beyond its own site, rather than only direct website visits.\n- SignalDesk application: compare owned claims with relevant reviews and discussions; publish verifiable answers where a real question or misunderstanding is evidenced.\n- Limit: article references other studies. Trace any numerical claim to its original dataset before reuse. A negative comment is not a representative reputation score, and missing mentions do not prove irrelevance.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R13",
+      "title": "Cold Inbound — Alex Birkett, Omniscient Digital",
+      "url": "https://beomniscient.com/blog/cold-inbound/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Article](https://beomniscient.com/blog/cold-inbound/).\n- Published: 2026-09-24.\n- Useful mechanism: distinguish inbound purchase interest from familiarity and affinity; a buyer can arrive ready to compare vendors but know little about any brand.\n- SignalDesk application: ask actual incoming buyers what they already know and where the shortlist came from before testing a different introduction or decision aid.\n- Limit: operator interpretation and examples, not proof that a specific client's leads behave this way. Do not diagnose a sales problem from this article.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R14",
+      "title": "State of Outbound 2026 — Cognism",
+      "url": "https://www.cognism.com/reports/state-of-outbound-2026",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Original vendor report](https://www.cognism.com/reports/state-of-outbound-2026).\n- Date: report labeled 2026; exact release date not displayed. Underlying activity is 2025.\n- Useful mechanism: coordinate calls, email and LinkedIn around relevant contacts and conversation quality rather than maximizing task volume.\n- SignalDesk application: define a small account cohort, contextual reason to engage, sequence handoffs and held/qualified meeting outcomes.\n- Limit: report explicitly describes Cognism's internal teams and excludes inbound/partner/marketing-sourced opportunities. Its channel mix and rates are not industry-wide targets or client forecasts; observed associations do not establish causation.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R15",
+      "title": "About Pre-Built Segments — Mailchimp",
+      "url": "https://mailchimp.com/help/about-pre-built-segments/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Official product documentation](https://mailchimp.com/help/about-pre-built-segments/).\n- Date: publication/update date not displayed; verified 2026-09-28.\n- Useful mechanism: group contacts using observed activity or supplied attributes; distinguish subscribed contacts from other records.\n- SignalDesk application: when data and permissions exist, carry a contact's expressed interest from an acquisition touch into an appropriate email follow-up and stop irrelevant sequences.\n- Limit: no contact data means no behavioral segment can be asserted. Product features and predicted segments are not independent customer truth; check plan eligibility and signal quality before implementation.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R16",
+      "title": "Growth Marketing: The B2B Marketer's Complete Guide — Exit Five",
+      "url": "https://exitfive.com/growth-marketing/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Publisher guide](https://exitfive.com/growth-marketing/).\n- Date: publication date not displayed in inspected page.\n- Useful mechanism: work backward from the customer journey and business outcome, then select channels; define test criteria before observing the result.\n- SignalDesk application: map one coherent path from discovery through qualified engagement to purchase/retention, with a named handoff between channels.\n- Limit: several superlative channel claims lack supporting data in the page. Do not adopt “best ROI” or “highest converting” assertions. Use as a broad checklist, not an idea generator or benchmark.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R17",
+      "title": "What's working in SaaS pricing right now — Rob Litterst, Growth Unhinged",
+      "url": "https://www.growthunhinged.com/p/2025-state-of-saas-pricing-changes",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Pricing analysis](https://www.growthunhinged.com/p/2025-state-of-saas-pricing-changes).\n- Published: 2026-01-07; analysis covers 2025 changes.\n- Useful mechanism: review packaging, usage limits and how buyers understand value; complexity and predictability matter alongside sticker price.\n- SignalDesk application: audit the visible offer for understandable units, limits and next steps. Test comprehension before proposing a new price model.\n- Limit: only the publicly accessible portion was read; later sections are paywalled. Dataset focuses on selected SaaS firms with transparent pricing, not all B2B companies or agencies. Changes do not prove improved economics.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "R18",
+      "title": "About Conversion Lift — Google Ads",
+      "url": "https://support.google.com/google-ads/answer/12003020?hl=en",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/GTM_LIBRARY.md",
+      "notes": "- Source: [Official measurement documentation](https://support.google.com/google-ads/answer/12003020?hl=en).\n- Date: publication/update date not displayed; verified 2026-09-28.\n- Useful mechanism: compare treatment and control to estimate additional outcomes attributable to ads, rather than equating credited conversions with causal impact.\n- SignalDesk application: separate observed pipeline, attributed pipeline and experimentally estimated additional pipeline. Check eligibility and sample feasibility before proposing a platform lift study.\n- Limit: not available to every account. A small agency test may only produce qualitative or directional evidence; do not promise a statistically conclusive revenue answer on a tiny budget.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B01",
+      "title": "Value Proposition Design",
+      "url": "https://www.strategyzer.com/library/value-proposition-design-2",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Author/source:** Alexander Osterwalder and coauthors; [Strategyzer book page](https://www.strategyzer.com/library/value-proposition-design-2).\n- **Date/access:** Page dated 2014-11-01; confirms 2014 edition. Public synopsis and companion-resource descriptions inspected; book/sample PDF not read. Accessed 2026-09-28.\n- **Method:** Design and test the connection between an offer and what customers want, using a visual value-proposition model.\n- **SignalDesk application:** Compare a company's documented promise with buyer interview evidence. Turn an unsupported value claim into a specific comprehension or relevance test before polishing copy.\n- **Limit:** A filled canvas is not validated customer understanding. “Fit” cannot be inferred from the website alone.\n- **Tags:** positioning, ICP, offer, research, message-testing.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B02",
+      "title": "Business Model Generation",
+      "url": "https://www.strategyzer.com/library/business-model-generation",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Author/source:** Alexander Osterwalder and Yves Pigneur; [Strategyzer book page](https://www.strategyzer.com/library/business-model-generation).\n- **Date/access:** Publication date not displayed. Public description inspected; offered 72-page preview not accessed. Accessed 2026-09-28.\n- **Method:** Model how a business operates so alternatives can be compared systematically, rather than only changing promotional tactics.\n- **SignalDesk application:** When campaign ideas feel interchangeable, examine a different purchase route, delivery arrangement or partner role. List operational dependencies before calling it feasible.\n- **Limit:** A new commercial mechanism may require product, delivery or legal changes outside marketing authority. Do not invent a company's cost structure.\n- **Tags:** business-model, partnerships, offer, creativity, finance.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B03",
+      "title": "Continuous Discovery Habits",
+      "url": "https://www.producttalk.org/continuous-discovery-habits/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Author/source:** Teresa Torres; [author's launch article](https://www.producttalk.org/continuous-discovery-habits/).\n- **Date/access:** Launch article dated 2021-05-19, announcing availability. Article read; book not read. Accessed 2026-09-28.\n- **Method:** Start with an outcome, discover opportunities through interviews, and test uncertainties in candidate solutions. Visualize the relationship between the outcome and possible interventions.\n- **SignalDesk application:** Present one buyer question and competing tests, not a long unexplained idea backlog. Check the smallest consequential uncertainty first.\n- **Limit:** Product-team methods require adaptation to agency GTM. A proposed experiment hypothesis is allowed; invented client facts are not. The source's habit cadence is not a mandatory research delay.\n- **Tags:** discovery, research, experimentation, prioritization.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B04",
+      "title": "Demand-Side Sales 101",
+      "url": "https://therewiredgroup.com/learn/demand-side-sales-101/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Author/source:** Bob Moesta with Greg Engle; [The Re-Wired Group's book description](https://therewiredgroup.com/learn/demand-side-sales-101/).\n- **Date/access:** Publication date not displayed. Public description read; book not read. Accessed 2026-09-28.\n- **Method:** Understand how a customer makes progress and buys, rather than merely improving a seller's feature presentation.\n- **SignalDesk application:** Interview buyers about the situation that triggered a search, alternatives considered, and what prevented a decision. Use those accounts to test a different buying experience.\n- **Limit:** A job title or industry is not a buying situation. Without interviews or authorized sales evidence, the reason for stalled deals remains unknown.\n- **Tags:** JTBD, ICP, sales, buying-process, research.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B05",
+      "title": "Made to Stick",
+      "url": "https://heathbrothers.com/books/made-to-stick/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Chip Heath and Dan Heath; [authors' book page](https://heathbrothers.com/books/made-to-stick/).\n- **Date/access:** Source explicitly states release in 2007; exact date not stated. Public description read, not the offered first chapter or book. Accessed 2026-09-28.\n- **Method:** Explore what helps an idea attract attention and remain understandable and memorable, including disrupted expectations and curiosity.\n- **SignalDesk application:** Replace abstract claims with a small demonstration of the promised change. Test unaided understanding and recall, then assess whether it encourages a relevant next action.\n- **Limit:** Memorability does not establish truth, qualified demand or revenue. A surprising headline alone does not satisfy SignalDesk's creativity test.\n- **Tags:** creativity, message-testing, storytelling, comprehension.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B06",
+      "title": "The Power of Moments",
+      "url": "https://heathbrothers.com/books/the-power-of-moments/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Chip Heath and Dan Heath; [authors' book page](https://heathbrothers.com/books/the-power-of-moments/).\n- **Date/access:** Publication date not displayed on inspected page. Public description read; embedded audio not played and book not read. Accessed 2026-09-28.\n- **Method:** Deliberately design brief experiences around insight, connection, pride or elevation instead of leaving memorable moments to chance.\n- **SignalDesk application:** Prototype a moment in evaluation or onboarding where buyers discover something useful themselves. Evaluate demonstrated understanding or progress, not just entertainment.\n- **Limit:** Do not disguise ordinary client reviews as creative experiences. A memorable event does not fix weak delivery or prove retention impact.\n- **Tags:** creativity, onboarding, buyer-experience, retention.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B07",
+      "title": "Contagious",
+      "url": "https://jonahberger.com/books/contagious/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Author/source:** Jonah Berger; [author's book page](https://jonahberger.com/books/contagious/).\n- **Date/access:** Publication date not displayed. Public description read; gated resources and full book not accessed. Accessed 2026-09-28.\n- **Method:** Examine the reasons information travels through word of mouth and social transmission, including B2B contexts.\n- **SignalDesk application:** For any shareable artifact, specify who would forward it, to whom, why doing so helps them, and how a recipient benefits without a sales call.\n- **Limit:** Do not promise virality or treat shares as opportunities. Validate actual recipient relevance and voluntary sharing; an unrequested referral scheme is not automatically useful.\n- **Tags:** creativity, distribution, referrals, advocacy.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B08",
+      "title": "Monetizing Innovation",
+      "url": "https://catalogimages.wiley.com/images/db/pdf/9781119240860.excerpt.pdf",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Madhavan Ramanujam and Georg Tacke; [Wiley's authorized chapter-one excerpt](https://catalogimages.wiley.com/images/db/pdf/9781119240860.excerpt.pdf).\n- **Date/access:** Publication date not established from this excerpt. Public 12-page chapter excerpt inspected; not full book. Accessed 2026-09-28.\n- **Method:** Investigate perceived value and willingness to pay before committing to a fully developed offering; the excerpt illustrates the principle through automotive examples.\n- **SignalDesk application:** Before recommending a new service package, test which outcomes and constraints matter to buyers and whether they will make a meaningful commitment.\n- **Limit:** Stated willingness to pay may differ from purchase behavior. Historical illustrative cases are not causal proof or B2B pricing benchmarks. Never choose a price from an unrelated company's result.\n- **Tags:** pricing, packaging, offer, finance, experimentation.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B09",
+      "title": "Blue Ocean Strategy",
+      "url": "https://www.blueoceanstrategy.com/books/blue-ocean-strategy-book/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Chan Kim and Renée Mauborgne; [official book page](https://www.blueoceanstrategy.com/books/blue-ocean-strategy-book/).\n- **Date/access:** Exact publication date not displayed; page describes a 20th-anniversary enhanced edition. Public description read; book not read. Accessed 2026-09-28.\n- **Method:** Consider changes to market boundaries and sources of demand rather than only competing on the same attributes.\n- **SignalDesk application:** Ask which buying constraints prevent otherwise relevant people from participating, and whether a different engagement structure could remove one. Compare the resulting mechanism against existing offers.\n- **Limit:** “Uncontested” is not an evidence-backed description of a market until investigated. A new category name is not proof of demand or defensibility.\n- **Tags:** differentiation, positioning, creativity, category, offer.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B10",
+      "title": "Hacking Growth",
+      "url": "https://www.penguinrandomhouse.com/books/545936/hacking-growth-by-sean-ellis-founder-of-growthhackerscom-and-morgan-brown/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Sean Ellis and Morgan Brown; [Penguin Random House description](https://www.penguinrandomhouse.com/books/545936/hacking-growth-by-sean-ellis-founder-of-growthhackerscom-and-morgan-brown/).\n- **Date/access:** Publisher states 2017-04-25. Public description inspected; full book/sample not read. Accessed 2026-09-28.\n- **Method:** Coordinate cross-functional, repeated tests across acquisition, engagement, retention and repeat purchase rather than relying on isolated large campaigns.\n- **SignalDesk application:** Connect a small acquisition test to the next customer action and an explicit learning decision. Assign owners across the handoff instead of evaluating channels independently.\n- **Limit:** Historical growth-company stories are not transferable forecasts. Speed without tracking quality, sufficient evidence or delivery capacity can produce noise.\n- **Tags:** experimentation, channels, growth, retention, activation.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B11",
+      "title": "This Is Marketing",
+      "url": "https://seths.blog/2018/11/what-is-inside-thisismarketing/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Author/source:** Seth Godin; [author's explanation of the book](https://seths.blog/2018/11/what-is-inside-thisismarketing/).\n- **Date/access:** Article is in November 2018 archive; exact book publication date not established here. Public article read; book not read. Accessed 2026-09-28.\n- **Method:** Define a specific audience worth serving and the change the work is intended to create, rather than maximizing broad attention.\n- **SignalDesk application:** Explain who benefits from an experiment and why they would participate before deciding format or channel. Validate that group instead of silently inventing an ICP.\n- **Limit:** An attractive audience story is still a hypothesis without customer evidence. Narrowness by itself does not establish commercial viability.\n- **Tags:** ICP, positioning, permission, brand, relevance.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B12",
+      "title": "The JOLT Effect",
+      "url": "https://www.penguinrandomhouse.com/books/697165/the-jolt-effect-by-matthew-dixon-and-ted-mckenna/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Matthew Dixon and Ted McKenna; [Penguin Random House description](https://www.penguinrandomhouse.com/books/697165/the-jolt-effect-by-matthew-dixon-and-ted-mckenna/).\n- **Date/access:** Publisher states 2022-09-20. Public description read; study dataset and book not inspected. Accessed 2026-09-28.\n- **Method:** Distinguish interest in changing from confidence in making a purchase; the authors frame indecision and fear of failure as potential barriers.\n- **SignalDesk application:** Where sales evidence supports uncertainty, test a concrete decision aid or reversible first step against simply adding more benefit claims.\n- **Limit:** The publisher's reported study is not independently audited here. Do not assume every stalled deal reflects indecision; budget, fit, timing and procurement are competing explanations.\n- **Tags:** sales, message-testing, risk, buying-process, conversion.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B13",
+      "title": "Scaling Innovation",
+      "url": "https://growthblueprint.simon-kucher.com/issue-02/qa",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Madhavan Ramanujam and Eddie Hartman; [Simon-Kucher interview with Hartman](https://growthblueprint.simon-kucher.com/issue-02/qa).\n- **Date/access:** Publication date not displayed; footer copyright is not treated as publication proof. Full public interview read, not book. Accessed 2026-09-28.\n- **Method:** Consider acquisition, monetization and retention together; communicate delivered value and investigate reasons for churn rather than reflexively discounting.\n- **SignalDesk application:** Explain how an experiment might affect new business, ongoing delivery and renewal. Identify the required cost, margin and customer inputs before computing financial outcomes.\n- **Limit:** Consultancy interview promotes the authors' services. Price increases and expanded services are not justified merely by this framework. Routine retention contact is operational hygiene, not automatically creative GTM.\n- **Tags:** finance, pricing, retention, expansion, value.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B14",
+      "title": "The Customer Success Economy",
+      "url": "https://www.gainsight.com/resource/the-customer-success-economy-book/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Nick Mehta and Allison Pickens; [Gainsight book page](https://www.gainsight.com/resource/the-customer-success-economy-book/).\n- **Date/access:** Exact publication date not established. Page refers to four years after its 2016 predecessor; do not substitute that for a verified release date. Public description read; gated chapter not obtained. Accessed 2026-09-28.\n- **Method:** Treat customer success as a concern across the organization, rather than confining it to a post-sale department.\n- **SignalDesk application:** Check whether an experiment's acquisition promise is supported by onboarding and delivery. Tie expansion proposals to customer progress, and specify evidence needed to establish a renewal problem.\n- **Limit:** Vendor has a commercial interest in customer-success investment. Without customer data, do not assign health scores or claim churn risk. More meetings are not a creative retention strategy.\n- **Tags:** retention, expansion, handoffs, customer-success.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "B15",
+      "title": "Trustworthy Online Controlled Experiments",
+      "url": "https://www.cambridge.org/core/books/abs/trustworthy-online-controlled-experiments/contents/E5D69C46E095D864BE242CE5BF5FEEBE",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/books/BOOKS_AND_METHODS.md",
+      "notes": "- **Authors/source:** Ron Kohavi, Diane Tang and Ya Xu; [Cambridge University Press contents page](https://www.cambridge.org/core/books/abs/trustworthy-online-controlled-experiments/contents/E5D69C46E095D864BE242CE5BF5FEEBE).\n- **Date/access:** Publisher lists online publication 2020-03-13 and print year 2020. Public metadata/contents inspected only; full chapters unavailable in this review. Accessed 2026-09-28.\n- **Method scope:** Contents distinguish introductory experimentation, complementary/alternative techniques, platform construction and advanced analysis. This is a deeper technical reference to consult when a quantitative test is justified.\n- **SignalDesk application:** Separate “we can learn from a small prototype” from “we can estimate causal lift.” Escalate to an appropriately designed controlled test only when data and feasible sample support it.\n- **Limit:** This entry is a reading pointer, not a summary of unseen statistical guidance. Do not derive sample sizes or significance rules from a table of contents.\n- **Tags:** experimentation, measurement, causality, evidence-quality.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "C01",
+      "title": "How we got our first 1,000 users",
+      "url": "https://posthog.com/founders/first-1000-users",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [James Hawkins, PostHog](https://posthog.com/founders/first-1000-users).\n- **Publication:** 2024-06-21. **Access:** public founder article.\n- **Topics:** developer GTM, PLG, onboarding, community, pricing.\n- **Mechanism:** manually onboard early users, learn whether strangers return, then reduce signup/deployment friction. The account connects product decisions with distribution and pricing rather than treating marketing as a separate layer.\n- **SignalDesk use:** propose a small observed-use test before scaling acquisition. Capture why people return, what they cannot complete, and whether the intended value is actually experienced.\n- **Limits:** retrospective founder account with survivorship bias, not a controlled study. Venture-backed open-source circumstances do not transfer automatically to an agency. Do not recommend delaying revenue or copy its reported growth as a forecast.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C02",
+      "title": "Six cold email examples",
+      "url": "https://www.gong.io/blog/cold-email-examples",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Jonathan Costet, Gong](https://www.gong.io/blog/cold-email-examples).\n- **Publication:** 2022-04-22; last modified 2026-03-04. **Access:** public article and examples.\n- **Topics:** outbound, creative participation, sales conversations.\n- **Mechanism:** examples combine prospect relevance with unexpected physical or visual elements, rather than relying only on a feature pitch.\n- **SignalDesk use:** separate the relevant reason to engage from the attention device. Test whether the recipient finds the object or message useful before scaling a creative outreach concept.\n- **Limits:** selected success examples, no representative comparison group. Replies and booked meetings are not revenue. Gifts, puns, caricatures and persistence are not inherently appropriate; this is not permission to send unsolicited campaigns or ignore opt-outs. An update date does not make old examples new 2026 evidence.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C03",
+      "title": "How to define success for your partner marketing program",
+      "url": "https://blog.partnerstack.com/post/how-to-define-success-for-your-partner-marketing-program",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Luke Swanek, PartnerStack](https://blog.partnerstack.com/post/how-to-define-success-for-your-partner-marketing-program).\n- **Publication:** 2018-11-29. **Access:** public original article.\n- **Topics:** partnerships, co-marketing, enablement, measurement.\n- **Mechanism:** partner selection, mutual incentives and ongoing support jointly determine program design; a universal success benchmark is inappropriate.\n- **SignalDesk use:** identify a complementary partner with an evidenced shared buyer problem. Scope one jointly useful interaction, each party's contribution, qualified introductions and delivery responsibilities before proposing a large program.\n- **Limits:** vendor advice promotes partner software. Old foundational guidance, not current channel performance evidence. More registered partners does not establish active distribution or incremental sales.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C04",
+      "title": "How to communicate a price increase—and keep your best subscribers",
+      "url": "https://www.revenuecat.com/blog/growth/how-to-raise-app-prices-effectively",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Daphne Tideman, RevenueCat](https://www.revenuecat.com/blog/growth/how-to-raise-app-prices-effectively).\n- **Publication:** 2025-05-06; updated 2025-06-19. **Access:** public article.\n- **Topics:** pricing, retention, packaging, communication.\n- **Mechanism:** evaluate the timing, customer value and treatment of existing versus new subscribers before writing the announcement.\n- **SignalDesk use:** test comprehension of an offer and its value before recommending a price change. Specify whose price changes, when, and what delivered value supports the explanation.\n- **Limits:** consumer subscription examples and practitioner opinion, not evidence of B2B willingness to pay. Higher price can reduce volume or retention. Do not promise improved margin without delivery cost data or treat narrative examples as causal proof.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C05",
+      "title": "How we decide which moments get a message",
+      "url": "https://customer.io/learn/lifecycle-marketing/event-based-messaging",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Molly Evola, Customer.io](https://customer.io/learn/lifecycle-marketing/event-based-messaging).\n- **Publication:** not displayed in inspected text. **Access:** public operator article.\n- **Topics:** email, in-app messaging, lifecycle, suppression.\n- **Mechanism:** the same action can warrant different treatment depending on customer history; repeat content downloads need not restart the same nurture sequence.\n- **SignalDesk use:** define an event, relevant history, useful response, suppression rule and exit condition. Connect an organic or paid visit to opted-in follow-up without repeatedly treating an existing customer as a new lead.\n- **Limits:** describes the vendor's own workflow. A content download or engagement score is not verified purchase intent. Requires reliable first-party events and appropriate contact permissions; without these, report the dependency as missing.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C06",
+      "title": "2026 customer messaging trends: the complete data",
+      "url": "https://customer.io/learn/lifecycle-marketing/2026-customer-messaging-trends",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Customer.io research and methodology](https://customer.io/learn/lifecycle-marketing/2026-customer-messaging-trends).\n- **Publication:** report labeled 2026; exact release date not displayed in inspected text. Supplementary platform data covers November–December 2025. **Access:** public report.\n- **Topics:** email, cross-channel messaging, research quality.\n- **Mechanism:** compare messaging choices by business model, role and lifecycle purpose rather than prescribing one channel for every company.\n- **SignalDesk use:** use the questionnaire to identify unanswered operational questions: which messages support activation, retention or monetization, and what outcome is tracked?\n- **Limits:** vendor-run, self-reported survey with a North American/mid-market B2B SaaS skew; not a client baseline or causal effectiveness study. Some demographic figures differ between marketer-specific summary and all-respondent tables. Preserve subgroup denominators rather than mixing them. No survey percentage becomes a company forecast.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C07",
+      "title": "Growth loops are the new funnels",
+      "url": "https://www.reforge.com/blog/growth-loops",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Reforge; Brian Balfour, Casey Winters, Kevin Kwok and Andrew Chen](https://www.reforge.com/blog/growth-loops).\n- **Publication:** article displays 2018-07-31. The collection listing displays 2026-01-09; use the article date, not the listing as evidence of new research. **Access:** public article; linked courses not accessed.\n- **Topics:** connected channels, referrals, product, distribution.\n- **Mechanism:** ask how the output of one cohort can create useful input for the next, spanning product, acquisition and monetization.\n- **SignalDesk use:** draw a proposed route from customer value to a shareable useful output to another qualified buyer. Name the incentive, owner and measurable handoff at every step.\n- **Limits:** framework and selected examples; drawing a circular diagram does not prove compounding. Low participation, long cycle times or acquisition costs can break the loop. Keep ordinary funnel reporting where useful.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C08",
+      "title": "Monetization versus growth? It is a false choice",
+      "url": "https://www.reforge.com/blog/monetization-vs-growth-its-a-false-choice",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Elena Verna, Dan Hockenmaier, Patrick Campbell and Brian Balfour, Reforge](https://www.reforge.com/blog/monetization-vs-growth-its-a-false-choice).\n- **Publication:** 2020-02-18. **Access:** public article; course not accessed.\n- **Topics:** pricing, sales-assisted PLG, acquisition economics.\n- **Mechanism:** packaging and price affect which acquisition and service models a business can afford; monetization is connected to distribution.\n- **SignalDesk use:** check whether a proposed high-touch motion can be supported by actual contract economics. Where economics are unknown, show the missing inputs and proposed learning step instead of inventing CAC or payback.\n- **Limits:** historical market claims and selected operator stories are not 2026 benchmarks. A successful price/package change elsewhere cannot establish causality or suitability for a new client.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C09",
+      "title": "Net and gross revenue retention",
+      "url": "https://chartmogul.com/blog/net-and-gross-retention-rates/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Aaron Wichman, ChartMogul](https://chartmogul.com/blog/net-and-gross-retention-rates/).\n- **Publication:** 2022-12-14. **Access:** public article/product announcement.\n- **Topics:** retention, expansion, finance.\n- **Mechanism:** gross retention excludes expansion; net retention includes it. Both require a defined starting customer cohort and time period, excluding new customers acquired during that period.\n- **SignalDesk use:** report customer loss separately from expansion so upsells cannot hide churn. Connect a renewal experiment to the correct cohort, renewal window and contract value.\n- **Limits:** recurring-revenue metric definitions are not a diagnosis. Do not apply SaaS MRR formulas mechanically to project-based agencies. Billing, recognized revenue and cash remain distinct.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C10",
+      "title": "Enhanced conversions for leads",
+      "url": "https://support.google.com/google-ads/answer/15713840?hl=en-AU",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Google Ads official documentation](https://support.google.com/google-ads/answer/15713840?hl=en-AU).\n- **Publication:** no article date displayed; includes a settings-change notice referring to April 2026. **Access:** public documentation.\n- **Topics:** PPC, offline conversions, CRM, measurement.\n- **Mechanism:** connect later offline lead outcomes with ad interactions using supported first-party identifiers and imports, rather than stopping measurement at the form submission.\n- **SignalDesk use:** when authorized CRM and Ads access exist, define distinct lead and later commercial outcome events, stable identifiers and deduplication. Verify data quality before optimizing campaigns.\n- **Limits:** attribution is not incrementality. Hashed data still requires appropriate collection/use permissions; documentation does not establish a client's compliance. Re-check current implementation requirements and account eligibility. No integration is implied by saving this reference.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C11",
+      "title": "Information gain in SEO",
+      "url": "https://ahrefs.com/blog/information-gain/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Louise Linehan, Ahrefs](https://ahrefs.com/blog/information-gain/).\n- **Publication:** 2026-08-20. **Access:** public article.\n- **Topics:** organic, original evidence, differentiation.\n- **Mechanism:** identify what useful information the audience cannot obtain from repetitive existing results, then contribute first-hand experience or original evidence.\n- **SignalDesk use:** examine competing answers before proposing content. Prototype a genuinely useful comparison, demonstration or original observation; test buyer usefulness before producing a full asset or distributing it through paid/email channels.\n- **Limits:** SEO vendor interpretation. The article explicitly says a literal Google information-gain ranking score is unconfirmed. A patent is not proof of implementation, and originality does not guarantee ranking, AI citations or revenue. Never invent original data to fill a gap.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C12",
+      "title": "Benchmarks methodology and comparison controls",
+      "url": "https://help.chartmogul.com/article/138-benchmarks",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [ChartMogul Help Center](https://help.chartmogul.com/article/138-benchmarks).\n- **Publication:** not established from inspected page. **Access:** public documentation; no account-level benchmark tool accessed.\n- **Topics:** benchmarking, growth, retention, finance.\n- **Mechanism:** compare recurring-revenue businesses through defined measures and segments, with year-over-year comparisons rather than an undifferentiated industry average.\n- **SignalDesk use:** record metric definition, period, cohort and relevant company segment before using a benchmark. Show unavailable comparison inputs explicitly.\n- **Limits:** participating vendor customer data is not the entire market. Subscription benchmarks can be inappropriate for services, early-stage experiments or different contract sizes. Association between retention and growth is not proof that a particular tactic caused either.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C13",
+      "title": "How to think about paid ad experiments",
+      "url": "https://metadata.io/resources/blog/stop-struggling-start-experimenting-how-to-think-about-your-paid-ad-experiments",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Abdallah Al-Hakim, Metadata](https://metadata.io/resources/blog/stop-struggling-start-experimenting-how-to-think-about-your-paid-ad-experiments).\n- **Publication:** 2023-12-05. **Access:** public practitioner/vendor article.\n- **Topics:** PPC, creative testing, pipeline, stopping rules.\n- **Mechanism:** specify the demand objective and test a limited set of audience/message/offer differences, following outcomes beyond cost per lead.\n- **SignalDesk use:** choose one decision, ensure the landing path works, set a spending cap, and compare qualified opportunity outcomes when data permits. Avoid proliferating test cells on small budgets.\n- **Limits:** a particularly useful cautionary source: the article labels opportunity value divided by ad spend as “ROI.” SignalDesk must not repeat that label as profit or realized return. Vendor-selected observational data cannot prove that more experiments cause better results. Its large spending/timing recommendation is not a minimum for every small test; platform claims need fresh verification.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C14",
+      "title": "Understand new user activation",
+      "url": "https://amplitude.com/blog/understand-new-user-activation",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Bethany Mangan, Amplitude](https://amplitude.com/blog/understand-new-user-activation).\n- **Publication:** 2023-04-11. **Access:** public tutorial.\n- **Topics:** PLG, activation, retention, experiment design.\n- **Mechanism:** define meaningful activation events, examine time and drop-off between them, compare behavioral cohorts, then test whether encouraging a behavior changes retention.\n- **SignalDesk use:** distinguish initial setup from experienced value. Propose a small onboarding intervention tied to a specific observed obstacle, with later retention as a guardrail.\n- **Limits:** vendor examples and correlation do not identify causal drivers by themselves. A reminder or sharing behavior may select already motivated users. The article's example counts/rates are not client benchmarks; without product analytics, activation and drop-off stay unknown.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "C15",
+      "title": "Expansion using customer data",
+      "url": "https://www.gainsight.com/blog/how-to-unlock-millions-of-dollars-in-expansion-using-customer-data/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/channels/CHANNELS_AND_GROWTH.md",
+      "notes": "- **Source:** [Priyanka Srinivasan, Gainsight](https://www.gainsight.com/blog/how-to-unlock-millions-of-dollars-in-expansion-using-customer-data/).\n- **Publication:** 2019-08-20. **Access:** public vendor article.\n- **Topics:** expansion, customer success, advocacy, sales enablement.\n- **Mechanism:** connect actual entitlements, usage, customer outcomes and stakeholder knowledge before proposing an additional product or business-unit introduction.\n- **SignalDesk use:** distinguish capacity limits, an unmet job and lack of awareness as different expansion hypotheses. Require customer value and an evidenced need before a commercial prompt.\n- **Limits:** promotional headline and revenue claims are not a forecast. Missing purchases do not prove demand; similar accounts need not want the same bundle. This is ordinary expansion process guidance, not a novel experiment by itself. No automatic emails without authorized scope and valid recipient context.",
+      "discoveryOnly": false
+    },
+    {
+      "id": "W01",
+      "title": "AI-Assisted Creativity: 6 B2B Marketers Share How AI Fits Into Their Process",
+      "url": "https://exitfive.com/live/ai-assisted-creativity-6-b2b-marketers/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Exit Five / Walker Sands](https://exitfive.com/live/ai-assisted-creativity-6-b2b-marketers/).\n- Date/access: event dated 2026-09-25; public event description inspected. Recording not reviewed; page still contains registration language after the event date.\n- Scope: six marketers describe creative workflows and where human judgment remains necessary.\n- Application: seek concrete examples of how an idea was challenged and changed, not just the tool or prompt used. Ask what human decision prevented generic output.\n- Limit: the page does not disclose the actual workflows or their commercial results. Do not attribute invented techniques to speakers.\n- Tags: creativity, AI, human-review.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W02",
+      "title": "Paid Ads Playoff",
+      "url": "https://exitfive.com/live/paid-ads-playoff-proven-b2b-paid-ads-plays-that-turn-spend-into-pipeline/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Exit Five session page](https://exitfive.com/live/paid-ads-playoff-proven-b2b-paid-ads-plays-that-turn-spend-into-pipeline/).\n- Date/access: 2026-07-10; event description and public replay link inspected, recording not reviewed.\n- Scope: short ad examples, questions and audience voting. The organizer promises discussion of pipeline results.\n- Application: use the format to review competing experiment proposals: show the actual creative, ask for the buyer action, challenge the measurement, choose a small test.\n- Limit: audience votes measure preference, not incremental pipeline. Organizer claims of results are not verified campaign evidence.\n- Tags: PPC, creative, pipeline, experiment-review.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W03",
+      "title": "B2B Email Marketing: What Still Works?",
+      "url": "https://exitfive.com/live/b2b-email-marketing-what-still-works/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Exit Five / Knak](https://exitfive.com/live/b2b-email-marketing-what-still-works/).\n- Date/access: 2026-05-15; public description and FAQ reviewed, recording not reviewed.\n- Scope: personalization, production workflows, campaigns and reporting email impact to leadership.\n- Application: evaluate email as a relevant next step after an organic, paid or event interaction. Define the recipient's reason to act and the resulting qualified conversation, not only opens.\n- Limit: campaign examples and result calculations are not available in the inspected description. Email effectiveness must be tested with permission, deliverability and account-level context.\n- Tags: email, distribution, lifecycle, pipeline.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W04",
+      "title": "The Marketing Playbook for Keeping Customers",
+      "url": "https://exitfive.com/live/the-marketing-playbook-for-keeping-customers-not-just-acquiring-them/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Exit Five / Customer.io](https://exitfive.com/live/the-marketing-playbook-for-keeping-customers-not-just-acquiring-them/).\n- Date/access: 2026-05-01; public description reviewed, recording not reviewed.\n- Scope: behavior-triggered engagement across email, push, SMS and in-app channels; choosing relevant channels.\n- Application: propose one customer-value trigger and an appropriate intervention, then measure the value event and later retention separately.\n- Limit: do not import the page's generic acquisition-versus-retention cost multiplier into client finances. Customer behavior and actual churn causes require first-party data.\n- Tags: retention, expansion, activation, lifecycle.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W05",
+      "title": "The B2B Buying Experience With AI: What Changes?",
+      "url": "https://exitfive.com/live/the-b2b-buying-experience-with-ai-what-changes/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Exit Five session](https://exitfive.com/live/the-b2b-buying-experience-with-ai-what-changes/).\n- Date/access: 2025-10-30; public description reviewed, recording not reviewed.\n- Scope: self-education, AI-assisted buying and changing marketing/sales responsibilities.\n- Application: investigate what prospects already know at the first conversation, which claims they trust and what missing information prevents a decision.\n- Limit: a panel premise does not prove this client's buyers use AI or that an AI visibility campaign will create revenue.\n- Tags: buyer-research, sales-handoff, decision-friction.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W06",
+      "title": "Turn Your Pipe(line) Dreams into Reality: A Deep Dive into Deal Boards",
+      "url": "https://www.gong.io/resources/webinars/turn-your-pipeline-dreams-into-reality-a-deep-dive-into-deal-boards",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Gong webinar](https://www.gong.io/resources/webinars/turn-your-pipeline-dreams-into-reality-a-deep-dive-into-deal-boards).\n- Date/access: publication date not verified; public webinar description reviewed, recording not reviewed.\n- Scope: deal inspection, customer engagement, AI insights and next steps within Gong's product.\n- Application: when authorized CRM and call data exist, compare stalled opportunities with actual conversations before selecting a sales experiment.\n- Limit: vendor demonstration, not independent evidence. Without CRM/call access, stalled stages and sales objections remain unknown.\n- Tags: sales, pipeline, CRM, diagnosis.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W07",
+      "title": "Unlocking Retention and Growth: How to Set Customer-led KPIs (Part 2)",
+      "url": "https://forgetthefunnel.substack.com/p/unlocking-retention-and-growth-how",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Forget the Funnel — Georgiana Laudi and Claire Suellentrop](https://forgetthefunnel.substack.com/p/unlocking-retention-and-growth-how).\n- Date/access: 2024-03-05; substantive episode notes and timestamp summaries reviewed. Audio/full transcript not reviewed.\n- Method in public notes: distinguish first value, value realization and continued value; choose measures connected to the customer's desired outcome.\n- Application: pair a behavioral success measure with a later commercial measure. For example, completing a valuable workflow is different from merely logging in; the actual workflow must be established with customers.\n- Limit: do not repeat the introductory signup-abandonment statistic as a benchmark; underlying study was not inspected. Value events cannot be invented from a marketing page.\n- Tags: KPI, activation, retention, customer-research.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W08",
+      "title": "How to Operationalize Customer Value to Maximize Product Growth",
+      "url": "https://www.2checkout.com/lp/operationalize-customer-value-to-maximize-product-growth.html",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [2Checkout webinar with Claire Suellentrop](https://www.2checkout.com/lp/operationalize-customer-value-to-maximize-product-growth.html).\n- Date/access: date not verified; public description reviewed. Registration/recording not accessed.\n- Scope: identifying valuable customers, aligning product experience with customer value and connecting leading indicators to trial conversion and recurring revenue.\n- Application: write a proposed causal chain from customer action to value to payment, then identify what observation could disprove each link.\n- Limit: descriptive agenda, not a verified method demonstration. Page lists inconsistent duration descriptions; no duration claim is adopted here.\n- Tags: PLG, ICP, measurement, activation.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W09",
+      "title": "Demand Curve Growth Program",
+      "url": "https://www.demandcurve.com/growth-program",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Official program page](https://www.demandcurve.com/growth-program).\n- Date/access: date not verified; public program overview inspected. Paid curriculum not accessed.\n- Scope: acquisition, activation, monetization and retention across several growth motions.\n- Application: use the curriculum categories as a coverage checklist when deciding which part of the customer journey needs investigation.\n- Limit: do not present advertised student outcomes as independently established results or claim to know the gated lessons. Free practitioner reference R09 is available separately.\n- Tags: course, funnel, channel-coordination.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W10",
+      "title": "SaaStr AI Annual 2026 Agenda",
+      "url": "https://www.saastrannual2026.com/saastr-2026-agenda",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [Official agenda](https://www.saastrannual2026.com/saastr-2026-agenda).\n- Date/access: event dated 2026-05-12 through 2026-05-14; agenda inspected, sessions not viewed.\n- Scope: tracks include GTM orchestration, AI pricing, implementation and customer support/revenue.\n- Application: find specific practitioner sessions for a current question, then inspect that session before citing its conclusions.\n- Limit: an agenda is a discovery resource. Speaker presence, event marketing claims and track names do not establish results or industry-wide adoption.\n- Tags: events, pricing, AI, discovery.",
+      "discoveryOnly": true
+    },
+    {
+      "id": "W11",
+      "title": "Free CXL Content and Courses",
+      "url": "https://cxl.com/first-time-start-here/",
+      "checkedAt": "2026-09-28",
+      "document": "docs/references/media/WEBINARS_AND_COURSES.md",
+      "notes": "- Source: [CXL starting page](https://cxl.com/first-time-start-here/).\n- Date/access: date not verified; public resource directory inspected. Account-only materials not accessed.\n- Scope: free lessons, practitioner webinars, blog and newsletter discovery.\n- Application: locate a specific source for an unresolved measurement, messaging or experimentation question rather than ingesting the entire catalog.\n- Limit: directory only. Marketing claims about quality or audience size are not evaluation evidence. No subscription was created.\n- Tags: courses, webinars, measurement, discovery.",
+      "discoveryOnly": true
+    }
+  ]
+}

@@ -13,10 +13,14 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --max-warnings 0",
     "db:generate": "drizzle-kit generate",
     "test": "npm run test:unit",
-    "test:unit": "node --experimental-strip-types --test tests/validation.test.ts tests/website-crawl.test.ts tests/supervisor.test.ts tests/model-budget.test.ts",
+    "test:unit": "npm run references:check && node --experimental-strip-types --test tests/validation.test.ts tests/website-crawl.test.ts tests/supervisor.test.ts tests/model-budget.test.ts tests/reference-retrieval.test.ts",
     "test:integration": "node tests/api.integration.mjs",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run test:unit && npm run build"
+    "check": "npm run lint && npm run typecheck && npm run test:unit && npm run build",
+    "references:build": "node scripts/build-reference-catalog.mjs",
+    "references:check": "node scripts/build-reference-catalog.mjs --check",
+    "predev": "npm run references:build",
+    "prebuild": "npm run references:build"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
